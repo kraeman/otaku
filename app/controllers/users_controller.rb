@@ -16,6 +16,21 @@ class UsersController < ApplicationController
     def show
         @user = current_user
     end
+
+    def edit
+    end
+
+    def update
+        @user.update(user_params)
+        if @user.valid?
+            redirect_to @user
+        else
+            render :edit
+        end
+    end
+
+    def destroy
+    end
     
     private
     
