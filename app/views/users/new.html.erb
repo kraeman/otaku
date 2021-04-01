@@ -8,11 +8,11 @@
         </div>
         <div class="form-control">
             <%= f.label :admin, class: "form-label" %>
-            <%= f.text_field :admin, class: "form-input" %>
+            <%= f.check_box :admin, class: "form-input" %>
         </div>
         <div class="form-control">
             <%= f.label :dob, class: "form-label" %>
-            <%= f.text_field :dob, class: "form-input" %>
+            <%= f.date_field(:dob, max: Date.today), class: "form-input" %>
         </div>
         <div class="form-control">
             <%= f.label :name, class: "form-label" %>
