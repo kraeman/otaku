@@ -611,3 +611,45 @@ Processing by UsersController#new as HTML
 Completed 200 OK in 35ms (Views: 33.7ms | Allocations: 5827)
 
 
+Started POST "/users" for ::1 at 2021-04-01 12:26:17 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"kraeman", "admin"=>"1", "dob"=>"1995-02-11", "name"=>"Krae H Wind", "email"=>"kraewind@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"create"}
+Completed 500 Internal Server Error in 2ms (Allocations: 823)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'password' for User.):
+  
+app/controllers/users_controller.rb:7:in `create'
+Started GET "/users/new" for ::1 at 2021-04-01 12:27:38 -0400
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 26.7ms | Allocations: 1371)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.7ms | Allocations: 5423)
+Completed 200 OK in 40ms (Views: 39.5ms | Allocations: 5820)
+
+
+Started GET "/users/new" for ::1 at 2021-04-01 12:27:44 -0400
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1371)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.7ms | Allocations: 5422)
+Completed 200 OK in 24ms (Views: 23.6ms | Allocations: 5818)
+
+
+Started POST "/users" for ::1 at 2021-04-01 12:29:44 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"kraeman", "admin"=>"1", "dob"=>"1995-02-11", "name"=>"Krae H Wind", "email"=>"kraewind@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"create"}
+Completed 500 Internal Server Error in 5ms (Allocations: 1236)
+
+
+  
+LoadError (cannot load such file -- bcrypt):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:7:in `create'
