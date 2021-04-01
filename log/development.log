@@ -174,3 +174,189 @@ Migrating to FixDobColumnForActorDataType (20210401153653)
   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/new" for ::1 at 2021-04-01 12:12:04 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 6.9ms | Allocations: 2126)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 2199)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.3ms | Allocations: 11685)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Signup</h1>
+
+<div id="signup-form" class="hide">
+    <%= form_with(model: @user) do |f| %>
+        <div class="form-control">
+            <%= f.label :username, class: "form-label" %>
+            <%= f.text_field :username, class: "form-input" %>
+        </div>
+        <div class="form-control">
+            <%= f.label :admin, class: "form-label" %>
+            <%= f.check_box :admin, class: "form-input" %>
+        </div>
+        <div class="form-control">
+            <%= f.label :dob, class: "form-label" %>
+            <%= f.date_field(:dob, max: Date.today), class: "form-input" %>
+        </div>
+        <div class="form-control">
+            <%= f.label :name, class: "form-label" %>
+            <%= f.text_field :name, class: "form-input" %>
+        </div>
+        <div class="form-control">
+            <%= f.label :email, class: "form-label"%>
+            <%= f.email_field :email, class: "form-input" %>
+        </div>
+        <div class="form-control">
+            <%= f.label :password, class: "form-label"%>
+            <%= f.password_field :password, class: "form-input" %>
+        </div>
+        <%= f.submit :create%>
+    <% end %>
+    Already have an account? <%= link_to "Log in", login_path, class: "show-login"%> here.
+
+</div>
+):
+1:    <h1>Signup</h1>
+2:    
+3:    <div id="signup-form" class="hide">
+4:        <%= form_with(model: @user) do |f| %>
+5:            <div class="form-control">
+6:                <%= f.label :username, class: "form-label" %>
+7:                <%= f.text_field :username, class: "form-input" %>
+8:            </div>
+9:            <div class="form-control">
+10:                <%= f.label :admin, class: "form-label" %>
+11:                <%= f.check_box :admin, class: "form-input" %>
+12:            </div>
+13:            <div class="form-control">
+14:                <%= f.label :dob, class: "form-label" %>
+15:                <%= f.date_field(:dob, max: Date.today), class: "form-input" %>
+16:            </div>
+17:            <div class="form-control">
+18:                <%= f.label :name, class: "form-label" %>
+19:                <%= f.text_field :name, class: "form-input" %>
+20:            </div>
+21:            <div class="form-control">
+22:                <%= f.label :email, class: "form-label"%>
+23:                <%= f.email_field :email, class: "form-input" %>
+24:            </div>
+25:            <div class="form-control">
+26:                <%= f.label :password, class: "form-label"%>
+27:                <%= f.password_field :password, class: "form-input" %>
+28:            </div>
+29:            <%= f.submit :create%>
+30:        <% end %>
+31:        Already have an account? <%= link_to "Log in", login_path, class: "show-login"%> here.
+32:    
+33:    </div>
+  
+app/views/users/new.html.erb:15: syntax error, unexpected ',', expecting ')'
+app/views/users/new.html.erb:15: syntax error, unexpected ',', expecting ')'
+app/views/users/new.html.erb:15: syntax error, unexpected ',', expecting ')'
+app/views/users/new.html.erb:15: syntax error, unexpected ',', expecting ')'
+app/views/users/new.html.erb:15: syntax error, unexpected ',', expecting ')'
+app/views/users/new.html.erb:15: syntax error, unexpected ',', expecting ')'
+Started GET "/users/new" for ::1 at 2021-04-01 12:17:32 -0400
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 89.3ms | Allocations: 13821)
+  Rendered layout layouts/application.html.erb (Duration: 89.7ms | Allocations: 13892)
+Completed 500 Internal Server Error in 99ms (Allocations: 15083)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `login_path' for #<ActionView::Base:0x007fb42db42970>):
+    28:         </div>
+    29:         <%= f.submit :create%>
+    30:     <% end %>
+    31:     Already have an account? <%= link_to "Log in", login_path, class: "show-login"%> here.
+    32: 
+    33: </div>
+  
+app/views/users/new.html.erb:31
+Started GET "/users/new" for ::1 at 2021-04-01 12:17:58 -0400
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 8.2ms | Allocations: 1780)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/kraewind/Documents/Flatiron/Phase 3/otaku/public/packs
+[Webpacker] Hash: ce14c115e350524bb5a9
+Version: webpack 4.46.0
+Time: 1771ms
+Built at: 04/01/2021 12:18:03 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-b43fa54005da8e229d8c.js    125 KiB  application  [emitted] [immutable]  application
+js/application-b43fa54005da8e229d8c.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-b43fa54005da8e229d8c.js js/application-b43fa54005da8e229d8c.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 492 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 5151.7ms | Allocations: 40382)
+Completed 500 Internal Server Error in 5158ms (Allocations: 41452)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `root_path' for #<ActionView::Base:0x007fb3fbdfbce8>
+Did you mean?  font_path):
+    13:   <body>
+    14:     <nav>
+    15:       <div class="navbar-list">
+    16:           <a class="navbar-link <%= active_css(root_path)%>" href="/">Home</a>
+    17:           <a class="navbar-link <%= active_css(brands_path)%>" href="/brands">Brands</a>
+    18:           <a class="navbar-link <%= active_css(products_path)%>" href="/products">Products</a>
+    19:           <a class="navbar-link <%= active_css(new_brand_path)%>" href="/brands/new">New Brand</a>
+  
+app/views/layouts/application.html.erb:16
+Started GET "/users/new" for ::1 at 2021-04-01 12:18:30 -0400
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 1779)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 37.8ms | Allocations: 9350)
+Completed 500 Internal Server Error in 47ms (Allocations: 10421)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `brands_path' for #<ActionView::Base:0x007fb3fbf05f08>):
+    14:     <%# <nav>
+    15:       <div class="navbar-list">
+    16:           <a class="navbar-link <%= active_css(root_path)%>" href="/">Home</a>
+    17:           <a class="navbar-link <%= active_css(brands_path)%>" href="/brands">Brands</a>
+    18:           <a class="navbar-link <%= active_css(products_path)%>" href="/products">Products</a>
+    19:           <a class="navbar-link <%= active_css(new_brand_path)%>" href="/brands/new">New Brand</a>
+    20:           <a class="navbar-link <%= active_css(new_product_path)%>" href="/products/new">New Product</a>
+  
+app/views/layouts/application.html.erb:17
+Started GET "/users/new" for ::1 at 2021-04-01 12:19:16 -0400
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1779)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.8ms | Allocations: 9367)
+Completed 500 Internal Server Error in 35ms (Allocations: 10437)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `root_path' for #<ActionView::Base:0x007fb3fbda7a08>
+Did you mean?  font_path):
+    14:   <!-- 
+    15:     <nav>
+    16:       <div class="navbar-list">
+    17:           <a class="navbar-link <%= active_css(root_path)%>" href="/">Home</a>
+    18:           <a class="navbar-link <%= active_css(brands_path)%>" href="/brands">Brands</a>
+    19:           <a class="navbar-link <%= active_css(products_path)%>" href="/products">Products</a>
+    20:           <a class="navbar-link <%= active_css(new_brand_path)%>" href="/brands/new">New Brand</a>
+  
+app/views/layouts/application.html.erb:17

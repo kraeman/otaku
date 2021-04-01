@@ -12,7 +12,7 @@
         </div>
         <div class="form-control">
             <%= f.label :dob, class: "form-label" %>
-            <%= f.date_field(:dob, max: Date.today), class: "form-input" %>
+            <%= f.date_field :dob, max: Date.today, class: "form-input" %>
         </div>
         <div class="form-control">
             <%= f.label :name, class: "form-label" %>
@@ -28,6 +28,6 @@
         </div>
         <%= f.submit :create%>
     <% end %>
-    Already have an account? <%= link_to "Log in", login_path, class: "show-login"%> here.
+    <%# Already have an account? <%= link_to "Log in", login_path, class: "show-login"%> here. %>
 
 </div>
