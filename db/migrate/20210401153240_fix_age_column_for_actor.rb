@@ -1,5 +1,5 @@
 class FixAgeColumnForActor < ActiveRecord::Migration[6.1]
   def change
-    rename_column :users, :age, :dob
+    rename_column :actors, :age, :dob
   end
 end
