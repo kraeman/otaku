@@ -653,3 +653,167 @@ LoadError (cannot load such file -- bcrypt):
 app/models/user.rb:2:in `<class:User>'
 app/models/user.rb:1:in `<main>'
 app/controllers/users_controller.rb:7:in `create'
+Started GET "/users/new" for ::1 at 2021-04-01 12:30:31 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 23.9ms | Allocations: 7909)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 46.4ms | Allocations: 15839)
+Completed 200 OK in 79ms (Views: 52.9ms | ActiveRecord: 0.3ms | Allocations: 27466)
+
+
+Started GET "/users/new" for ::1 at 2021-04-01 12:30:33 -0400
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1377)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 5431)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.0ms | Allocations: 5838)
+
+
+Started POST "/users" for ::1 at 2021-04-01 12:30:51 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"kraeman", "admin"=>"1", "dob"=>"1995-02-11", "name"=>"Krae H Wind", "email"=>"kraewind@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"create"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "dob", "admin", "created_at", "updated_at", "email", "password_digest", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Krae H Wind"], ["dob", "1995-02-11"], ["admin", 1], ["created_at", "2021-04-01 16:30:52.117634"], ["updated_at", "2021-04-01 16:30:52.117634"], ["email", "kraewind@gmail.com"], ["password_digest", "$2a$12$IJhwaFrpV/jHud9R805vVeqUtO0AU7JuC4N7b3s1j1MgY/E/N7qja"], ["username", "kraeman"]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 301ms (ActiveRecord: 1.7ms | Allocations: 3159)
+
+
+Started GET "/users/1" for ::1 at 2021-04-01 12:30:52 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 2543)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<UsersController:0x007ffc0e5e2380>):
+  
+app/controllers/users_controller.rb:17:in `show'
+Started GET "/users/1" for ::1 at 2021-04-01 12:32:23 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 91121ms (Allocations: 74638)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<UsersController:0x007ffc3b551628>):
+  
+app/controllers/users_controller.rb:18:in `show'
+Started GET "/users/1" for ::1 at 2021-04-01 12:33:54 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 924ms (Allocations: 37784)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<UsersController:0x007ffc3bd15e18>):
+  
+app/controllers/users_controller.rb:18:in `show'
+Started GET "/users/1" for ::1 at 2021-04-01 12:33:58 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 222)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 4389)
+Completed 200 OK in 23ms (Views: 9.7ms | ActiveRecord: 0.6ms | Allocations: 13897)
+
+
+Started GET "/users/1/edit" for ::1 at 2021-04-01 12:38:55 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1351)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 1422)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 1908)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form_with(model: @user) do |f| %>
+        <div class="form-control">
+            <%= f.label :username, class: "form-label" %>
+            <%= f.text_field :username, class: "form-input" %>
+        </div>
+        <div class="form-control">
+            <%= f.label :admin, class: "form-label" %>
+            <%= f.check_box :admin, class: "form-input" %>
+        </div>
+        <div class="form-control">
+            <%= f.label :dob, class: "form-label" %>
+            <%= f.date_field(:dob, max: Date.today), class: "form-input" %>
+        </div>
+        <div class="form-control">
+            <%= f.label :name, class: "form-label" %>
+            <%= f.text_field :name, class: "form-input" %>
+        </div>
+        <div class="form-control">
+            <%= f.label :email, class: "form-label"%>
+            <%= f.email_field :email, class: "form-input" %>
+        </div>
+        <div class="form-control">
+            <%= f.label :password, class: "form-label"%>
+            <%= f.password_field :password, class: "form-input" %>
+        </div>
+        <%= f.submit :update%>
+    <% end %>
+):
+1:    <%= form_with(model: @user) do |f| %>
+2:            <div class="form-control">
+3:                <%= f.label :username, class: "form-label" %>
+4:                <%= f.text_field :username, class: "form-input" %>
+5:            </div>
+6:            <div class="form-control">
+7:                <%= f.label :admin, class: "form-label" %>
+8:                <%= f.check_box :admin, class: "form-input" %>
+9:            </div>
+10:            <div class="form-control">
+11:                <%= f.label :dob, class: "form-label" %>
+12:                <%= f.date_field(:dob, max: Date.today), class: "form-input" %>
+13:            </div>
+14:            <div class="form-control">
+15:                <%= f.label :name, class: "form-label" %>
+16:                <%= f.text_field :name, class: "form-input" %>
+17:            </div>
+18:            <div class="form-control">
+19:                <%= f.label :email, class: "form-label"%>
+20:                <%= f.email_field :email, class: "form-input" %>
+21:            </div>
+22:            <div class="form-control">
+23:                <%= f.label :password, class: "form-label"%>
+24:                <%= f.password_field :password, class: "form-input" %>
+25:            </div>
+26:            <%= f.submit :update%>
+27:        <% end %>
+  
+app/views/users/edit.html.erb:12: syntax error, unexpected ',', expecting ')'
+app/views/users/edit.html.erb:12: syntax error, unexpected ',', expecting ')'
+app/views/users/edit.html.erb:12: syntax error, unexpected ',', expecting ')'
+app/views/users/edit.html.erb:12: syntax error, unexpected ',', expecting ')'
+app/views/users/edit.html.erb:12: syntax error, unexpected ',', expecting ')'
+app/views/users/edit.html.erb:12: syntax error, unexpected ',', expecting ')'
+Started GET "/users/1/edit" for ::1 at 2021-04-01 12:39:55 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 9.6ms | Allocations: 6852)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.7ms | Allocations: 11012)
+Completed 200 OK in 33ms (Views: 30.9ms | Allocations: 12136)
+
+
