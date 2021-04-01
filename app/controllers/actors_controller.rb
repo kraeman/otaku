@@ -2,6 +2,10 @@ class ActorsController < ApplicationController
     def new
         @actor = Actor.new
     end
+
+    def index
+        @actors = Actor.all
+    end
     
     def create
         @actor = Actor.create(actor_params)
