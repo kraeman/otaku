@@ -992,3 +992,22 @@ Processing by ActorsController#show as HTML
 Completed 200 OK in 23ms (Views: 10.8ms | ActiveRecord: 0.4ms | Allocations: 9559)
 
 
+Started GET "/" for ::1 at 2021-04-01 15:14:29 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/kraewind/.rvm/gems/ruby-2.6.1/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/kraewind/.rvm/gems/ruby-2.6.1/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 12.0ms | Allocations: 1839)
+Completed 200 OK in 36ms (Views: 15.5ms | ActiveRecord: 0.0ms | Allocations: 4541)
+
+
+Started GET "/users/new" for ::1 at 2021-04-01 15:14:37 -0400
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 40.5ms | Allocations: 7551)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 67.1ms | Allocations: 15545)
+Completed 200 OK in 101ms (Views: 69.2ms | ActiveRecord: 0.9ms | Allocations: 25758)
+
+
