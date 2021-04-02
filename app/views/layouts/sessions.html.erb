@@ -1,24 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Otaku</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
+   
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <nav>
-      <div class="navbar-list">
- 
-          <a class="navbar-link <%=characters_path%>" href="/characters">Characters</a>
-          <a class="navbar-link <%=actors_path%>" href="/actors">Actors</a>
-         
-        </div>
-    </nav>
     <div class="content">
       <%= yield %>
     </div>

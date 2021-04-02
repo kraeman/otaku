@@ -2210,3 +2210,132 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 12ms (Views: 9.3ms | ActiveRecord: 0.1ms | Allocations: 5865)
 
 
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/login" for ::1 at 2021-04-02 13:28:19 -0400
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 24.0ms | Allocations: 6332)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 49.0ms | Allocations: 14269)
+Completed 200 OK in 84ms (Views: 55.7ms | ActiveRecord: 0.4ms | Allocations: 26499)
+
+
+Started GET "/users/new" for ::1 at 2021-04-02 13:28:22 -0400
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 16.3ms | Allocations: 2323)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.3ms | Allocations: 6472)
+Completed 200 OK in 33ms (Views: 29.5ms | ActiveRecord: 0.0ms | Allocations: 7906)
+
+
+Started POST "/users" for ::1 at 2021-04-02 13:29:20 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"bouvmom", "admin"=>"0", "dob"=>"1965-10-08", "name"=>"Felisa A Wind", "email"=>"felisa.wind@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"create"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "felisa.wind@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "bouvmom"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "dob", "admin", "created_at", "updated_at", "email", "password_digest", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Felisa A Wind"], ["dob", "1965-10-08"], ["admin", 0], ["created_at", "2021-04-02 17:29:20.960054"], ["updated_at", "2021-04-02 17:29:20.960054"], ["email", "felisa.wind@gmail.com"], ["password_digest", "$2a$12$pFVYRYlP16pOaS3DBHvFZeINMtW2gFrl0tAZ8s.TL4If5D2KrcCWO"], ["username", "bouvmom"]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 309ms (ActiveRecord: 1.8ms | Allocations: 7512)
+
+
+Started GET "/users/2" for ::1 at 2021-04-02 13:29:20 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 211)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 4276)
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 0.1ms | Allocations: 5473)
+
+
+Started GET "/users/2" for ::1 at 2021-04-02 13:49:02 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:20:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 214)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 8141)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.6ms | Allocations: 17215)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `root_path' for #<ActionView::Base:0x007fa475d50ba8>
+Did you mean?  font_path):
+    13:   <body>
+    14:     <nav>
+    15:       <div class="navbar-list">
+    16:           <a class="navbar-link <%= active_css(root_path)%>" href="/">Home</a>
+    17:           <a class="navbar-link <%= active_css(brands_path)%>" href="/brands">Brands</a>
+    18:           <a class="navbar-link <%= active_css(products_path)%>" href="/products">Products</a>
+    19:           <a class="navbar-link <%= active_css(new_brand_path)%>" href="/brands/new">New Brand</a>
+  
+app/views/layouts/application.html.erb:16
+Started GET "/users/2" for ::1 at 2021-04-02 13:50:26 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 211)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 34.8ms | Allocations: 7725)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 0.3ms | Allocations: 9533)
+
+
+  
+ActionView::Template::Error (undefined method `active_css' for #<ActionView::Base:0x007fa475a2cb70>):
+    14:     <nav>
+    15:       <div class="navbar-list">
+    16:  
+    17:           <a class="navbar-link <%= active_css(characters_path)%>" href="/characters">Characters</a>
+    18:           <a class="navbar-link <%= active_css(actors_path)%>" href="/actors">Actors</a>
+    19:          
+    20:         </div>
+  
+app/views/layouts/application.html.erb:17
+Started GET "/users/2" for ::1 at 2021-04-02 13:50:48 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 204)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.3ms | Allocations: 4539)
+Completed 200 OK in 30ms (Views: 25.5ms | ActiveRecord: 0.3ms | Allocations: 6215)
+
+
+Started GET "/signup" for ::1 at 2021-04-02 13:51:05 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/signup"):
+  
+Started GET "/users/new" for ::1 at 2021-04-02 13:51:12 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb
+  Rendered users/new.html.erb (Duration: 9.5ms | Allocations: 6734)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.0ms | Allocations: 7206)
+
+
