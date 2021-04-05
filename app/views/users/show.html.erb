@@ -9,14 +9,25 @@
 <h4><%= @user.admin %></h4>
 <img src="<%= @user.image %>">
 
-<h4><%=link_to "Edit Profile", edit_user_path(@user)%></h4>
+<h4><%=button_to "Edit Profile", edit_user_path(@user)%></h4>
 
-<h3>Anime You Have Watched: </h3> <br>
+<h3>Anime You Have Watched:</h3> <br>
 <ul>
   <% @user.shows.each do |show| %>
     <li><%=link_to show.title, show_path(show)%></li>
   <% end %>
 </ul>
+
+<h3>Your Upcoming Viewings:</h3>
+<ul>
+  <% @user.viewings.each do |viewing| %>
+    <li><%=link_to viewing.show.title, show_path(viewing.show)%>
+    <%= link_to viewing.time, viewing_path(viewing)%></li>
+  <% end %>
+</ul>
+<br>
+  <%= button_to "Add a viewing", new_viewing_path, method: 'get' %>
+<br>
 <% else %>
   <%= link_to('Log in with Google!', '/auth/google_oauth2') %>
 <% end %> 

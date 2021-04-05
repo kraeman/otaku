@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :actors
   resources :characters
-  resources :viewings
+  resources :viewings, except: [:index]
   resources :users
   resources :comments
   resources :shows
@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get '/logout', to: "sessions#destroy", as: "logout"
   #why doesnt the resources above take care of this????
   post '/users/new', to: 'users#create'
+  get '/viewings/new', to: 'viewings#new'
+  post '/viewings', to: 'viewings#create'
   
 
 

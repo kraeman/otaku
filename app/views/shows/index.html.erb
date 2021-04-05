@@ -3,3 +3,6 @@
 <% @shows.each do |s| %>
     <%= link_to s.title, show_path(s) %>
 <% end %>
+
+<br>
+<%= link_to "Create A Show", new_show_path %>

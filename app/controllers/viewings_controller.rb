@@ -2,12 +2,15 @@ class ViewingsController < ApplicationController
     def new
         @viewing = Viewing.new
     end
+
     
     def create
-        @viewing = Viewing.create(viewing_params)
+        # byebug
+        @viewing = Viewing.create(time: viewing_params[:time], place: viewing_params[:place], show_id: viewing_params[:show_id], user_id: session[:user_id])
+        # byebug
         if @viewing.id
           session[:viewing_id] = @viewing.id
-          redirect_to @viewing
+          redirect_to @viewing.user
         else
           render :new
         end
