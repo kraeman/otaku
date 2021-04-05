@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/login', to: "sessions#new", as: "signin"
   post '/login', to: "sessions#create"
   get 'auth/:provider/callback', to: 'sessions#omniauth'
-  
+  get '/logout', to: "sessions#destroy", as: "logout"
   #why doesnt the resources above take care of this????
   post '/users/new', to: 'users#create'
   

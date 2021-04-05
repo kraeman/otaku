@@ -17,7 +17,11 @@ class UsersController < ApplicationController
     end
     
     def show
-        @user = User.find(session[:user_id])
+       
+        @user = User.find_by(id: session[:user_id])
+        if !@user
+            redirect_to signin_path
+        end
     end
 
     def edit
