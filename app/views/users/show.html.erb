@@ -8,6 +8,15 @@
 <h4><%= @user.dob %></h4>
 <h4><%= @user.admin %></h4>
 <img src="<%= @user.image %>">
+
+<h4><%=link_to "Edit Profile", edit_user_path(@user)%></h4>
+
+<h3>Anime You Have Watched: </h3> <br>
+<ul>
+  <% @user.shows.each do |show| %>
+    <li><%=link_to show.title, show_path(show)%></li>
+  <% end %>
+</ul>
 <% else %>
   <%= link_to('Log in with Google!', '/auth/google_oauth2') %>
 <% end %> 

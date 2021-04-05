@@ -2,6 +2,10 @@ class ShowsController < ApplicationController
     def new
         @show = Show.new
     end
+
+    def index
+        @shows = Show.all
+    end
     
     def create
         @show = Show.create(show_params)
