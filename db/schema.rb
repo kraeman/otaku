@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_03_201055) do
+ActiveRecord::Schema.define(version: 2021_04_05_165639) do
 
   create_table "actors", force: :cascade do |t|
     t.string "name"
@@ -65,6 +65,8 @@ ActiveRecord::Schema.define(version: 2021_04_03_201055) do
     t.string "password_digest"
     t.string "username"
     t.string "uid"
+    t.string "image"
+    t.boolean "cvo", default: false
   end
 
   create_table "viewings", force: :cascade do |t|

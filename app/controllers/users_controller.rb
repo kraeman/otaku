@@ -6,21 +6,22 @@ class UsersController < ApplicationController
     end
     
     def create
+        # byebug
         @user = User.create(user_params)
         if @user.id
           session[:user_id] = @user.id
-          redirect_to @user
+          redirect_to user_path(@user)
         else
           render :new
         end
     end
     
     def show
-     
         @user = User.find(session[:user_id])
     end
 
     def edit
+        #if cvo is true, cant resent password
     end
 
     def update
@@ -38,6 +39,6 @@ class UsersController < ApplicationController
     private
     
     def user_params
-        params.require(:user).permit(:username, :email, :password, :dob, :name, :admin)
+        params.permit(:username, :cvo, :email, :password, :dob, :name, :admin, :uid, :image)
     end
 end
