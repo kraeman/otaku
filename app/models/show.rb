@@ -8,4 +8,6 @@ class Show < ApplicationRecord
     validates :title, presence: true, uniqueness: true
     #validates air time as a length of time
     validates :rating, numericality: true, presence: true
+
+    scope :search_by_title, -> (title) {where("title LIKE ?", "#{title}%")}
 end

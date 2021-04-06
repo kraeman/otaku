@@ -21,6 +21,14 @@
           <a class="navbar-link <%=logout_path%>" href='/logout'>Logout</a>
          
         </div>
+          <%=form_with(url: searches_path, method: 'get') do |f|%>
+            <%=f.label :search%>
+            <%=f.text_field :search%>
+            <%=f.submit :search%>
+          <% end %>
+        <div>
+          
+        </div>
     </nav>
     <div class="content">
       <%= yield %>

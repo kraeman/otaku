@@ -3,3 +3,5 @@
 <% @characters.each do |c| %>
     <%= link_to c.name, character_path(c) %>
 <% end %>
+
+<%= link_to "Create A Character", new_character_path %>

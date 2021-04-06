@@ -8,6 +8,7 @@ class CharactersController < ApplicationController
     end
     
     def create
+        # byebug
         @character = Character.create(character_params)
         if @character.id
           session[:character_id] = @character.id
