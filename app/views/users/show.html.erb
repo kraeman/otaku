@@ -22,7 +22,7 @@
 <ul>
   <% @user.viewings.each do |viewing| %>
     <li><%=link_to viewing.show.title, show_path(viewing.show)%>
-    <%= link_to viewing.time, viewing_path(viewing)%></li>
+    <%= link_to viewing.time, edit_viewing_path(viewing)%></li>
   <% end %>
 </ul>
 <br>
