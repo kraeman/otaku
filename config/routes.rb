@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :actors
   resources :characters
   resources :viewings, except: [:index]
-  resources :users
+  resources :users, except: [:create, :show]
   resources :comments
   resources :shows
   get '/login', to: "sessions#new", as: "signin"
@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   post '/users/new', to: 'users#create'
   get '/viewings/new', to: 'viewings#new'
   post '/viewings', to: 'viewings#create'
+  get '/users/:id', to: 'users#show'
   
 
 
