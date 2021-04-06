@@ -15616,3 +15616,373 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 36ms (Views: 30.8ms | ActiveRecord: 1.1ms | Allocations: 9957)
 
 
+Started GET "/shows" for ::1 at 2021-04-06 13:08:17 -0400
+Processing by ShowsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shows/index.html.erb within layouts/application
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows"[0m
+  ↳ app/views/shows/index.html.erb:3
+  Rendered shows/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 778)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 5347)
+Completed 200 OK in 15ms (Views: 12.4ms | ActiveRecord: 0.4ms | Allocations: 6294)
+
+
+Started GET "/shows/3" for ::1 at 2021-04-06 13:08:20 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:21:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shows/show.html.erb within layouts/application
+  Rendered shows/show.html.erb within layouts/application (Duration: 3.1ms | Allocations: 144)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | Allocations: 4770)
+Completed 200 OK in 30ms (Views: 23.6ms | ActiveRecord: 0.4ms | Allocations: 5841)
+
+
+Started GET "/shows" for ::1 at 2021-04-06 13:08:22 -0400
+Processing by ShowsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shows/index.html.erb within layouts/application
+  [1m[36mShow Load (0.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows"[0m
+  ↳ app/views/shows/index.html.erb:3
+  Rendered shows/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 603)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layout layouts/application.html.erb (Duration: 40.4ms | Allocations: 5206)
+Completed 200 OK in 43ms (Views: 40.9ms | ActiveRecord: 0.6ms | Allocations: 5624)
+
+
+Started GET "/shows/1" for ::1 at 2021-04-06 13:08:25 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShow Load (0.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:21:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shows/show.html.erb within layouts/application
+  Rendered shows/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 29)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layout layouts/application.html.erb (Duration: 23.6ms | Allocations: 4645)
+Completed 200 OK in 27ms (Views: 24.2ms | ActiveRecord: 0.6ms | Allocations: 5498)
+
+
+Started GET "/shows/1" for ::1 at 2021-04-06 13:09:03 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:21:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shows/show.html.erb within layouts/application
+  Rendered shows/show.html.erb within layouts/application (Duration: 3.2ms | Allocations: 278)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layout layouts/application.html.erb (Duration: 20.2ms | Allocations: 5186)
+Completed 200 OK in 32ms (Views: 26.0ms | ActiveRecord: 0.5ms | Allocations: 6770)
+
+
+Started POST "/shows/1/edit" for ::1 at 2021-04-06 13:09:04 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/shows/1/edit"):
+  
+Started GET "/shows/1" for ::1 at 2021-04-06 13:09:19 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShow Load (0.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:21:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shows/show.html.erb within layouts/application
+  Rendered shows/show.html.erb within layouts/application (Duration: 1.8ms | Allocations: 252)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | Allocations: 5294)
+Completed 200 OK in 31ms (Views: 25.6ms | ActiveRecord: 0.6ms | Allocations: 7020)
+
+
+Started GET "/shows/1/edit" for ::1 at 2021-04-06 13:09:21 -0400
+Processing by ShowsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering shows/edit.html.erb within layouts/application
+  Rendered shows/edit.html.erb within layouts/application (Duration: 13.1ms | Allocations: 4252)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layout layouts/application.html.erb (Duration: 30.3ms | Allocations: 8763)
+Completed 200 OK in 33ms (Views: 30.8ms | ActiveRecord: 0.2ms | Allocations: 9297)
+
+
+Started GET "/shows/1/edit" for ::1 at 2021-04-06 13:09:55 -0400
+Processing by ShowsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering shows/edit.html.erb within layouts/application
+  Rendered shows/edit.html.erb within layouts/application (Duration: 3.0ms | Allocations: 3782)
+Started GET "/shows/1/edit" for ::1 at 2021-04-06 13:10:33 -0400
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/layouts/application.html.erb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layout layouts/application.html.erb (Duration: 45.0ms | Allocations: 25892)
+Completed 200 OK in 38370ms (Views: 46.7ms | ActiveRecord: 1.1ms | Allocations: 67823)
+
+
+Processing by ShowsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/shows_controller.rb:25:in `edit'
+  [1m[36mShow Load (0.1ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:25:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering shows/edit.html.erb within layouts/application
+  Rendered shows/edit.html.erb within layouts/application (Duration: 1.5ms | Allocations: 995)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 14329)
+Completed 200 OK in 25ms (Views: 16.8ms | ActiveRecord: 1.0ms | Allocations: 22627)
+
+
+Started PATCH "/shows/1" for ::1 at 2021-04-06 13:10:39 -0400
+Processing by ShowsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "show"=>{"title"=>"One Piece", "air_time"=>"22", "rating"=>"10.0"}, "commit"=>"update", "id"=>"1"}
+Completed 500 Internal Server Error in 2ms (Allocations: 1123)
+
+
+  
+NoMethodError (undefined method `update' for nil:NilClass):
+  
+app/controllers/shows_controller.rb:29:in `update'
+Started GET "/shows/1/edit" for ::1 at 2021-04-06 13:12:40 -0400
+Processing by ShowsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/shows_controller.rb:25:in `edit'
+  [1m[36mShow Load (0.1ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:25:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering shows/edit.html.erb within layouts/application
+  Rendered shows/edit.html.erb within layouts/application (Duration: 1.9ms | Allocations: 879)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 14091)
+Completed 200 OK in 29ms (Views: 18.4ms | ActiveRecord: 1.3ms | Allocations: 22429)
+
+
+Started PATCH "/shows/1" for ::1 at 2021-04-06 13:12:41 -0400
+Processing by ShowsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "show"=>{"title"=>"One Piece", "air_time"=>"", "rating"=>"10.0"}, "commit"=>"update", "id"=>"1"}
+Completed 404 Not Found in 28639ms (ActiveRecord: 0.0ms | Allocations: 9354)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Show without an ID):
+  
+app/controllers/shows_controller.rb:30:in `update'
+Started GET "/shows/1/edit" for ::1 at 2021-04-06 13:13:14 -0400
+Processing by ShowsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/shows_controller.rb:25:in `edit'
+  [1m[36mShow Load (0.1ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:25:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering shows/edit.html.erb within layouts/application
+  Rendered shows/edit.html.erb within layouts/application (Duration: 1.6ms | Allocations: 879)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 14090)
+Completed 200 OK in 25ms (Views: 15.5ms | ActiveRecord: 1.1ms | Allocations: 22423)
+
+
+Started PATCH "/shows/1" for ::1 at 2021-04-06 13:13:18 -0400
+Processing by ShowsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "show"=>{"title"=>"One Piece", "air_time"=>"22", "rating"=>"10.0"}, "commit"=>"update", "id"=>"1"}
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:30:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/shows_controller.rb:31:in `update'
+  [1m[36mShow Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "shows" WHERE "shows"."title" = ? AND "shows"."id" != ? LIMIT ?[0m  [["title", "One Piece"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:31:in `update'
+  [1m[36mShow Update (3.3ms)[0m  [1m[33mUPDATE "shows" SET "air_time" = ?, "updated_at" = ? WHERE "shows"."id" = ?[0m  [["air_time", "2021-04-22 00:00:00"], ["updated_at", "2021-04-06 17:13:18.286089"], ["id", 1]]
+  ↳ app/controllers/shows_controller.rb:31:in `update'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/shows_controller.rb:31:in `update'
+  [1m[36mShow Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "shows" WHERE "shows"."title" = ? AND "shows"."id" != ? LIMIT ?[0m  [["title", "One Piece"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:32:in `update'
+Redirected to http://localhost:3000/shows/1
+Completed 302 Found in 28ms (ActiveRecord: 6.0ms | Allocations: 4808)
+
+
+Started GET "/shows/1" for ::1 at 2021-04-06 13:13:18 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:21:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shows/show.html.erb within layouts/application
+  Rendered shows/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 81)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 6280)
+Completed 200 OK in 14ms (Views: 11.7ms | ActiveRecord: 0.3ms | Allocations: 7685)
+
+
+Started GET "/shows/1/edit" for ::1 at 2021-04-06 13:13:20 -0400
+Processing by ShowsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:25:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering shows/edit.html.erb within layouts/application
+  Rendered shows/edit.html.erb within layouts/application (Duration: 4.7ms | Allocations: 813)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layout layouts/application.html.erb (Duration: 24.6ms | Allocations: 5415)
+Completed 200 OK in 29ms (Views: 25.2ms | ActiveRecord: 0.5ms | Allocations: 6252)
+
+
+Started PATCH "/shows/1" for ::1 at 2021-04-06 13:13:39 -0400
+Processing by ShowsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "show"=>{"title"=>"One Piece", "air_time"=>"1", "rating"=>"10.0"}, "commit"=>"update", "id"=>"1"}
+  [1m[36mShow Load (0.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:30:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/shows_controller.rb:31:in `update'
+  [1m[36mShow Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "shows" WHERE "shows"."title" = ? AND "shows"."id" != ? LIMIT ?[0m  [["title", "One Piece"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:31:in `update'
+  [1m[36mShow Update (0.8ms)[0m  [1m[33mUPDATE "shows" SET "air_time" = ?, "updated_at" = ? WHERE "shows"."id" = ?[0m  [["air_time", nil], ["updated_at", "2021-04-06 17:13:39.455773"], ["id", 1]]
+  ↳ app/controllers/shows_controller.rb:31:in `update'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/shows_controller.rb:31:in `update'
+  [1m[36mShow Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "shows" WHERE "shows"."title" = ? AND "shows"."id" != ? LIMIT ?[0m  [["title", "One Piece"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:32:in `update'
+Redirected to http://localhost:3000/shows/1
+Completed 302 Found in 24ms (ActiveRecord: 4.8ms | Allocations: 4235)
+
+
+Started GET "/shows/1" for ::1 at 2021-04-06 13:13:39 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:21:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shows/show.html.erb within layouts/application
+  Rendered shows/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 62)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 4665)
+Completed 200 OK in 16ms (Views: 13.8ms | ActiveRecord: 0.3ms | Allocations: 5494)
+
+
+Started GET "/actors" for ::1 at 2021-04-06 13:13:45 -0400
+Processing by ActorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering actors/index.html.erb within layouts/application
+  [1m[36mActor Load (0.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/views/actors/index.html.erb:3
+  Rendered actors/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 636)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 5217)
+Completed 200 OK in 23ms (Views: 15.0ms | ActiveRecord: 0.4ms | Allocations: 8060)
+
+
+Started GET "/shows" for ::1 at 2021-04-06 13:15:13 -0400
+Processing by ShowsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shows/index.html.erb within layouts/application
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows"[0m
+  ↳ app/views/shows/index.html.erb:3
+  Rendered shows/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 775)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 5386)
+Completed 200 OK in 24ms (Views: 20.7ms | ActiveRecord: 0.4ms | Allocations: 5929)
+
+
+Started GET "/shows/1" for ::1 at 2021-04-06 13:15:14 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:21:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shows/show.html.erb within layouts/application
+  Rendered shows/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 63)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layout layouts/application.html.erb (Duration: 20.3ms | Allocations: 4666)
+Completed 200 OK in 24ms (Views: 21.0ms | ActiveRecord: 0.6ms | Allocations: 5503)
+
+
+Started GET "/shows/1/edit" for ::1 at 2021-04-06 13:15:15 -0400
+Processing by ShowsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:25:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering shows/edit.html.erb within layouts/application
+  Rendered shows/edit.html.erb within layouts/application (Duration: 3.9ms | Allocations: 797)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layout layouts/application.html.erb (Duration: 23.0ms | Allocations: 5399)
+Completed 200 OK in 28ms (Views: 23.6ms | ActiveRecord: 0.5ms | Allocations: 6235)
+
+
+Started GET "/shows/1" for ::1 at 2021-04-06 13:15:17 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:21:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shows/show.html.erb within layouts/application
+  Rendered shows/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 62)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layout layouts/application.html.erb (Duration: 40.2ms | Allocations: 4665)
+Completed 200 OK in 44ms (Views: 40.7ms | ActiveRecord: 0.4ms | Allocations: 5500)
+
+
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeAirTimeDataTypeInShowTable (20210406171632)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ashows" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "air_time" datetime DEFAULT NULL, "rating" decimal DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ashows" ("id","title","air_time","rating","created_at","updated_at")
+                     SELECT "id","title","air_time","rating","created_at","updated_at" FROM "shows"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "shows"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "shows" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "air_time" integer DEFAULT NULL, "rating" decimal DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "shows" ("id","title","air_time","rating","created_at","updated_at")
+                     SELECT "id","title","air_time","rating","created_at","updated_at" FROM "ashows"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ashows"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210406171632"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

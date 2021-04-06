@@ -22,12 +22,15 @@ class ShowsController < ApplicationController
     end
 
     def edit
+        @show = Show.find(params[:id])
     end
 
     def update
-        @show.update(show_params)
-        if @show.valid?
-            redirect_to @show
+        # byebug
+        show = Show.find(params[:id])
+        show.update(show_params)
+        if show.valid?
+            redirect_to show
         else
             render :edit
         end
