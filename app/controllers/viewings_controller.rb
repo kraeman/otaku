@@ -3,6 +3,10 @@ class ViewingsController < ApplicationController
         @viewing = Viewing.new
     end
 
+    def index
+        @user = User.find(session[:user_id])
+    end
+
     
     def create
         # byebug

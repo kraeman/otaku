@@ -1,0 +1,9 @@
+<h1>Your Past Viewings</h1>
+
+
+<% @user.viewings.each do |viewing| %>
+    <% if viewing.time < Time.now %>
+      <li><%=link_to viewing.show.title, show_path(viewing.show)%>
+      <%= link_to "#{viewing.time} @ #{viewing.place}", edit_viewing_path(viewing)%></li>
+    <% end %>
+  <% end %>

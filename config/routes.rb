@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :actors
   resources :characters
-  resources :viewings, except: [:index]
+  resources :viewings
   resources :users, except: [:create, :show]
   resources :comments
   resources :shows

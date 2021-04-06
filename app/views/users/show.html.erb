@@ -11,7 +11,7 @@
 
 <h4><%=button_to "Edit Profile", edit_user_path(@user), method: 'get'%></h4>
 
-<h3>Anime You Have Watched:</h3> <br>
+<h3>Anime You Have Watched:</h3>
 <ul>
   <% @user.shows.uniq.each do |show| %>
     <li><%=link_to show.title, show_path(show)%></li>
@@ -21,12 +21,15 @@
 <h3>Your Upcoming Viewings:</h3>
 <ul>
   <% @user.viewings.each do |viewing| %>
-    <li><%=link_to viewing.show.title, show_path(viewing.show)%>
-    <%= link_to viewing.time, edit_viewing_path(viewing)%></li>
+    <% if viewing.time >= Time.now %>
+      <li><%=link_to viewing.show.title, show_path(viewing.show)%>
+      <%= link_to "#{viewing.time} @ #{viewing.place}", edit_viewing_path(viewing)%></li>
+    <% end %>
   <% end %>
 </ul>
 <br>
   <%= button_to "Add a viewing", new_viewing_path, method: 'get' %>
+  <%= button_to "See Past Viewings", viewings_path, method: 'get'%>
 <br>
 <% else %>
   <%= link_to('Log in with Google!', '/auth/google_oauth2') %>
