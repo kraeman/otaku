@@ -14997,3 +14997,26 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 52ms (Views: 47.8ms | ActiveRecord: 1.7ms | Allocations: 8353)
 
 
+Started GET "/users/1" for ::1 at 2021-04-06 10:59:14 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "viewings" ON "shows"."id" = "viewings"."show_id" WHERE "viewings"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:16:in `uniq'
+  [1m[36mViewing Load (0.2ms)[0m  [1m[34mSELECT "viewings".* FROM "viewings" WHERE "viewings"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:23
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:24
+  [1m[36mCACHE Show Load (0.0ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:24
+  Rendered users/show.html.erb within layouts/application (Duration: 14.8ms | Allocations: 3337)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layout layouts/application.html.erb (Duration: 29.4ms | Allocations: 8201)
+Completed 200 OK in 38ms (Views: 32.6ms | ActiveRecord: 1.1ms | Allocations: 9788)
+
+
