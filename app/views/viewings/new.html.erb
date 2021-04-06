@@ -13,7 +13,6 @@
         <div class="form-control">
             <%= f.label :show_id, class: "form-label"  %>
             <%= f.collection_select :show_id, Show.all, :id, :title, prompt: true, class: "form-label" %>
-            
         </div>
         <%= f.submit :create%>
     <% end %>

@@ -8,7 +8,7 @@ class CharactersController < ApplicationController
     end
     
     def create
-        # byebug
+        byebug
         @character = Character.create(character_params)
         if @character.id
           session[:character_id] = @character.id
@@ -40,6 +40,6 @@ class CharactersController < ApplicationController
     private
     
     def character_params
-        params.require(:character).permit(:name, :bio, :show_id)
+        params.require(:character).permit(:name, :bio, :show_id, :actor_id)
     end
 end

@@ -3,3 +3,5 @@
 <% @actors.each do |a| %>
     <%= link_to a.name, actor_path(a) %>
 <% end %>
+<br>
+<%= link_to "Create A Voice Actor", new_actor_path %>

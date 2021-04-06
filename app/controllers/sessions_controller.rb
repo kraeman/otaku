@@ -22,9 +22,10 @@ class SessionsController < ApplicationController
 
     def omniauth
       # byebug
-      @user = User.find_or_create_by(uid: auth["uid"], name: auth['info']['name'], email: auth['info']['email'], username: auth['info']['email']) do |u|
-          # u.name = auth['info']['name']
-          # u.email = auth['info']['email']
+      @user = User.find_or_create_by(uid: auth["uid"]) do |u|
+          u.name = auth['info']['name']
+          u.email = auth['info']['email']
+          u.username =  auth['info']['email']
           u.password = SecureRandom.hex(20)
           u.image = auth['info']['image']
           u.cvo = true
