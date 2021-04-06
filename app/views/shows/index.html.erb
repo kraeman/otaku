@@ -1,8 +1,8 @@
 <h1>All Anime</h1>
-
+<ul>
 <% @shows.each do |s| %>
-    <%= link_to s.title, show_path(s) %>
+    <li><%= link_to s.title, show_path(s) %></li>
 <% end %>
-
+</ul>
 <br>
 <%= link_to "Create A Show", new_show_path %>
