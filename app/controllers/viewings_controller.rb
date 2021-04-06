@@ -21,12 +21,16 @@ class ViewingsController < ApplicationController
     end
 
     def edit
+        # byebug
+        @viewing = Viewing.find(params[:id])
     end
 
     def update
-        @viewing.update(viewing_params)
-        if @viewing.valid?
-            redirect_to @viewing
+        # byebug
+        viewing = Viewing.find(params[:id])
+        viewing.update(viewing_params)
+        if viewing.valid?
+            redirect_to user_path(viewing.user)
         else
             render :edit
         end

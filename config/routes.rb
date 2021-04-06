@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get '/viewings/new', to: 'viewings#new'
   post '/viewings', to: 'viewings#create'
   get '/users/:id', to: 'users#show'
+  get '/users/:id/edit', to: 'users#edit'
   
 
 

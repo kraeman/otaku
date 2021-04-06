@@ -9,7 +9,7 @@
 <h4><%= @user.admin %></h4>
 <img src="<%= @user.image %>">
 
-<h4><%=button_to "Edit Profile", edit_user_path(@user)%></h4>
+<h4><%=button_to "Edit Profile", edit_user_path(@user), method: 'get'%></h4>
 
 <h3>Anime You Have Watched:</h3> <br>
 <ul>
