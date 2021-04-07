@@ -19,7 +19,7 @@
             <%= f.collection_select :actor_id, Actor.all, :id, :name, prompt: true, class: "form-label" %>
         </div>
         <div class="form-control">
-            <%= f.label "Charatcer Photo", class: "form-label" %>
+            <%= f.label "Character Photo", class: "form-label" %>
             <%= f.file_field :avatar, class: "form-input" %>
         </div>
         <%= f.submit :create%>

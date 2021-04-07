@@ -1,6 +1,7 @@
 class ShowsController < ApplicationController
     def new
         @show = Show.new
+        @show.characters.build
     end
 
     def index
@@ -8,6 +9,7 @@ class ShowsController < ApplicationController
     end
     
     def create
+        # byebug
         @show = Show.create(show_params)
         if @show.id
           session[:show_id] = @show.id
@@ -42,6 +44,12 @@ class ShowsController < ApplicationController
     private
     
     def show_params
-        params.require(:show).permit(:title, :air_time, :rating)
+        params.require(:show).permit(:title, :air_time, :rating, characters_attributes: [
+            :name,
+            :bio,
+            :actor_id,
+            :show_id,
+            :avatar
+          ])
     end
 end
