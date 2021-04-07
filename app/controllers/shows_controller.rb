@@ -48,7 +48,6 @@ class ShowsController < ApplicationController
             :name,
             :bio,
             :actor_id,
-            :show_id,
             :avatar
           ])
     end

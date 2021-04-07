@@ -20547,3 +20547,548 @@ Processing by CharactersController#edit as HTML
 Completed 200 OK in 44ms (Views: 18.5ms | ActiveRecord: 1.1ms | Allocations: 10388)
 
 
+Started GET "/shows" for ::1 at 2021-04-07 16:39:45 -0400
+Processing by ShowsController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/models/show.rb:12:in `block in <class:Show>'
+  Rendering layout layouts/application.html.erb
+  Rendering shows/index.html.erb within layouts/application
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" ORDER BY "shows"."title" ASC[0m
+  ↳ app/views/shows/index.html.erb:3
+  Rendered shows/index.html.erb within layouts/application (Duration: 14.3ms | Allocations: 6006)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.1ms | Allocations: 10692)
+Completed 200 OK in 31ms (Views: 23.0ms | ActiveRecord: 0.9ms | Allocations: 21395)
+
+
+Started GET "/shows/new" for ::1 at 2021-04-07 16:39:52 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ShowsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shows/new.html.erb within layouts/application
+  Rendered shows/new.html.erb within layouts/application (Duration: 8.2ms | Allocations: 2082)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 2284)
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 0.6ms | Allocations: 23258)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Create A Show</h1>
+
+<div id="show-form" class="hide">
+    <%= form_with(model: @show) do |f| %>
+        <div class="form-control">
+            <%= f.label :title, class: "form-label" %>
+            <%= f.text_field :title, class: "form-input" %>
+        </div>
+        <div class="form-control">
+            <%= f.label :air_time, class: "form-label" %>
+            <%= f.number_field :air_time, class: "form-input" %>
+        </div>
+        <div class="form-control">
+            <%= f.label :rating, class: "form-label" %>
+            <%= f.number_field :rating, class: "form-input" %>
+        </div>
+        <br>
+    <h2>Optionally create a Character for this show!</h2>
+    <br>
+        <%= f.fields_for :characters do |c| %>
+            <%= c.label :name %>
+            <%= c.text_field :name %><br>
+
+            <%= c.label :bio %>
+            <%= c.text_field :bio %><br>
+
+            <%= c.label :actor_id, class: "form-label"  %>
+            <%= c.collection_select :actor_id, Actor.all, :id, :name, prompt: true, class: "form-label" %>
+
+            <br>
+
+            <%=# c.hidden_field :show_id, value: @show.id %>
+
+            <%= c.label "Character Photo", class: "form-label" %>
+            <%= c.file_field :avatar, class: "form-input" %>
+
+        <% end %>
+ <br>
+
+        <h2><%= f.submit :create%></h2>
+    <% end %>
+
+</div>
+):
+1:    <h1>Create A Show</h1>
+2:    
+3:    <div id="show-form" class="hide">
+4:        <%= form_with(model: @show) do |f| %>
+5:            <div class="form-control">
+6:                <%= f.label :title, class: "form-label" %>
+7:                <%= f.text_field :title, class: "form-input" %>
+8:            </div>
+9:            <div class="form-control">
+10:                <%= f.label :air_time, class: "form-label" %>
+11:                <%= f.number_field :air_time, class: "form-input" %>
+12:            </div>
+13:            <div class="form-control">
+14:                <%= f.label :rating, class: "form-label" %>
+15:                <%= f.number_field :rating, class: "form-input" %>
+16:            </div>
+17:            <br>
+18:        <h2>Optionally create a Character for this show!</h2>
+19:        <br>
+20:            <%= f.fields_for :characters do |c| %>
+21:                <%= c.label :name %>
+22:                <%= c.text_field :name %><br>
+23:    
+24:                <%= c.label :bio %>
+25:                <%= c.text_field :bio %><br>
+26:    
+27:                <%= c.label :actor_id, class: "form-label"  %>
+28:                <%= c.collection_select :actor_id, Actor.all, :id, :name, prompt: true, class: "form-label" %>
+29:    
+30:                <br>
+31:    
+32:                <%=# c.hidden_field :show_id, value: @show.id %>
+33:    
+34:                <%= c.label "Character Photo", class: "form-label" %>
+35:                <%= c.file_field :avatar, class: "form-input" %>
+36:    
+37:            <% end %>
+38:     <br>
+39:    
+40:            <h2><%= f.submit :create%></h2>
+41:        <% end %>
+42:    
+43:    </div>
+  
+app/views/shows/new.html.erb:40: syntax error, unexpected '<'
+app/views/shows/new.html.erb:43: unknown regexp options - dv
+app/views/shows/new.html.erb:45: unterminated string meets end of file
+app/views/shows/new.html.erb:45: syntax error, unexpected end-of-input, expecting ')'
+app/views/shows/new.html.erb:40: syntax error, unexpected '<'
+app/views/shows/new.html.erb:43: unknown regexp options - dv
+app/views/shows/new.html.erb:45: unterminated string meets end of file
+app/views/shows/new.html.erb:45: syntax error, unexpected end-of-input, expecting ')'
+app/views/shows/new.html.erb:40: syntax error, unexpected '<'
+app/views/shows/new.html.erb:43: unknown regexp options - dv
+app/views/shows/new.html.erb:45: unterminated string meets end of file
+app/views/shows/new.html.erb:45: syntax error, unexpected end-of-input, expecting ')'
+app/views/shows/new.html.erb:40: syntax error, unexpected '<'
+app/views/shows/new.html.erb:43: unknown regexp options - dv
+app/views/shows/new.html.erb:45: unterminated string meets end of file
+app/views/shows/new.html.erb:45: syntax error, unexpected end-of-input, expecting ')'
+app/views/shows/new.html.erb:40: syntax error, unexpected '<'
+app/views/shows/new.html.erb:43: unknown regexp options - dv
+app/views/shows/new.html.erb:45: unterminated string meets end of file
+app/views/shows/new.html.erb:45: syntax error, unexpected end-of-input, expecting ')'
+app/views/shows/new.html.erb:40: syntax error, unexpected '<'
+app/views/shows/new.html.erb:43: unknown regexp options - dv
+app/views/shows/new.html.erb:45: unterminated string meets end of file
+app/views/shows/new.html.erb:45: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/shows/new" for ::1 at 2021-04-07 16:39:53 -0400
+Processing by ShowsController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/models/show.rb:12:in `block in <class:Show>'
+  Rendering layout layouts/application.html.erb
+  Rendering shows/new.html.erb within layouts/application
+  Rendered shows/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 1417)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | Allocations: 1490)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.4ms | Allocations: 5124)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Create A Show</h1>
+
+<div id="show-form" class="hide">
+    <%= form_with(model: @show) do |f| %>
+        <div class="form-control">
+            <%= f.label :title, class: "form-label" %>
+            <%= f.text_field :title, class: "form-input" %>
+        </div>
+        <div class="form-control">
+            <%= f.label :air_time, class: "form-label" %>
+            <%= f.number_field :air_time, class: "form-input" %>
+        </div>
+        <div class="form-control">
+            <%= f.label :rating, class: "form-label" %>
+            <%= f.number_field :rating, class: "form-input" %>
+        </div>
+        <br>
+    <h2>Optionally create a Character for this show!</h2>
+    <br>
+        <%= f.fields_for :characters do |c| %>
+            <%= c.label :name %>
+            <%= c.text_field :name %><br>
+
+            <%= c.label :bio %>
+            <%= c.text_field :bio %><br>
+
+            <%= c.label :actor_id, class: "form-label"  %>
+            <%= c.collection_select :actor_id, Actor.all, :id, :name, prompt: true, class: "form-label" %>
+
+            <br>
+
+            <%=# c.hidden_field :show_id, value: @show.id %>
+
+            <%= c.label "Character Photo", class: "form-label" %>
+            <%= c.file_field :avatar, class: "form-input" %>
+
+        <% end %>
+ <br>
+
+        <h2><%= f.submit :create%></h2>
+    <% end %>
+
+</div>
+):
+1:    <h1>Create A Show</h1>
+2:    
+3:    <div id="show-form" class="hide">
+4:        <%= form_with(model: @show) do |f| %>
+5:            <div class="form-control">
+6:                <%= f.label :title, class: "form-label" %>
+7:                <%= f.text_field :title, class: "form-input" %>
+8:            </div>
+9:            <div class="form-control">
+10:                <%= f.label :air_time, class: "form-label" %>
+11:                <%= f.number_field :air_time, class: "form-input" %>
+12:            </div>
+13:            <div class="form-control">
+14:                <%= f.label :rating, class: "form-label" %>
+15:                <%= f.number_field :rating, class: "form-input" %>
+16:            </div>
+17:            <br>
+18:        <h2>Optionally create a Character for this show!</h2>
+19:        <br>
+20:            <%= f.fields_for :characters do |c| %>
+21:                <%= c.label :name %>
+22:                <%= c.text_field :name %><br>
+23:    
+24:                <%= c.label :bio %>
+25:                <%= c.text_field :bio %><br>
+26:    
+27:                <%= c.label :actor_id, class: "form-label"  %>
+28:                <%= c.collection_select :actor_id, Actor.all, :id, :name, prompt: true, class: "form-label" %>
+29:    
+30:                <br>
+31:    
+32:                <%=# c.hidden_field :show_id, value: @show.id %>
+33:    
+34:                <%= c.label "Character Photo", class: "form-label" %>
+35:                <%= c.file_field :avatar, class: "form-input" %>
+36:    
+37:            <% end %>
+38:     <br>
+39:    
+40:            <h2><%= f.submit :create%></h2>
+41:        <% end %>
+42:    
+43:    </div>
+  
+app/views/shows/new.html.erb:40: syntax error, unexpected '<'
+app/views/shows/new.html.erb:43: unknown regexp options - dv
+app/views/shows/new.html.erb:45: unterminated string meets end of file
+app/views/shows/new.html.erb:45: syntax error, unexpected end-of-input, expecting ')'
+app/views/shows/new.html.erb:40: syntax error, unexpected '<'
+app/views/shows/new.html.erb:43: unknown regexp options - dv
+app/views/shows/new.html.erb:45: unterminated string meets end of file
+app/views/shows/new.html.erb:45: syntax error, unexpected end-of-input, expecting ')'
+app/views/shows/new.html.erb:40: syntax error, unexpected '<'
+app/views/shows/new.html.erb:43: unknown regexp options - dv
+app/views/shows/new.html.erb:45: unterminated string meets end of file
+app/views/shows/new.html.erb:45: syntax error, unexpected end-of-input, expecting ')'
+app/views/shows/new.html.erb:40: syntax error, unexpected '<'
+app/views/shows/new.html.erb:43: unknown regexp options - dv
+app/views/shows/new.html.erb:45: unterminated string meets end of file
+app/views/shows/new.html.erb:45: syntax error, unexpected end-of-input, expecting ')'
+app/views/shows/new.html.erb:40: syntax error, unexpected '<'
+app/views/shows/new.html.erb:43: unknown regexp options - dv
+app/views/shows/new.html.erb:45: unterminated string meets end of file
+app/views/shows/new.html.erb:45: syntax error, unexpected end-of-input, expecting ')'
+app/views/shows/new.html.erb:40: syntax error, unexpected '<'
+app/views/shows/new.html.erb:43: unknown regexp options - dv
+app/views/shows/new.html.erb:45: unterminated string meets end of file
+app/views/shows/new.html.erb:45: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/shows" for ::1 at 2021-04-07 16:39:55 -0400
+Processing by ShowsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shows/index.html.erb within layouts/application
+  [1m[36mShow Load (0.6ms)[0m  [1m[34mSELECT "shows".* FROM "shows" ORDER BY "shows"."title" ASC[0m
+  ↳ app/views/shows/index.html.erb:3
+  Rendered shows/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1050)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 57.8ms | Allocations: 9740)
+Completed 200 OK in 61ms (Views: 58.1ms | ActiveRecord: 0.6ms | Allocations: 10348)
+
+
+Started GET "/shows/new" for ::1 at 2021-04-07 16:39:57 -0400
+Processing by ShowsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shows/new.html.erb within layouts/application
+  Rendered shows/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1421)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 1493)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 2272)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Create A Show</h1>
+
+<div id="show-form" class="hide">
+    <%= form_with(model: @show) do |f| %>
+        <div class="form-control">
+            <%= f.label :title, class: "form-label" %>
+            <%= f.text_field :title, class: "form-input" %>
+        </div>
+        <div class="form-control">
+            <%= f.label :air_time, class: "form-label" %>
+            <%= f.number_field :air_time, class: "form-input" %>
+        </div>
+        <div class="form-control">
+            <%= f.label :rating, class: "form-label" %>
+            <%= f.number_field :rating, class: "form-input" %>
+        </div>
+        <br>
+    <h2>Optionally create a Character for this show!</h2>
+    <br>
+        <%= f.fields_for :characters do |c| %>
+            <%= c.label :name %>
+            <%= c.text_field :name %><br>
+
+            <%= c.label :bio %>
+            <%= c.text_field :bio %><br>
+
+            <%= c.label :actor_id, class: "form-label"  %>
+            <%= c.collection_select :actor_id, Actor.all, :id, :name, prompt: true, class: "form-label" %>
+
+            <br>
+
+            <%=# c.hidden_field :show_id, value: @show.id %>
+
+            <%= c.label "Character Photo", class: "form-label" %>
+            <%= c.file_field :avatar, class: "form-input" %>
+
+        <% end %>
+ <br>
+
+        <h2><%= f.submit :create%></h2>
+    <% end %>
+
+</div>
+):
+1:    <h1>Create A Show</h1>
+2:    
+3:    <div id="show-form" class="hide">
+4:        <%= form_with(model: @show) do |f| %>
+5:            <div class="form-control">
+6:                <%= f.label :title, class: "form-label" %>
+7:                <%= f.text_field :title, class: "form-input" %>
+8:            </div>
+9:            <div class="form-control">
+10:                <%= f.label :air_time, class: "form-label" %>
+11:                <%= f.number_field :air_time, class: "form-input" %>
+12:            </div>
+13:            <div class="form-control">
+14:                <%= f.label :rating, class: "form-label" %>
+15:                <%= f.number_field :rating, class: "form-input" %>
+16:            </div>
+17:            <br>
+18:        <h2>Optionally create a Character for this show!</h2>
+19:        <br>
+20:            <%= f.fields_for :characters do |c| %>
+21:                <%= c.label :name %>
+22:                <%= c.text_field :name %><br>
+23:    
+24:                <%= c.label :bio %>
+25:                <%= c.text_field :bio %><br>
+26:    
+27:                <%= c.label :actor_id, class: "form-label"  %>
+28:                <%= c.collection_select :actor_id, Actor.all, :id, :name, prompt: true, class: "form-label" %>
+29:    
+30:                <br>
+31:    
+32:                <%=# c.hidden_field :show_id, value: @show.id %>
+33:    
+34:                <%= c.label "Character Photo", class: "form-label" %>
+35:                <%= c.file_field :avatar, class: "form-input" %>
+36:    
+37:            <% end %>
+38:     <br>
+39:    
+40:            <h2><%= f.submit :create%></h2>
+41:        <% end %>
+42:    
+43:    </div>
+  
+app/views/shows/new.html.erb:40: syntax error, unexpected '<'
+app/views/shows/new.html.erb:43: unknown regexp options - dv
+app/views/shows/new.html.erb:45: unterminated string meets end of file
+app/views/shows/new.html.erb:45: syntax error, unexpected end-of-input, expecting ')'
+app/views/shows/new.html.erb:40: syntax error, unexpected '<'
+app/views/shows/new.html.erb:43: unknown regexp options - dv
+app/views/shows/new.html.erb:45: unterminated string meets end of file
+app/views/shows/new.html.erb:45: syntax error, unexpected end-of-input, expecting ')'
+app/views/shows/new.html.erb:40: syntax error, unexpected '<'
+app/views/shows/new.html.erb:43: unknown regexp options - dv
+app/views/shows/new.html.erb:45: unterminated string meets end of file
+app/views/shows/new.html.erb:45: syntax error, unexpected end-of-input, expecting ')'
+app/views/shows/new.html.erb:40: syntax error, unexpected '<'
+app/views/shows/new.html.erb:43: unknown regexp options - dv
+app/views/shows/new.html.erb:45: unterminated string meets end of file
+app/views/shows/new.html.erb:45: syntax error, unexpected end-of-input, expecting ')'
+app/views/shows/new.html.erb:40: syntax error, unexpected '<'
+app/views/shows/new.html.erb:43: unknown regexp options - dv
+app/views/shows/new.html.erb:45: unterminated string meets end of file
+app/views/shows/new.html.erb:45: syntax error, unexpected end-of-input, expecting ')'
+app/views/shows/new.html.erb:40: syntax error, unexpected '<'
+app/views/shows/new.html.erb:43: unknown regexp options - dv
+app/views/shows/new.html.erb:45: unterminated string meets end of file
+app/views/shows/new.html.erb:45: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/shows/new" for ::1 at 2021-04-07 16:40:52 -0400
+Processing by ShowsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shows/new.html.erb within layouts/application
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT "actors".* FROM "actors" ORDER BY "actors"."name" ASC[0m
+  ↳ app/views/shows/new.html.erb:28
+  Rendered shows/new.html.erb within layouts/application (Duration: 49.4ms | Allocations: 14449)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 57.7ms | Allocations: 18777)
+Completed 200 OK in 68ms (Views: 62.8ms | ActiveRecord: 0.7ms | Allocations: 20333)
+
+
+Started POST "/shows" for ::1 at 2021-04-07 16:41:29 -0400
+Processing by ShowsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "show"=>{"title"=>"THE SHOW TO END ALL SHOWS", "air_time"=>"10000000", "rating"=>"10", "characters_attributes"=>{"0"=>{"name"=>"THE DUDE", "bio"=>"COOOOOOOOL", "actor_id"=>"1", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007f7f14e54648 @tempfile=#<Tempfile:/var/folders/mf/2f9d1ypd4rnb2h6b6spyhdd40000gn/T/RackMultipart20210407-9385-sseklx.heic>, @original_filename="A83040B6-B454-4A7F-A7AD-10EBCBCAE347.heic", @content_type="image/heic", @headers="Content-Disposition: form-data; name=\"show[characters_attributes][0][avatar]\"; filename=\"A83040B6-B454-4A7F-A7AD-10EBCBCAE347.heic\"\r\nContent-Type: image/heic\r\n">}}}, "commit"=>"create"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/shows_controller.rb:13:in `create'
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."id" = ? ORDER BY "actors"."name" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:13:in `create'
+  [1m[36mShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "shows" WHERE "shows"."title" = ? LIMIT ?[0m  [["title", "THE SHOW TO END ALL SHOWS"], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:13:in `create'
+  [1m[36mShow Create (0.9ms)[0m  [1m[32mINSERT INTO "shows" ("title", "air_time", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "THE SHOW TO END ALL SHOWS"], ["air_time", 10000000], ["rating", 10.0], ["created_at", "2021-04-07 20:41:29.549522"], ["updated_at", "2021-04-07 20:41:29.549522"]]
+  ↳ app/controllers/shows_controller.rb:13:in `create'
+  [1m[36mCharacter Create (0.2ms)[0m  [1m[32mINSERT INTO "characters" ("name", "bio", "show_id", "created_at", "updated_at", "actor_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "THE DUDE"], ["bio", "COOOOOOOOL"], ["show_id", 10], ["created_at", "2021-04-07 20:41:29.552250"], ["updated_at", "2021-04-07 20:41:29.552250"], ["actor_id", 1]]
+  ↳ app/controllers/shows_controller.rb:13:in `create'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Character"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:13:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Character"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:13:in `create'
+  [1m[36mActiveStorage::Blob Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["key", "77jklco2zqhffme11fmcyimxyn5v"], ["filename", "A83040B6-B454-4A7F-A7AD-10EBCBCAE347.heic"], ["content_type", "image/heic"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 747220], ["checksum", "VqG2I0cFErdffxZkcHjd0Q=="], ["created_at", "2021-04-07 20:41:29.584602"]]
+  ↳ app/controllers/shows_controller.rb:13:in `create'
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "avatar"], ["record_type", "Character"], ["record_id", 6], ["blob_id", 4], ["created_at", "2021-04-07 20:41:29.588423"]]
+  ↳ app/controllers/shows_controller.rb:13:in `create'
+  [1m[36mCharacter Update (0.4ms)[0m  [1m[33mUPDATE "characters" SET "updated_at" = ? WHERE "characters"."id" = ?[0m  [["updated_at", "2021-04-07 20:41:29.589530"], ["id", 6]]
+  ↳ app/controllers/shows_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/shows_controller.rb:13:in `create'
+[36m  Disk Storage (9.0ms) [0m[32mUploaded file to key: 77jklco2zqhffme11fmcyimxyn5v (checksum: VqG2I0cFErdffxZkcHjd0Q==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: c562de22-55ee-4bcf-ae70-80660dad9592) to Async(default) with arguments: #<GlobalID:0x00007f7f14bfcd28 @uri=#<URI::GID gid://otaku/ActiveStorage::Blob/4>>
+Redirected to http://localhost:3000/shows/10
+Completed 302 Found in 158ms (ActiveRecord: 4.2ms | Allocations: 36992)
+
+
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c562de22-55ee-4bcf-ae70-80660dad9592] Performing ActiveStorage::AnalyzeJob (Job ID: c562de22-55ee-4bcf-ae70-80660dad9592) from Async(default) enqueued at 2021-04-07T20:41:29Z with arguments: #<GlobalID:0x00007f7f14c202a0 @uri=#<URI::GID gid://otaku/ActiveStorage::Blob/4>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c562de22-55ee-4bcf-ae70-80660dad9592] [36m  Disk Storage (0.4ms) [0m[34mDownloaded file from key: 77jklco2zqhffme11fmcyimxyn5v[0m
+Started GET "/shows/10" for ::1 at 2021-04-07 16:41:29 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mShow Load (0.1ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shows/show.html.erb within layouts/application
+  Rendered shows/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 219)
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c562de22-55ee-4bcf-ae70-80660dad9592] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c562de22-55ee-4bcf-ae70-80660dad9592]   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c562de22-55ee-4bcf-ae70-80660dad9592]   [1m[36mActiveStorage::Blob Update (0.2ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 4]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c562de22-55ee-4bcf-ae70-80660dad9592]   [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c562de22-55ee-4bcf-ae70-80660dad9592] Performed ActiveStorage::AnalyzeJob (Job ID: c562de22-55ee-4bcf-ae70-80660dad9592) from Async(default) in 31.09ms
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.4ms | Allocations: 7377)
+Completed 200 OK in 31ms (Views: 28.8ms | ActiveRecord: 0.1ms | Allocations: 8533)
+
+
+Started GET "/characters" for ::1 at 2021-04-07 16:41:31 -0400
+Processing by CharactersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering characters/index.html.erb within layouts/application
+  [1m[36mCharacter Load (0.8ms)[0m  [1m[34mSELECT "characters".* FROM "characters" ORDER BY "characters"."name" ASC[0m
+  ↳ app/views/characters/index.html.erb:3
+  Rendered characters/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 884)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.6ms | Allocations: 5065)
+Completed 200 OK in 32ms (Views: 27.5ms | ActiveRecord: 0.8ms | Allocations: 6055)
+
+
+Started GET "/characters/6" for ::1 at 2021-04-07 16:41:32 -0400
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."id" = ? ORDER BY "characters"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:22:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering characters/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Character"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/characters/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/characters/show.html.erb:4
+  Rendered characters/show.html.erb within layouts/application (Duration: 12.9ms | Allocations: 2179)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.8ms | Allocations: 6359)
+Completed 200 OK in 33ms (Views: 26.6ms | ActiveRecord: 1.5ms | Allocations: 7512)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f8fbd336be90f81fb680bcf6ef2be93aea68f3fe/A83040B6-B454-4A7F-A7AD-10EBCBCAE347.heic" for ::1 at 2021-04-07 16:41:33 -0400
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f8fbd336be90f81fb680bcf6ef2be93aea68f3fe", "filename"=>"A83040B6-B454-4A7F-A7AD-10EBCBCAE347"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[36m  Disk Storage (1.7ms) [0m[34mGenerated URL for file at key: 77jklco2zqhffme11fmcyimxyn5v (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOemRxYTJ4amJ6SjZjV2htWm0xbE1URm1iV041YVcxNGVXNDFkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVh4aGRIUmhZMmh0Wlc1ME95Qm1hV3hsYm1GdFpUMGlRVGd6TURRd1FqWXRRalExTkMwMFFUZEdMVUUzUVVRdE1UQkZRa05DUTBGRk16UTNMbWhsYVdNaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkowRTRNekEwTUVJMkxVSTBOVFF0TkVFM1JpMUJOMEZFTFRFd1JVSkRRa05CUlRNME55NW9aV2xqQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YUdWcFl3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0pkR1Z6ZEE9PSIsImV4cCI6IjIwMjEtMDQtMDdUMjA6NDY6MzMuMDQzWiIsInB1ciI6ImJsb2Jfa2V5In19--2bb9d270b58a12263438cfff6ebc5fde6066c23d/A83040B6-B454-4A7F-A7AD-10EBCBCAE347.heic)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOemRxYTJ4amJ6SjZjV2htWm0xbE1URm1iV041YVcxNGVXNDFkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVh4aGRIUmhZMmh0Wlc1ME95Qm1hV3hsYm1GdFpUMGlRVGd6TURRd1FqWXRRalExTkMwMFFUZEdMVUUzUVVRdE1UQkZRa05DUTBGRk16UTNMbWhsYVdNaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkowRTRNekEwTUVJMkxVSTBOVFF0TkVFM1JpMUJOMEZFTFRFd1JVSkRRa05CUlRNME55NW9aV2xqQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YUdWcFl3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0pkR1Z6ZEE9PSIsImV4cCI6IjIwMjEtMDQtMDdUMjA6NDY6MzMuMDQzWiIsInB1ciI6ImJsb2Jfa2V5In19--2bb9d270b58a12263438cfff6ebc5fde6066c23d/A83040B6-B454-4A7F-A7AD-10EBCBCAE347.heic
+Completed 302 Found in 8ms (ActiveRecord: 0.2ms | Allocations: 1670)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOemRxYTJ4amJ6SjZjV2htWm0xbE1URm1iV041YVcxNGVXNDFkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVh4aGRIUmhZMmh0Wlc1ME95Qm1hV3hsYm1GdFpUMGlRVGd6TURRd1FqWXRRalExTkMwMFFUZEdMVUUzUVVRdE1UQkZRa05DUTBGRk16UTNMbWhsYVdNaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkowRTRNekEwTUVJMkxVSTBOVFF0TkVFM1JpMUJOMEZFTFRFd1JVSkRRa05CUlRNME55NW9aV2xqQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YUdWcFl3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0pkR1Z6ZEE9PSIsImV4cCI6IjIwMjEtMDQtMDdUMjA6NDY6MzMuMDQzWiIsInB1ciI6ImJsb2Jfa2V5In19--2bb9d270b58a12263438cfff6ebc5fde6066c23d/A83040B6-B454-4A7F-A7AD-10EBCBCAE347.heic" for ::1 at 2021-04-07 16:41:33 -0400
+Processing by ActiveStorage::DiskController#show as */*
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"A83040B6-B454-4A7F-A7AD-10EBCBCAE347"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 366)
+
+
+Started GET "/characters/6/edit" for ::1 at 2021-04-07 16:41:37 -0400
+Processing by CharactersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."id" = ? ORDER BY "characters"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:26:in `edit'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/characters_controller.rb:27:in `edit'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:27:in `edit'
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."id" = ? ORDER BY "actors"."name" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:27:in `edit'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Character"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:27:in `edit'
+  [1m[36mActiveStorage::Attachment Destroy (0.7ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/characters_controller.rb:27:in `edit'
+  [1m[36mCharacter Update (0.3ms)[0m  [1m[33mUPDATE "characters" SET "updated_at" = ? WHERE "characters"."id" = ?[0m  [["updated_at", "2021-04-07 20:41:37.261464"], ["id", 6]]
+  ↳ app/controllers/characters_controller.rb:27:in `edit'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/characters_controller.rb:27:in `edit'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:27:in `edit'
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: f02d79b5-9fff-4593-999c-1f7054cee5e2) to Async(default) with arguments: #<GlobalID:0x00007f7f43b6b7b8 @uri=#<URI::GID gid://otaku/ActiveStorage::Blob/4>>
+  Rendering layout layouts/application.html.erb
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering characters/edit.html.erb within layouts/application
+[ActiveJob] [ActiveStorage::PurgeJob] [f02d79b5-9fff-4593-999c-1f7054cee5e2] Performing ActiveStorage::PurgeJob (Job ID: f02d79b5-9fff-4593-999c-1f7054cee5e2) from Async(default) enqueued at 2021-04-07T20:41:37Z with arguments: #<GlobalID:0x00007f7f310cf4b0 @uri=#<URI::GID gid://otaku/ActiveStorage::Blob/4>>
+[ActiveJob] [ActiveStorage::PurgeJob] [f02d79b5-9fff-4593-999c-1f7054cee5e2]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  Rendered characters/edit.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2020)
+[ActiveJob] [ActiveStorage::PurgeJob] [f02d79b5-9fff-4593-999c-1f7054cee5e2]   [1m[36mActiveStorage::Attachment Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ? LIMIT ?[0m  [["blob_id", 4], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [f02d79b5-9fff-4593-999c-1f7054cee5e2]   [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ?[0m  [["blob_id", 4]]
+[ActiveJob] [ActiveStorage::PurgeJob] [f02d79b5-9fff-4593-999c-1f7054cee5e2]   [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [f02d79b5-9fff-4593-999c-1f7054cee5e2]   [1m[36mActiveStorage::Blob Destroy (0.5ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 4]]
+[ActiveJob] [ActiveStorage::PurgeJob] [f02d79b5-9fff-4593-999c-1f7054cee5e2]   [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [f02d79b5-9fff-4593-999c-1f7054cee5e2] [36m  Disk Storage (0.6ms) [0m[31mDeleted file from key: 77jklco2zqhffme11fmcyimxyn5v[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [f02d79b5-9fff-4593-999c-1f7054cee5e2] [36m  Disk Storage (0.1ms) [0m[31mDeleted files by key prefix: variants/77jklco2zqhffme11fmcyimxyn5v/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [f02d79b5-9fff-4593-999c-1f7054cee5e2] Performed ActiveStorage::PurgeJob (Job ID: f02d79b5-9fff-4593-999c-1f7054cee5e2) from Async(default) in 17.16ms
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.4ms | Allocations: 14101)
+Completed 200 OK in 68ms (Views: 28.7ms | ActiveRecord: 4.0ms | Allocations: 21996)
+
+
