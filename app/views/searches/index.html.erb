@@ -1,2 +1,11 @@
-<h1>Searches#index</h1>
-<p>Find me in app/views/searches/index.html.erb</p>
+<ul>
+    <% @results.each do |r| %>
+        <% if r.class == Show %>
+            <li><%=link_to r.title, show_path(r)%></li>
+        <% elsif r.class == Character %>
+            <li><%=link_to r.name, character_path(r)%></li>
+        <% else %>
+            <li><%=link_to r.name, actor_path(r)%></li>
+        <% end %>
+    <% end %>
+</ul>

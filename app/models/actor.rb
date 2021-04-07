@@ -5,4 +5,6 @@ class Actor < ApplicationRecord
 
     validates :name, presence: true
     #add validation for dob not being in the future
+
+    scope :search_by_name, -> (name) {where("name LIKE ?", "#{name}%")}
 end

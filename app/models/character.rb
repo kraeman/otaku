@@ -5,4 +5,6 @@ class Character < ApplicationRecord
   validates :name,  presence: true
   validates :bio, presence: true
 
+
+  scope :search_by_name, -> (name) {where("name LIKE ?", "#{name}%")}
 end
