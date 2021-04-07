@@ -1,3 +1,5 @@
 <h1><%=@character.name%></h1>
 
 <h4>Bio: <%=@character.bio%></h4>
+<br>
+<%=button_to "Edit Character", edit_character_path(@character), method: 'get'%>

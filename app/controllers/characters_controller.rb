@@ -23,12 +23,15 @@ class CharactersController < ApplicationController
     end
 
     def edit
+        @character = Character.find(params[:id])
     end
 
     def update
-        @character.update(character_params)
-        if @character.valid?
-            redirect_to @character
+        # byebug
+        character = Character.find(params[:id])
+        character.update(character_params)
+        if character.valid?
+            redirect_to character
         else
             render :edit
         end

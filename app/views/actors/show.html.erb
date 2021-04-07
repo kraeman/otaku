@@ -1,3 +1,5 @@
 <h1><%=@actor.name%></h1>
 
 <h4>DOB: <%=@actor.dob%></h4>
+<br>
+<%=button_to "Edit Actor", edit_actor_path(@actor), method: 'get'%>

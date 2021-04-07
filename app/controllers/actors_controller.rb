@@ -22,12 +22,14 @@ class ActorsController < ApplicationController
     end
 
     def edit
+        @actor = Actor.find(params[:id])
     end
 
     def update
-        @actor.update(actor_params)
-        if @actor.valid?
-            redirect_to @actor
+        actor = Actor.find(params[:id])
+        actor.update(actor_params)
+        if actor.valid?
+            redirect_to actor
         else
             render :edit
         end
