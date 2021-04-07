@@ -18555,3 +18555,437 @@ Processing by SearchesController#index as HTML
 Completed 200 OK in 57ms (Views: 15.0ms | ActiveRecord: 1.8ms | Allocations: 36687)
 
 
+Started GET "/actors" for ::1 at 2021-04-06 23:27:02 -0400
+Processing by ActorsController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/models/actor.rb:8:in `block in <class:Actor>'
+Started GET "/actors" for ::1 at 2021-04-06 23:27:02 -0400
+  Rendering layout layouts/application.html.erb
+  Rendering actors/index.html.erb within layouts/application
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors" ORDER BY "actors"."name" ASC[0m
+  ↳ app/views/actors/index.html.erb:3
+  Rendered actors/index.html.erb within layouts/application (Duration: 8.0ms | Allocations: 3108)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layout layouts/application.html.erb (Duration: 29.0ms | Allocations: 17324)
+Completed 200 OK in 45ms (Views: 29.4ms | ActiveRecord: 2.1ms | Allocations: 22724)
+
+
+Processing by ActorsController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/models/actor.rb:8:in `block in <class:Actor>'
+  Rendering layout layouts/application.html.erb
+  Rendering actors/index.html.erb within layouts/application
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT "actors".* FROM "actors" ORDER BY "actors"."name" ASC[0m
+  ↳ app/views/actors/index.html.erb:3
+  Rendered actors/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 2989)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 17220)
+Completed 200 OK in 23ms (Views: 17.5ms | ActiveRecord: 0.9ms | Allocations: 20927)
+
+
+Started GET "/users/1" for ::1 at 2021-04-06 23:27:06 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "viewings" ON "shows"."id" = "viewings"."show_id" WHERE "viewings"."user_id" = ? ORDER BY "shows"."title" ASC[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:16:in `uniq'
+  [1m[36mViewing Load (0.2ms)[0m  [1m[34mSELECT "viewings".* FROM "viewings" WHERE "viewings"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:23
+  Rendered users/show.html.erb within layouts/application (Duration: 24.3ms | Allocations: 8859)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layout layouts/application.html.erb (Duration: 34.5ms | Allocations: 14354)
+Completed 200 OK in 39ms (Views: 34.3ms | ActiveRecord: 1.9ms | Allocations: 15441)
+
+
+Started GET "/shows" for ::1 at 2021-04-06 23:27:10 -0400
+Processing by ShowsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shows/index.html.erb within layouts/application
+  [1m[36mShow Load (0.5ms)[0m  [1m[34mSELECT "shows".* FROM "shows" ORDER BY "shows"."title" ASC[0m
+  ↳ app/views/shows/index.html.erb:3
+  Rendered shows/index.html.erb within layouts/application (Duration: 12.3ms | Allocations: 3325)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layout layouts/application.html.erb (Duration: 29.8ms | Allocations: 8965)
+Completed 200 OK in 33ms (Views: 30.9ms | ActiveRecord: 0.6ms | Allocations: 9576)
+
+
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateActiveStorageTables (20210407032807)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "service_name" varchar NOT NULL, "byte_size" bigint NOT NULL, "checksum" varchar NOT NULL, "created_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" integer NOT NULL, "variation_digest" varchar NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210407032807"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/characters" for ::1 at 2021-04-06 23:36:06 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CharactersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering characters/index.html.erb within layouts/application
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" ORDER BY "characters"."name" ASC[0m
+  ↳ app/views/characters/index.html.erb:3
+  Rendered characters/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 4085)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layout layouts/application.html.erb (Duration: 23.1ms | Allocations: 18106)
+Completed 200 OK in 35ms (Views: 24.7ms | ActiveRecord: 0.7ms | Allocations: 21608)
+
+
+Started GET "/characters/1" for ::1 at 2021-04-06 23:36:08 -0400
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."id" = ? ORDER BY "characters"."name" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:22:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering characters/show.html.erb within layouts/application
+  Rendered characters/show.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1515)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 1585)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.4ms | Allocations: 2726)
+
+
+  
+ActionView::Template::Error (undefined method `avatar' for nil:NilClass):
+    1: <h1><%=@character.name%></h1>
+    2: 
+    3: <% if @user.avatar.attached? %>
+    4:     <image src="<%=(url_for(@user.avatar))%>">
+    5: <% end %>
+    6: 
+  
+app/views/characters/show.html.erb:3
+Started GET "/characters/1" for ::1 at 2021-04-06 23:36:30 -0400
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."id" = ? ORDER BY "characters"."name" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:22:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering characters/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Character"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/characters/show.html.erb:3
+  Rendered characters/show.html.erb within layouts/application (Duration: 24.5ms | Allocations: 3596)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layout layouts/application.html.erb (Duration: 39.8ms | Allocations: 9530)
+Completed 200 OK in 52ms (Views: 44.5ms | ActiveRecord: 1.3ms | Allocations: 11291)
+
+
+Started GET "/characters/1/edit" for ::1 at 2021-04-06 23:36:33 -0400
+Processing by CharactersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."id" = ? ORDER BY "characters"."name" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:26:in `edit'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/characters_controller.rb:27:in `edit'
+  [1m[36mShow Load (0.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:27:in `edit'
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."id" = ? ORDER BY "actors"."name" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:27:in `edit'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Character"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:27:in `edit'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/characters_controller.rb:27:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering characters/edit.html.erb within layouts/application
+  Rendered characters/edit.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1280)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 6852)
+Completed 200 OK in 60ms (Views: 14.0ms | ActiveRecord: 1.3ms | Allocations: 23578)
+
+
+Started PATCH "/characters/1" for ::1 at 2021-04-06 23:37:04 -0400
+Processing by CharactersController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "character"=>{"name"=>"Luffy", "bio"=>"Very Strong Dude man", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007fb279097f58 @tempfile=#<Tempfile:/var/folders/mf/2f9d1ypd4rnb2h6b6spyhdd40000gn/T/RackMultipart20210406-9331-wunww0.webp>, @original_filename="Monkey_D._Luffy_Anime_Post_Timeskip_Infobox.webp", @content_type="image/webp", @headers="Content-Disposition: form-data; name=\"character[avatar]\"; filename=\"Monkey_D._Luffy_Anime_Post_Timeskip_Infobox.webp\"\r\nContent-Type: image/webp\r\n">}, "commit"=>"update", "id"=>"1"}
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."id" = ? ORDER BY "characters"."name" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:32:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/characters_controller.rb:33:in `update'
+  [1m[36mShow Load (0.1ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:33:in `update'
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."id" = ? ORDER BY "actors"."name" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:33:in `update'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Character"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:33:in `update'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Character"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:33:in `update'
+  [1m[36mActiveStorage::Blob Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["key", "7xlmd6ct9x0cnlm9c9s2mkgj7mp9"], ["filename", "Monkey_D._Luffy_Anime_Post_Timeskip_Infobox.webp"], ["content_type", "image/webp"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 87036], ["checksum", "YmptElr0+4/IfyvtShRj0g=="], ["created_at", "2021-04-07 03:37:04.360235"]]
+  ↳ app/controllers/characters_controller.rb:33:in `update'
+  [1m[36mActiveStorage::Attachment Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "avatar"], ["record_type", "Character"], ["record_id", 1], ["blob_id", 1], ["created_at", "2021-04-07 03:37:04.364493"]]
+  ↳ app/controllers/characters_controller.rb:33:in `update'
+  [1m[36mCharacter Update (0.1ms)[0m  [1m[33mUPDATE "characters" SET "updated_at" = ? WHERE "characters"."id" = ?[0m  [["updated_at", "2021-04-07 03:37:04.365827"], ["id", 1]]
+  ↳ app/controllers/characters_controller.rb:33:in `update'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/characters_controller.rb:33:in `update'
+[36m  Disk Storage (6.7ms) [0m[32mUploaded file to key: 7xlmd6ct9x0cnlm9c9s2mkgj7mp9 (checksum: YmptElr0+4/IfyvtShRj0g==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 03f14895-17b6-4ce9-a1b7-23e7d0e50a73) to Async(default) with arguments: #<GlobalID:0x00007fb27e0c74d8 @uri=#<URI::GID gid://otaku/ActiveStorage::Blob/1>>
+Redirected to http://localhost:3000/characters/1
+Completed 302 Found in 125ms (ActiveRecord: 3.5ms | Allocations: 30009)
+
+
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [03f14895-17b6-4ce9-a1b7-23e7d0e50a73] Performing ActiveStorage::AnalyzeJob (Job ID: 03f14895-17b6-4ce9-a1b7-23e7d0e50a73) from Async(default) enqueued at 2021-04-07T03:37:04Z with arguments: #<GlobalID:0x00007fb26ff10c10 @uri=#<URI::GID gid://otaku/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [03f14895-17b6-4ce9-a1b7-23e7d0e50a73] [36m  Disk Storage (0.4ms) [0m[34mDownloaded file from key: 7xlmd6ct9x0cnlm9c9s2mkgj7mp9[0m
+Started GET "/characters/1" for ::1 at 2021-04-06 23:37:04 -0400
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."id" = ? ORDER BY "characters"."name" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:22:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering characters/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Character"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/characters/show.html.erb:3
+  Rendered characters/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 2174)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 2245)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms | Allocations: 3239)
+
+
+  
+ActionView::Template::Error (undefined method `avatar' for nil:NilClass):
+    1: <h1><%=@character.name%></h1>
+    2: 
+    3: <% if @character.avatar.attached? %>
+    4:     <image src="<%=(url_for(@user.avatar))%>">
+    5: <% end %>
+    6: 
+    7: <h4>Bio: <%=@character.bio%></h4>
+  
+app/views/characters/show.html.erb:4
+[ActiveJob] [ActiveStorage::AnalyzeJob] [03f14895-17b6-4ce9-a1b7-23e7d0e50a73] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [03f14895-17b6-4ce9-a1b7-23e7d0e50a73]   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [03f14895-17b6-4ce9-a1b7-23e7d0e50a73]   [1m[36mActiveStorage::Blob Update (0.3ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [03f14895-17b6-4ce9-a1b7-23e7d0e50a73]   [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [03f14895-17b6-4ce9-a1b7-23e7d0e50a73] Performed ActiveStorage::AnalyzeJob (Job ID: 03f14895-17b6-4ce9-a1b7-23e7d0e50a73) from Async(default) in 200.59ms
+Started GET "/characters/1" for ::1 at 2021-04-06 23:37:18 -0400
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."id" = ? ORDER BY "characters"."name" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:22:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering characters/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Character"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/characters/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/characters/show.html.erb:4
+  Rendered characters/show.html.erb within layouts/application (Duration: 8.4ms | Allocations: 2157)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layout layouts/application.html.erb (Duration: 29.2ms | Allocations: 8192)
+Completed 200 OK in 43ms (Views: 35.7ms | ActiveRecord: 1.2ms | Allocations: 9954)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--48f241431cca6d0571f6cfef674ca226992f24f6/Monkey_D._Luffy_Anime_Post_Timeskip_Infobox.webp" for ::1 at 2021-04-06 23:37:19 -0400
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--48f241431cca6d0571f6cfef674ca226992f24f6", "filename"=>"Monkey_D._Luffy_Anime_Post_Timeskip_Infobox"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (1.0ms) [0m[34mGenerated URL for file at key: 7xlmd6ct9x0cnlm9c9s2mkgj7mp9 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOM2hzYldRMlkzUTVlREJqYm14dE9XTTVjekp0YTJkcU4yMXdPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlwaGRIUmhZMmh0Wlc1ME95Qm1hV3hsYm1GdFpUMGlUVzl1YTJWNVgwUXVYMHgxWm1aNVgwRnVhVzFsWDFCdmMzUmZWR2x0WlhOcmFYQmZTVzVtYjJKdmVDNTNaV0p3SWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkTmIyNXJaWGxmUkM1ZlRIVm1abmxmUVc1cGJXVmZVRzl6ZEY5VWFXMWxjMnRwY0Y5SmJtWnZZbTk0TG5kbFluQUdPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOTNaV0p3QmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMS0wNC0wN1QwMzo0MjoxOS4xMzFaIiwicHVyIjoiYmxvYl9rZXkifX0=--b060516ab031b99bacaf5daaf55cb1eb996ca2ff/Monkey_D._Luffy_Anime_Post_Timeskip_Infobox.webp)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOM2hzYldRMlkzUTVlREJqYm14dE9XTTVjekp0YTJkcU4yMXdPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlwaGRIUmhZMmh0Wlc1ME95Qm1hV3hsYm1GdFpUMGlUVzl1YTJWNVgwUXVYMHgxWm1aNVgwRnVhVzFsWDFCdmMzUmZWR2x0WlhOcmFYQmZTVzVtYjJKdmVDNTNaV0p3SWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkTmIyNXJaWGxmUkM1ZlRIVm1abmxmUVc1cGJXVmZVRzl6ZEY5VWFXMWxjMnRwY0Y5SmJtWnZZbTk0TG5kbFluQUdPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOTNaV0p3QmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMS0wNC0wN1QwMzo0MjoxOS4xMzFaIiwicHVyIjoiYmxvYl9rZXkifX0=--b060516ab031b99bacaf5daaf55cb1eb996ca2ff/Monkey_D._Luffy_Anime_Post_Timeskip_Infobox.webp
+Completed 302 Found in 6ms (ActiveRecord: 0.1ms | Allocations: 1729)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOM2hzYldRMlkzUTVlREJqYm14dE9XTTVjekp0YTJkcU4yMXdPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlwaGRIUmhZMmh0Wlc1ME95Qm1hV3hsYm1GdFpUMGlUVzl1YTJWNVgwUXVYMHgxWm1aNVgwRnVhVzFsWDFCdmMzUmZWR2x0WlhOcmFYQmZTVzVtYjJKdmVDNTNaV0p3SWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkTmIyNXJaWGxmUkM1ZlRIVm1abmxmUVc1cGJXVmZVRzl6ZEY5VWFXMWxjMnRwY0Y5SmJtWnZZbTk0TG5kbFluQUdPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOTNaV0p3QmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMS0wNC0wN1QwMzo0MjoxOS4xMzFaIiwicHVyIjoiYmxvYl9rZXkifX0=--b060516ab031b99bacaf5daaf55cb1eb996ca2ff/Monkey_D._Luffy_Anime_Post_Timeskip_Infobox.webp" for ::1 at 2021-04-06 23:37:19 -0400
+Processing by ActiveStorage::DiskController#show as */*
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Monkey_D._Luffy_Anime_Post_Timeskip_Infobox"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 382)
+
+
+Started GET "/characters/1/edit" for ::1 at 2021-04-06 23:37:37 -0400
+Processing by CharactersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."id" = ? ORDER BY "characters"."name" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:26:in `edit'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/characters_controller.rb:27:in `edit'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:27:in `edit'
+  [1m[36mActor Load (0.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."id" = ? ORDER BY "actors"."name" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:27:in `edit'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Character"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:27:in `edit'
+  [1m[36mActiveStorage::Attachment Destroy (0.6ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/characters_controller.rb:27:in `edit'
+  [1m[36mCharacter Update (0.1ms)[0m  [1m[33mUPDATE "characters" SET "updated_at" = ? WHERE "characters"."id" = ?[0m  [["updated_at", "2021-04-07 03:37:37.432352"], ["id", 1]]
+  ↳ app/controllers/characters_controller.rb:27:in `edit'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/characters_controller.rb:27:in `edit'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:27:in `edit'
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 6da640a2-3bfe-47bb-bd4a-33c26fac7063) to Async(default) with arguments: #<GlobalID:0x00007fb26fb0a3a0 @uri=#<URI::GID gid://otaku/ActiveStorage::Blob/1>>
+  Rendering layout layouts/application.html.erb
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering characters/edit.html.erb within layouts/application
+[ActiveJob] [ActiveStorage::PurgeJob] [6da640a2-3bfe-47bb-bd4a-33c26fac7063] Performing ActiveStorage::PurgeJob (Job ID: 6da640a2-3bfe-47bb-bd4a-33c26fac7063) from Async(default) enqueued at 2021-04-07T03:37:37Z with arguments: #<GlobalID:0x00007fb26fbfd1b8 @uri=#<URI::GID gid://otaku/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::PurgeJob] [6da640a2-3bfe-47bb-bd4a-33c26fac7063]   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [6da640a2-3bfe-47bb-bd4a-33c26fac7063]   [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ? LIMIT ?[0m  [["blob_id", 1], ["LIMIT", 1]]
+  Rendered characters/edit.html.erb within layouts/application (Duration: 4.1ms | Allocations: 2589)
+[ActiveJob] [ActiveStorage::PurgeJob] [6da640a2-3bfe-47bb-bd4a-33c26fac7063]   [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ?[0m  [["blob_id", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [6da640a2-3bfe-47bb-bd4a-33c26fac7063]   [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [6da640a2-3bfe-47bb-bd4a-33c26fac7063]   [1m[36mActiveStorage::Blob Destroy (0.2ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [6da640a2-3bfe-47bb-bd4a-33c26fac7063]   [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [6da640a2-3bfe-47bb-bd4a-33c26fac7063] [36m  Disk Storage (0.3ms) [0m[31mDeleted file from key: 7xlmd6ct9x0cnlm9c9s2mkgj7mp9[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [6da640a2-3bfe-47bb-bd4a-33c26fac7063] [36m  Disk Storage (0.1ms) [0m[31mDeleted files by key prefix: variants/7xlmd6ct9x0cnlm9c9s2mkgj7mp9/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [6da640a2-3bfe-47bb-bd4a-33c26fac7063] Performed ActiveStorage::PurgeJob (Job ID: 6da640a2-3bfe-47bb-bd4a-33c26fac7063) from Async(default) in 15.42ms
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layout layouts/application.html.erb (Duration: 23.1ms | Allocations: 15644)
+Completed 200 OK in 81ms (Views: 24.5ms | ActiveRecord: 2.8ms | Allocations: 25783)
+
+
+Started GET "/characters" for ::1 at 2021-04-06 23:37:42 -0400
+Processing by CharactersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering characters/index.html.erb within layouts/application
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" ORDER BY "characters"."name" ASC[0m
+  ↳ app/views/characters/index.html.erb:3
+  Rendered characters/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 754)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layout layouts/application.html.erb (Duration: 19.8ms | Allocations: 6394)
+Completed 200 OK in 24ms (Views: 20.3ms | ActiveRecord: 0.5ms | Allocations: 6982)
+
+
+Started GET "/characters/2" for ::1 at 2021-04-06 23:37:45 -0400
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."id" = ? ORDER BY "characters"."name" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:22:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering characters/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Character"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/characters/show.html.erb:3
+  Rendered characters/show.html.erb within layouts/application (Duration: 3.6ms | Allocations: 861)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 6492)
+Completed 200 OK in 19ms (Views: 14.6ms | ActiveRecord: 0.6ms | Allocations: 7519)
+
+
+Started GET "/characters/2/edit" for ::1 at 2021-04-06 23:37:46 -0400
+Processing by CharactersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."id" = ? ORDER BY "characters"."name" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:26:in `edit'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/characters_controller.rb:27:in `edit'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:27:in `edit'
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."id" = ? ORDER BY "actors"."name" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:27:in `edit'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Character"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:27:in `edit'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/characters_controller.rb:27:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering characters/edit.html.erb within layouts/application
+  Rendered characters/edit.html.erb within layouts/application (Duration: 2.8ms | Allocations: 788)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 6418)
+Completed 200 OK in 42ms (Views: 21.7ms | ActiveRecord: 1.5ms | Allocations: 11287)
+
+
+Started PATCH "/characters/2" for ::1 at 2021-04-06 23:38:21 -0400
+Processing by CharactersController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "character"=>{"name"=>"Broly", "bio"=>"Bad Man", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007fb24e3957d0 @tempfile=#<Tempfile:/var/folders/mf/2f9d1ypd4rnb2h6b6spyhdd40000gn/T/RackMultipart20210406-9331-152rg6f.png>, @original_filename="2b101f33635479ec166f2cbfd3b6472c.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"character[avatar]\"; filename=\"2b101f33635479ec166f2cbfd3b6472c.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"update", "id"=>"2"}
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."id" = ? ORDER BY "characters"."name" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:32:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/characters_controller.rb:33:in `update'
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:33:in `update'
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."id" = ? ORDER BY "actors"."name" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:33:in `update'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Character"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:33:in `update'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Character"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:33:in `update'
+  [1m[36mActiveStorage::Blob Create (0.9ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["key", "nw4mjl70czis6kn01as7rr6fcovm"], ["filename", "2b101f33635479ec166f2cbfd3b6472c.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 717469], ["checksum", "wTKbPiST3jMOjScbLiSH/Q=="], ["created_at", "2021-04-07 03:38:21.242930"]]
+  ↳ app/controllers/characters_controller.rb:33:in `update'
+  [1m[36mActiveStorage::Attachment Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "avatar"], ["record_type", "Character"], ["record_id", 2], ["blob_id", 2], ["created_at", "2021-04-07 03:38:21.249960"]]
+  ↳ app/controllers/characters_controller.rb:33:in `update'
+  [1m[36mCharacter Update (0.1ms)[0m  [1m[33mUPDATE "characters" SET "updated_at" = ? WHERE "characters"."id" = ?[0m  [["updated_at", "2021-04-07 03:38:21.251678"], ["id", 2]]
+  ↳ app/controllers/characters_controller.rb:33:in `update'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/characters_controller.rb:33:in `update'
+[36m  Disk Storage (10.6ms) [0m[32mUploaded file to key: nw4mjl70czis6kn01as7rr6fcovm (checksum: wTKbPiST3jMOjScbLiSH/Q==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 0e959645-3c12-4a8d-b8c4-465519859762) to Async(default) with arguments: #<GlobalID:0x00007fb24e4c7040 @uri=#<URI::GID gid://otaku/ActiveStorage::Blob/2>>
+Redirected to http://localhost:3000/characters/2
+Completed 302 Found in 55ms (ActiveRecord: 3.5ms | Allocations: 12746)
+
+
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0e959645-3c12-4a8d-b8c4-465519859762] Performing ActiveStorage::AnalyzeJob (Job ID: 0e959645-3c12-4a8d-b8c4-465519859762) from Async(default) enqueued at 2021-04-07T03:38:21Z with arguments: #<GlobalID:0x00007fb24e4ef720 @uri=#<URI::GID gid://otaku/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0e959645-3c12-4a8d-b8c4-465519859762] [36m  Disk Storage (0.6ms) [0m[34mDownloaded file from key: nw4mjl70czis6kn01as7rr6fcovm[0m
+Started GET "/characters/2" for ::1 at 2021-04-06 23:38:21 -0400
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."id" = ? ORDER BY "characters"."name" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:22:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering characters/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Character"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/characters/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/characters/show.html.erb:4
+  Rendered characters/show.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1688)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 9233)
+Completed 200 OK in 20ms (Views: 17.6ms | ActiveRecord: 0.4ms | Allocations: 10284)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0e959645-3c12-4a8d-b8c4-465519859762] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0e959645-3c12-4a8d-b8c4-465519859762]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0e959645-3c12-4a8d-b8c4-465519859762]   [1m[36mActiveStorage::Blob Update (0.2ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 2]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0e959645-3c12-4a8d-b8c4-465519859762]   [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0e959645-3c12-4a8d-b8c4-465519859762] Performed ActiveStorage::AnalyzeJob (Job ID: 0e959645-3c12-4a8d-b8c4-465519859762) from Async(default) in 31.47ms
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--31c5423ed5475313b2434dbcb063fa35a6bf0117/2b101f33635479ec166f2cbfd3b6472c.png" for ::1 at 2021-04-06 23:38:21 -0400
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--31c5423ed5475313b2434dbcb063fa35a6bf0117", "filename"=>"2b101f33635479ec166f2cbfd3b6472c"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: nw4mjl70czis6kn01as7rr6fcovm (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhibmMwYldwc056QmplbWx6Tm10dU1ERmhjemR5Y2pabVkyOTJiUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpKaU1UQXhaak16TmpNMU5EYzVaV014TmpabU1tTmlabVF6WWpZME56SmpMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0Njbk1tSXhNREZtTXpNMk16VTBOemxsWXpFMk5tWXlZMkptWkROaU5qUTNNbU11Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIxLTA0LTA3VDAzOjQzOjIxLjM0NloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--06c8fb0f52527b5804c64bad67ecf3fabebd69ab/2b101f33635479ec166f2cbfd3b6472c.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhibmMwYldwc056QmplbWx6Tm10dU1ERmhjemR5Y2pabVkyOTJiUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpKaU1UQXhaak16TmpNMU5EYzVaV014TmpabU1tTmlabVF6WWpZME56SmpMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0Njbk1tSXhNREZtTXpNMk16VTBOemxsWXpFMk5tWXlZMkptWkROaU5qUTNNbU11Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIxLTA0LTA3VDAzOjQzOjIxLjM0NloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--06c8fb0f52527b5804c64bad67ecf3fabebd69ab/2b101f33635479ec166f2cbfd3b6472c.png
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1381)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhibmMwYldwc056QmplbWx6Tm10dU1ERmhjemR5Y2pabVkyOTJiUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpKaU1UQXhaak16TmpNMU5EYzVaV014TmpabU1tTmlabVF6WWpZME56SmpMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0Njbk1tSXhNREZtTXpNMk16VTBOemxsWXpFMk5tWXlZMkptWkROaU5qUTNNbU11Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIxLTA0LTA3VDAzOjQzOjIxLjM0NloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--06c8fb0f52527b5804c64bad67ecf3fabebd69ab/2b101f33635479ec166f2cbfd3b6472c.png" for ::1 at 2021-04-06 23:38:21 -0400
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"2b101f33635479ec166f2cbfd3b6472c"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 329)
+
+

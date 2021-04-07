@@ -1,5 +1,9 @@
 <h1><%=@character.name%></h1>
 
+<% if @character.avatar.attached? %>
+    <image src="<%=(url_for(@character.avatar))%>">
+<% end %>
+
 <h4>Bio: <%=@character.bio%></h4>
 <br>
 <%=button_to "Edit Character", edit_character_path(@character), method: 'get'%>

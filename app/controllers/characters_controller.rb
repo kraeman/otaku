@@ -24,6 +24,7 @@ class CharactersController < ApplicationController
 
     def edit
         @character = Character.find(params[:id])
+        @character.avatar.attach(params[:avatar])
     end
 
     def update
@@ -43,6 +44,6 @@ class CharactersController < ApplicationController
     private
     
     def character_params
-        params.require(:character).permit(:name, :bio, :show_id, :actor_id)
+        params.require(:character).permit(:name, :bio, :show_id, :actor_id, :avatar)
     end
 end
