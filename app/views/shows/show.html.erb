@@ -4,4 +4,11 @@
 
 <h4><%=@show.air_time%></h4>
 
+<h2>List of characters: </h2>
+<ul>
+    <% @show.characters.each do |c| %>
+        <li><%=link_to c.name, show_character_path(c)%></li>
+    <% end %>
+</ul>
+
 <%=button_to "Edit Show", edit_show_path(@show), method: 'get'%>

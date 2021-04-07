@@ -21092,3 +21092,268 @@ Processing by CharactersController#edit as HTML
 Completed 200 OK in 68ms (Views: 28.7ms | ActiveRecord: 4.0ms | Allocations: 21996)
 
 
+Started GET "/shows" for ::1 at 2021-04-07 16:43:33 -0400
+Processing by ShowsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shows/index.html.erb within layouts/application
+  [1m[36mShow Load (0.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" ORDER BY "shows"."title" ASC[0m
+  ↳ app/views/shows/index.html.erb:3
+  Rendered shows/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 970)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.9ms | Allocations: 5150)
+Completed 200 OK in 23ms (Views: 19.5ms | ActiveRecord: 0.4ms | Allocations: 5730)
+
+
+Started GET "/shows/3" for ::1 at 2021-04-07 16:43:36 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shows/show.html.erb within layouts/application
+  Rendered shows/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 64)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 4241)
+Completed 200 OK in 54ms (Views: 32.5ms | ActiveRecord: 0.2ms | Allocations: 5250)
+
+
+Started GET "/shows" for ::1 at 2021-04-07 19:20:59 -0400
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ShowsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shows/index.html.erb within layouts/application
+  [1m[36mShow Load (0.6ms)[0m  [1m[34mSELECT "shows".* FROM "shows" ORDER BY "shows"."title" ASC[0m
+  ↳ app/views/shows/index.html.erb:3
+  Rendered shows/index.html.erb within layouts/application (Duration: 17.1ms | Allocations: 5485)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 55.3ms | Allocations: 14239)
+Completed 200 OK in 98ms (Views: 61.7ms | ActiveRecord: 1.1ms | Allocations: 23111)
+
+
+Started GET "/shows/3" for ::1 at 2021-04-07 19:21:00 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mShow Load (0.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shows/show.html.erb within layouts/application
+  Rendered shows/show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 217)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 4399)
+Completed 200 OK in 31ms (Views: 15.8ms | ActiveRecord: 0.4ms | Allocations: 5901)
+
+
+Started GET "/shows/3" for ::1 at 2021-04-07 19:24:47 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shows/show.html.erb within layouts/application
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."show_id" = ? ORDER BY "characters"."name" ASC[0m  [["show_id", 3]]
+  ↳ app/views/shows/show.html.erb:9
+  Rendered shows/show.html.erb within layouts/application (Duration: 46.0ms | Allocations: 7691)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 68.2ms | Allocations: 12019)
+Completed 200 OK in 80ms (Views: 73.4ms | ActiveRecord: 0.9ms | Allocations: 13802)
+
+
+Started GET "/characters" for ::1 at 2021-04-07 19:24:54 -0400
+Processing by CharactersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering characters/index.html.erb within layouts/application
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT "characters".* FROM "characters" ORDER BY "characters"."name" ASC[0m
+  ↳ app/views/characters/index.html.erb:3
+  Rendered characters/index.html.erb within layouts/application (Duration: 10.8ms | Allocations: 4347)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.9ms | Allocations: 8528)
+Completed 200 OK in 27ms (Views: 23.2ms | ActiveRecord: 1.1ms | Allocations: 9525)
+
+
+Started GET "/characters/new" for ::1 at 2021-04-07 19:24:58 -0400
+Processing by CharactersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering characters/new.html.erb within layouts/application
+  [1m[36mShow Load (0.1ms)[0m  [1m[34mSELECT "shows".* FROM "shows" ORDER BY "shows"."title" ASC[0m
+  ↳ app/views/characters/new.html.erb:15
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT "actors".* FROM "actors" ORDER BY "actors"."name" ASC[0m
+  ↳ app/views/characters/new.html.erb:19
+  Rendered characters/new.html.erb within layouts/application (Duration: 48.0ms | Allocations: 11947)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 56.1ms | Allocations: 16023)
+Completed 200 OK in 59ms (Views: 56.2ms | ActiveRecord: 0.7ms | Allocations: 16643)
+
+
+Started POST "/characters" for ::1 at 2021-04-07 19:25:09 -0400
+Processing by CharactersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "character"=>{"name"=>"Asta", "bio"=>"NO Magic", "show_id"=>"3", "actor_id"=>"1"}, "commit"=>"create"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/characters_controller.rb:16:in `create'
+  [1m[36mShow Load (0.1ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:16:in `create'
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."id" = ? ORDER BY "actors"."name" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:16:in `create'
+  [1m[36mCharacter Create (0.9ms)[0m  [1m[32mINSERT INTO "characters" ("name", "bio", "show_id", "created_at", "updated_at", "actor_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Asta"], ["bio", "NO Magic"], ["show_id", 3], ["created_at", "2021-04-07 23:25:13.348127"], ["updated_at", "2021-04-07 23:25:13.348127"], ["actor_id", 1]]
+  ↳ app/controllers/characters_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/characters_controller.rb:16:in `create'
+Redirected to http://localhost:3000/characters/7
+Completed 302 Found in 3751ms (ActiveRecord: 2.0ms | Allocations: 49032)
+
+
+Started GET "/characters/7" for ::1 at 2021-04-07 19:25:13 -0400
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."id" = ? ORDER BY "characters"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:26:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering characters/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Character"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/characters/show.html.erb:3
+  Rendered characters/show.html.erb within layouts/application (Duration: 11.3ms | Allocations: 3334)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | Allocations: 7416)
+Completed 200 OK in 25ms (Views: 21.9ms | ActiveRecord: 0.8ms | Allocations: 8579)
+
+
+Started GET "/shows" for ::1 at 2021-04-07 19:25:16 -0400
+Processing by ShowsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shows/index.html.erb within layouts/application
+  [1m[36mShow Load (0.1ms)[0m  [1m[34mSELECT "shows".* FROM "shows" ORDER BY "shows"."title" ASC[0m
+  ↳ app/views/shows/index.html.erb:3
+  Rendered shows/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 980)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 5162)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.1ms | Allocations: 5762)
+
+
+Started GET "/shows/3" for ::1 at 2021-04-07 19:25:17 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shows/show.html.erb within layouts/application
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."show_id" = ? ORDER BY "characters"."name" ASC[0m  [["show_id", 3]]
+  ↳ app/views/shows/show.html.erb:9
+  Rendered shows/show.html.erb within layouts/application (Duration: 4.0ms | Allocations: 837)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 5014)
+Completed 200 OK in 22ms (Views: 18.7ms | ActiveRecord: 0.5ms | Allocations: 6028)
+
+
+Started GET "/shows/7/characters" for ::1 at 2021-04-07 19:25:21 -0400
+Processing by CharactersController#index as HTML
+  Parameters: {"show_id"=>"7"}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 1539)
+
+
+  
+NoMethodError (undefined method `characters' for "7":String):
+  
+app/controllers/characters_controller.rb:4:in `index'
+Started GET "/shows/7/characters" for ::1 at 2021-04-07 19:28:48 -0400
+Processing by CharactersController#index as HTML
+  Parameters: {"show_id"=>"7"}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 1586)
+
+
+  
+NoMethodError (undefined method `characters' for "7":String):
+  
+app/controllers/characters_controller.rb:4:in `index'
+Started GET "/characters/new" for ::1 at 2021-04-07 19:28:52 -0400
+Processing by CharactersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering characters/new.html.erb within layouts/application
+  [1m[36mShow Load (0.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" ORDER BY "shows"."title" ASC[0m
+  ↳ app/views/characters/new.html.erb:15
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors" ORDER BY "actors"."name" ASC[0m
+  ↳ app/views/characters/new.html.erb:19
+  Rendered characters/new.html.erb within layouts/application (Duration: 12.9ms | Allocations: 3148)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.7ms | Allocations: 7695)
+Completed 200 OK in 36ms (Views: 32.9ms | ActiveRecord: 0.6ms | Allocations: 9044)
+
+
+Started GET "/characters/new" for ::1 at 2021-04-07 19:28:54 -0400
+Processing by CharactersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering characters/new.html.erb within layouts/application
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" ORDER BY "shows"."title" ASC[0m
+  ↳ app/views/characters/new.html.erb:15
+  [1m[36mActor Load (0.5ms)[0m  [1m[34mSELECT "actors".* FROM "actors" ORDER BY "actors"."name" ASC[0m
+  ↳ app/views/characters/new.html.erb:19
+  Rendered characters/new.html.erb within layouts/application (Duration: 10.8ms | Allocations: 2630)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 6806)
+Completed 200 OK in 23ms (Views: 20.4ms | ActiveRecord: 0.8ms | Allocations: 7278)
+
+
+Started GET "/shows" for ::1 at 2021-04-07 19:28:56 -0400
+Processing by ShowsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shows/index.html.erb within layouts/application
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" ORDER BY "shows"."title" ASC[0m
+  ↳ app/views/shows/index.html.erb:3
+  Rendered shows/index.html.erb within layouts/application (Duration: 24.9ms | Allocations: 976)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 34.3ms | Allocations: 5157)
+Completed 200 OK in 40ms (Views: 37.5ms | ActiveRecord: 0.3ms | Allocations: 6149)
+
+
+Started GET "/shows/3" for ::1 at 2021-04-07 19:28:57 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shows/show.html.erb within layouts/application
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."show_id" = ? ORDER BY "characters"."name" ASC[0m  [["show_id", 3]]
+  ↳ app/views/shows/show.html.erb:9
+  Rendered shows/show.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1103)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | Allocations: 5283)
+Completed 200 OK in 24ms (Views: 18.6ms | ActiveRecord: 0.5ms | Allocations: 6458)
+
+
+Started GET "/shows/7/characters/3" for ::1 at 2021-04-07 19:28:58 -0400
+Processing by CharactersController#show as HTML
+  Parameters: {"show_id"=>"7", "id"=>"3"}
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."id" = ? ORDER BY "characters"."name" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:26:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering characters/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Character"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/characters/show.html.erb:3
+  Rendered characters/show.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1041)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 5221)
+Completed 200 OK in 25ms (Views: 19.3ms | ActiveRecord: 0.5ms | Allocations: 6357)
+
+
+Started GET "/characters/3/edit" for ::1 at 2021-04-07 19:29:04 -0400
+Processing by CharactersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."id" = ? ORDER BY "characters"."name" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:30:in `edit'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/characters_controller.rb:31:in `edit'
+  [1m[36mShow Load (0.1ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:31:in `edit'
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."id" = ? ORDER BY "actors"."name" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:31:in `edit'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Character"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:31:in `edit'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/characters_controller.rb:31:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering characters/edit.html.erb within layouts/application
+  Rendered characters/edit.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1093)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 5204)
+Completed 200 OK in 40ms (Views: 12.1ms | ActiveRecord: 0.6ms | Allocations: 12540)
+
+

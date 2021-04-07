@@ -1,6 +1,10 @@
 class CharactersController < ApplicationController
     def index
-        @characters = Character.all
+        if params[:show_id]
+            @characters = Show.find(params[:show_id].characters)
+        else
+            @characters = Character.all
+        end
     end
     
     def new

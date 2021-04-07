@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
   get 'searches/index', as: 'searches'
   resources :actors
-  resources :characters
+ 
   resources :viewings
   resources :users, except: [:create, :show]
   resources :comments
-  resources :shows
+  resources :shows do
+    resources :characters, only: [:show, :index]
+  end
+  resources :characters
   get '/login', to: "sessions#new", as: "signin"
   post '/login', to: "sessions#create"
   get 'auth/:provider/callback', to: 'sessions#omniauth'
