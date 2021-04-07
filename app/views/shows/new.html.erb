@@ -14,6 +14,25 @@
             <%= f.label :rating, class: "form-label" %>
             <%= f.number_field :rating, class: "form-input" %>
         </div>
+
+        <%= f.fields_for :characters do |c| %>
+            <%= c.label :name %>
+            <%= c.text_field :name %><br>
+
+            <%= c.label :bio %>
+            <%= c.text_field :bio %><br>
+
+            <%= c.label :actor_id, class: "form-label"  %>
+            <%= c.collection_select :actor_id, Actor.all, :id, :name, prompt: true, class: "form-label" %>
+
+            <%= c.hidden_field :show_id, value: @show.id %>
+
+            <%= c.label "Charatcer Photo", class: "form-label" %>
+            <%= c.file_field :avatar, class: "form-input" %>
+
+        <% end %>
+
+
         <%= f.submit :create%>
     <% end %>
 

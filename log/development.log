@@ -19734,3 +19734,226 @@ Processing by CharactersController#index as HTML
 Completed 200 OK in 29ms (Views: 26.0ms | ActiveRecord: 0.4ms | Allocations: 6423)
 
 
+Started GET "/actors" for ::1 at 2021-04-07 12:14:25 -0400
+Processing by ActorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering actors/index.html.erb within layouts/application
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors" ORDER BY "actors"."name" ASC[0m
+  ↳ app/views/actors/index.html.erb:3
+  Rendered actors/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 689)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 4869)
+Completed 200 OK in 17ms (Views: 14.8ms | ActiveRecord: 0.2ms | Allocations: 5849)
+
+
+Started GET "/actors" for ::1 at 2021-04-07 12:15:19 -0400
+Processing by ActorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering actors/index.html.erb within layouts/application
+  [1m[36mActor Load (0.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors" ORDER BY "actors"."name" ASC[0m
+  ↳ app/views/actors/index.html.erb:3
+  Rendered actors/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 692)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.8ms | Allocations: 5119)
+Completed 200 OK in 28ms (Views: 25.4ms | ActiveRecord: 0.3ms | Allocations: 6320)
+
+
+Started GET "/actors" for ::1 at 2021-04-07 12:15:25 -0400
+Processing by ActorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering actors/index.html.erb within layouts/application
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors" ORDER BY "actors"."name" ASC[0m
+  ↳ app/views/actors/index.html.erb:3
+  Rendered actors/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 697)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 5125)
+Completed 200 OK in 20ms (Views: 17.5ms | ActiveRecord: 0.2ms | Allocations: 6336)
+
+
+Started GET "/characters" for ::1 at 2021-04-07 12:15:27 -0400
+Processing by CharactersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering characters/index.html.erb within layouts/application
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT "characters".* FROM "characters" ORDER BY "characters"."name" ASC[0m
+  ↳ app/views/characters/index.html.erb:3
+  Rendered characters/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 787)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.2ms | Allocations: 4967)
+Completed 200 OK in 26ms (Views: 23.0ms | ActiveRecord: 0.4ms | Allocations: 5949)
+
+
+Started GET "/shows" for ::1 at 2021-04-07 12:15:29 -0400
+Processing by ShowsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shows/index.html.erb within layouts/application
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" ORDER BY "shows"."title" ASC[0m
+  ↳ app/views/shows/index.html.erb:3
+  Rendered shows/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 784)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.8ms | Allocations: 4964)
+Completed 200 OK in 37ms (Views: 34.1ms | ActiveRecord: 0.2ms | Allocations: 5947)
+
+
+Started GET "/shows" for ::1 at 2021-04-07 12:15:44 -0400
+Processing by ShowsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shows/index.html.erb within layouts/application
+  [1m[36mShow Load (0.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" ORDER BY "shows"."title" ASC[0m
+  ↳ app/views/shows/index.html.erb:3
+  Rendered shows/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 784)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.7ms | Allocations: 5211)
+Completed 200 OK in 37ms (Views: 32.5ms | ActiveRecord: 0.4ms | Allocations: 6408)
+
+
+Started GET "/login" for ::1 at 2021-04-07 14:10:34 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 4.9ms | Allocations: 892)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 38.8ms | Allocations: 5172)
+Completed 200 OK in 46ms (Views: 41.8ms | Allocations: 5978)
+
+
+Started POST "/auth/google_oauth2" for ::1 at 2021-04-07 14:10:40 -0400
+Started GET "/auth/google_oauth2/callback?state=8cb4f83be6d84c3559e563e73ae0623e6978eba761e2ce7e&code=4%2F0AY0e-g40e_sGySDzMb6eV93dZOj2xpAWXvXCNRGYT2Q4tOAKPwGDwgDIAi819gS2zIgaYQ&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=none" for ::1 at 2021-04-07 14:10:40 -0400
+Processing by SessionsController#omniauth as HTML
+  Parameters: {"state"=>"8cb4f83be6d84c3559e563e73ae0623e6978eba761e2ce7e", "code"=>"4/0AY0e-g40e_sGySDzMb6eV93dZOj2xpAWXvXCNRGYT2Q4tOAKPwGDwgDIAi819gS2zIgaYQ", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email openid", "authuser"=>"0", "prompt"=>"none", "provider"=>"google_oauth2"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/sessions_controller.rb:25:in `omniauth'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "117860689234137033262"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:25:in `omniauth'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 14ms (ActiveRecord: 3.1ms | Allocations: 1225)
+
+
+Started GET "/users/1" for ::1 at 2021-04-07 14:10:40 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mShow Load (0.5ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "viewings" ON "shows"."id" = "viewings"."show_id" WHERE "viewings"."user_id" = ? ORDER BY "shows"."title" ASC[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:16:in `uniq'
+  [1m[36mViewing Load (0.2ms)[0m  [1m[34mSELECT "viewings".* FROM "viewings" WHERE "viewings"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:23
+  Rendered users/show.html.erb within layouts/application (Duration: 6.5ms | Allocations: 2142)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 6323)
+Completed 200 OK in 25ms (Views: 20.4ms | ActiveRecord: 1.1ms | Allocations: 7721)
+
+
+Started GET "/shows" for ::1 at 2021-04-07 14:36:40 -0400
+Processing by ShowsController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/models/show.rb:11:in `block in <class:Show>'
+  Rendering layout layouts/application.html.erb
+  Rendering shows/index.html.erb within layouts/application
+  [1m[36mShow Load (0.8ms)[0m  [1m[34mSELECT "shows".* FROM "shows" ORDER BY "shows"."title" ASC[0m
+  ↳ app/views/shows/index.html.erb:3
+  Rendered shows/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 655)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 4835)
+Completed 200 OK in 19ms (Views: 14.5ms | ActiveRecord: 1.6ms | Allocations: 5783)
+
+
+Started GET "/shows/new" for ::1 at 2021-04-07 14:36:41 -0400
+Processing by ShowsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shows/new.html.erb within layouts/application
+  Rendered shows/new.html.erb within layouts/application (Duration: 28.1ms | Allocations: 3630)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 55.7ms | Allocations: 7706)
+Completed 200 OK in 59ms (Views: 56.5ms | ActiveRecord: 0.0ms | Allocations: 8302)
+
+
+Started GET "/actors" for ::1 at 2021-04-07 14:36:44 -0400
+Processing by ActorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering actors/index.html.erb within layouts/application
+  [1m[36mActor Load (0.5ms)[0m  [1m[34mSELECT "actors".* FROM "actors" ORDER BY "actors"."name" ASC[0m
+  ↳ app/views/actors/index.html.erb:3
+  Rendered actors/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 706)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.1ms | Allocations: 4886)
+Completed 200 OK in 28ms (Views: 24.3ms | ActiveRecord: 0.5ms | Allocations: 5866)
+
+
+Started GET "/actors/new" for ::1 at 2021-04-07 14:36:48 -0400
+Processing by ActorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering actors/new.html.erb within layouts/application
+  Rendered actors/new.html.erb within layouts/application (Duration: 10.9ms | Allocations: 1058)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.9ms | Allocations: 5236)
+Completed 200 OK in 46ms (Views: 22.5ms | ActiveRecord: 0.0ms | Allocations: 5829)
+
+
+Started GET "/characters" for ::1 at 2021-04-07 14:36:50 -0400
+Processing by CharactersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering characters/index.html.erb within layouts/application
+  [1m[36mCharacter Load (0.5ms)[0m  [1m[34mSELECT "characters".* FROM "characters" ORDER BY "characters"."name" ASC[0m
+  ↳ app/views/characters/index.html.erb:3
+  Rendered characters/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 806)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.7ms | Allocations: 4986)
+Completed 200 OK in 28ms (Views: 24.7ms | ActiveRecord: 0.5ms | Allocations: 5966)
+
+
+Started GET "/characters/new" for ::1 at 2021-04-07 14:36:52 -0400
+Processing by CharactersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering characters/new.html.erb within layouts/application
+  [1m[36mShow Load (0.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" ORDER BY "shows"."title" ASC[0m
+  ↳ app/views/characters/new.html.erb:15
+  [1m[36mActor Load (0.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors" ORDER BY "actors"."name" ASC[0m
+  ↳ app/views/characters/new.html.erb:19
+  Rendered characters/new.html.erb within layouts/application (Duration: 24.1ms | Allocations: 3174)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 36.4ms | Allocations: 7351)
+Completed 200 OK in 40ms (Views: 36.7ms | ActiveRecord: 0.6ms | Allocations: 7942)
+
+
+Started GET "/characters/new" for ::1 at 2021-04-07 14:52:41 -0400
+Processing by CharactersController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/models/character.rb:9:in `block in <class:Character>'
+  Rendering layout layouts/application.html.erb
+  Rendering characters/new.html.erb within layouts/application
+  [1m[36mShow Load (0.9ms)[0m  [1m[34mSELECT "shows".* FROM "shows" ORDER BY "shows"."title" ASC[0m
+  ↳ app/views/characters/new.html.erb:15
+  [1m[36mActor Load (0.7ms)[0m  [1m[34mSELECT "actors".* FROM "actors" ORDER BY "actors"."name" ASC[0m
+  ↳ app/views/characters/new.html.erb:19
+  Rendered characters/new.html.erb within layouts/application (Duration: 12.8ms | Allocations: 2831)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.9ms | Allocations: 7257)
+Completed 200 OK in 39ms (Views: 31.0ms | ActiveRecord: 2.6ms | Allocations: 8973)
+
+
+Started GET "/shows" for ::1 at 2021-04-07 14:52:43 -0400
+Processing by ShowsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shows/index.html.erb within layouts/application
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" ORDER BY "shows"."title" ASC[0m
+  ↳ app/views/shows/index.html.erb:3
+  Rendered shows/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 784)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 33.4ms | Allocations: 4964)
+Completed 200 OK in 40ms (Views: 37.1ms | ActiveRecord: 0.3ms | Allocations: 5949)
+
+
+Started GET "/shows/new" for ::1 at 2021-04-07 14:52:44 -0400
+Processing by ShowsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shows/new.html.erb within layouts/application
+  [1m[36mActor Load (0.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors" ORDER BY "actors"."name" ASC[0m
+  ↳ app/views/shows/new.html.erb:26
+  Rendered shows/new.html.erb within layouts/application (Duration: 29.3ms | Allocations: 8681)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 42.4ms | Allocations: 12758)
+Completed 200 OK in 46ms (Views: 42.8ms | ActiveRecord: 0.4ms | Allocations: 13352)
+
+
