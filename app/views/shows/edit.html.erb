@@ -1,5 +1,15 @@
 <h1>Edit a Show</h1>
 
+<br>
+<ul>
+<% if @show.errors.any? %> 
+    <% @show.errors.each do |error| %>
+        <li><%=error.full_message%></li>
+    <% end %>
+<% end %>
+</ul>
+<br>
+
 <div id="show-form" class="hide">
     <%= form_with(model: @show) do |f| %>
         <div class="form-control">

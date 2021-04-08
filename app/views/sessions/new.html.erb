@@ -1,5 +1,16 @@
 <h1>Login</h1>
 
+<br>
+<ul>
+<% if @user.errors.any? %> 
+    <% @user.errors.each do |error| %>
+        <li><%=error.full_message%></li>
+    <% end %>
+    
+<% end %>
+</ul>
+<br>
+
 <div id="login-form">
     <%= form_with(model: @user, url: "/login") do |f| %>
         <div class="form-control">

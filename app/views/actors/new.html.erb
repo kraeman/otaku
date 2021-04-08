@@ -1,5 +1,13 @@
 <h1>Create an Actor</h1>
-
+<br>
+<ul>
+<% if @actor.errors.any? %> 
+    <% @actor.errors.each do |error| %>
+        <li><%=error.full_message%></li>
+    <% end %>
+<% end %>
+</ul>
+<br>
 <div id="actor-form" class="hide">
     <%= form_with(model: @actor) do |f| %>
         <div class="form-control">

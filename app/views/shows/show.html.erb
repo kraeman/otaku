@@ -1,3 +1,12 @@
+<br>
+<ul>
+<% if @comment.errors.any? %> 
+    <% @comment.errors.each do |error| %>
+        <li><%=error.full_message%></li>
+    <% end %>
+<% end %>
+</ul>
+<br>
 <h1><%=@show.title%></h1>
 
 <h4><%=@show.rating%></h4>
@@ -19,7 +28,7 @@
 
 
 <h2>COMMENTS: </h2>
-    <%= form_with(model: Comment.new) do |f| %>
+    <%= form_with(model: @comment) do |f| %>
         <div class="form-control">
             <%= f.label :content, class: "form-label" %>
             <%= f.text_field :content, class: "form-input" %>

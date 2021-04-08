@@ -3,12 +3,14 @@ Rails.application.routes.draw do
   resources :actors
  
   resources :viewings
+  
   resources :users, except: [:create, :show]
   resources :comments
   resources :shows do
     resources :characters, only: [:show, :index, :new, :create]
   end
   resources :characters
+  post '/users', to: "users#create", as: "signup"
   get '/login', to: "sessions#new", as: "signin"
   post '/login', to: "sessions#create"
   get 'auth/:provider/callback', to: 'sessions#omniauth'
