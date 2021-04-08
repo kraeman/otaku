@@ -7,11 +7,7 @@ class Character < ApplicationRecord
   validates :bio, presence: true
   accepts_nested_attributes_for :show
 
-
-  def show_attributes=(show)
-    self.show = Show.find_or_create_by(title: show[:title])
-    self.show.update(show)
-  end
+  
 
   default_scope { order(name: :asc) }
   scope :search_by_name, -> (name) {where("name LIKE ?", "#{name}%")}

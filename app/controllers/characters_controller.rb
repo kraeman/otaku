@@ -9,16 +9,23 @@ class CharactersController < ApplicationController
     
     def new
         @character = Character.new
+        @character.build_show
     end
     
     def create
-       if @character = Character.create(character_params)
-            redirect_to @character
+        byebug
+        
+        if character_params[:show_id] != nil || (nested_character_params[:show_attributes][:title] != nil && nested_character_params[:show_attributes][:air_time] != nil && nested_character_params[:show_attributes][:rating] != nil)
+            if character_params[:show_id] != ""
+                @character = Character.create(character_params)
+                redirect_to @character
+            else
+                @character = Character.create(nested_character_params)
+                redirect_to @character
+            end
        else
             render :new 
        end
-
-        
     end
     
     def show
@@ -46,6 +53,10 @@ class CharactersController < ApplicationController
     
     private
     
+    def nested_character_params
+        params.require(:character).permit(:name, :bio, :actor_id, :avatar, show_attributes: [:title, :rating, :air_time])
+    end
+
     def character_params
         params.require(:character).permit(:name, :bio, :show_id, :actor_id, :avatar)
     end
