@@ -1,7 +1,7 @@
 <h1>Create a Character</h1>
 
 <div id="character-form" class="hide">
-    <%= form_with(model: [@character]) do |f| %>
+    <%= form_with(model: [@show, @character]) do |f| %>
         <div class="form-control">
             <%= f.label :name, class: "form-label" %>
             <%= f.text_field :name, class: "form-input" %>
@@ -21,7 +21,7 @@
             <%= f.label "Character Photo", class: "form-label" %>
             <%= f.file_field :avatar, class: "form-input" %>
         </div>
-
+<% if @character.show_id == nil %>
 
         <div class="form-control">
                 <%= f.label :show_id, class: "form-label"  %>
@@ -39,6 +39,9 @@
                 <%= a.number_field :rating %><br>
 
             <% end %>
+<% else %>
+        <%=f.hidden_field :show_id, value: @character.show_id %>
+<% end %>
 
 
         <%= f.submit "Create"%>
