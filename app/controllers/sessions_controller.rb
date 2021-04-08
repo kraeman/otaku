@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
           redirect_to @user
         else
           #set error message with flash
-
+          @user = nil
           render :new
         end
     end
