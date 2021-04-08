@@ -15,7 +15,8 @@ class ShowsController < ApplicationController
           session[:show_id] = @show.id
           redirect_to @show
         else
-          render :new
+            @show.characters.build
+            render :new
         end
     end
     

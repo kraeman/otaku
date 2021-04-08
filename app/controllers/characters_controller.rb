@@ -8,15 +8,25 @@ class CharactersController < ApplicationController
     end
     
     def new
-        @character = Character.new
+        if params[:show_id] && @show = Show.find(params[:show_id])
+            @character = Character.new(show_id: params[:show_id])
+        else
+            @character = Character.new
+        end
+        # byebug
     end
     
     def create
-        byebug
         @character = Character.create(character_params)
-        if @character.id
-          session[:character_id] = @character.id
-          redirect_to @character
+        # byebug
+        if params[:show_id]
+        #   session[:character_id] = @character.id
+            if @character.show_id == params[:show_id].to_i && @character.id
+                redirect_to show_character_path(params[:show_id], @character.id)
+            end
+        elsif @character.id
+            redirect_to @character
+            
         else
           render :new
         end

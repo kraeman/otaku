@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users, except: [:create, :show]
   resources :comments
   resources :shows do
-    resources :characters, only: [:show, :index]
+    resources :characters, only: [:show, :index, :new, :create]
   end
   resources :characters
   get '/login', to: "sessions#new", as: "signin"
