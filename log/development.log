@@ -36426,3 +36426,374 @@ Processing by ShowsController#show as HTML
 Completed 200 OK in 22ms (Views: 19.1ms | ActiveRecord: 0.7ms | Allocations: 9509)
 
 
+Started GET "/users/2" for ::1 at 2021-04-08 14:57:38 -0400
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mShow Load (0.1ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "viewings" ON "shows"."id" = "viewings"."show_id" WHERE "viewings"."user_id" = ? ORDER BY "shows"."title" ASC[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:16:in `uniq'
+  [1m[36mViewing Load (0.1ms)[0m  [1m[34mSELECT "viewings".* FROM "viewings" WHERE "viewings"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:23
+  Rendered users/show.html.erb within layouts/application (Duration: 34.2ms | Allocations: 13588)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 72.4ms | Allocations: 26865)
+Completed 200 OK in 115ms (Views: 82.2ms | ActiveRecord: 1.2ms | Allocations: 43054)
+
+
+Started GET "/logout" for ::1 at 2021-04-08 14:57:41 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms | Allocations: 279)
+
+
+Started GET "/login" for ::1 at 2021-04-08 14:57:41 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 7.7ms | Allocations: 1192)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 38.5ms | Allocations: 5482)
+Completed 200 OK in 43ms (Views: 40.5ms | ActiveRecord: 0.0ms | Allocations: 6307)
+
+
+Started POST "/auth/google_oauth2" for ::1 at 2021-04-08 15:07:05 -0400
+Started GET "/auth/google_oauth2/callback?state=ebbd9d48c47dd2ce7ccfff1ece8247c3d81aadcfc5eca2a1&code=4%2F0AY0e-g4aN71oa6Mwd6-MdVdL-1lK16jnjF_PbcdW3xUsAXcDRfh-_CH53AgcnaHeTmg0-w&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=none" for ::1 at 2021-04-08 15:07:05 -0400
+Processing by SessionsController#omniauth as HTML
+  Parameters: {"state"=>"ebbd9d48c47dd2ce7ccfff1ece8247c3d81aadcfc5eca2a1", "code"=>"4/0AY0e-g4aN71oa6Mwd6-MdVdL-1lK16jnjF_PbcdW3xUsAXcDRfh-_CH53AgcnaHeTmg0-w", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email openid", "authuser"=>"0", "prompt"=>"none", "provider"=>"google_oauth2"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/sessions_controller.rb:25:in `omniauth'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "117860689234137033262"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:25:in `omniauth'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 12ms (ActiveRecord: 1.8ms | Allocations: 1233)
+
+
+Started GET "/users/1" for ::1 at 2021-04-08 15:07:05 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "viewings" ON "shows"."id" = "viewings"."show_id" WHERE "viewings"."user_id" = ? ORDER BY "shows"."title" ASC[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:16:in `uniq'
+  [1m[36mViewing Load (0.3ms)[0m  [1m[34mSELECT "viewings".* FROM "viewings" WHERE "viewings"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:23
+  Rendered users/show.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1686)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 6806)
+Completed 200 OK in 21ms (Views: 18.4ms | ActiveRecord: 0.9ms | Allocations: 7675)
+
+
+Started GET "/actors" for ::1 at 2021-04-08 15:07:09 -0400
+Processing by ActorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering actors/index.html.erb within layouts/application
+  [1m[36mActor Load (0.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors" ORDER BY "actors"."name" ASC[0m
+  ↳ app/views/actors/index.html.erb:3
+  Rendered actors/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 689)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 5806)
+Completed 200 OK in 39ms (Views: 19.2ms | ActiveRecord: 2.1ms | Allocations: 9308)
+
+
+Started GET "/actors/new" for ::1 at 2021-04-08 15:07:11 -0400
+Processing by ActorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering actors/new.html.erb within layouts/application
+  Rendered actors/new.html.erb within layouts/application (Duration: 9.8ms | Allocations: 1059)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 6176)
+Completed 200 OK in 32ms (Views: 21.1ms | ActiveRecord: 0.7ms | Allocations: 9147)
+
+
+Started POST "/actors" for ::1 at 2021-04-08 15:07:20 -0400
+Processing by ActorsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "actor"=>{"name"=>"Mitsumi Hakeda", "dob"=>"1955-02-11"}, "commit"=>"create"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/actors_controller.rb:11:in `create'
+  [1m[36mActor Create (2.5ms)[0m  [1m[32mINSERT INTO "actors" ("name", "dob", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Mitsumi Hakeda"], ["dob", "1955-02-11"], ["created_at", "2021-04-08 19:07:20.656736"], ["updated_at", "2021-04-08 19:07:20.656736"]]
+  ↳ app/controllers/actors_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/actors_controller.rb:11:in `create'
+Redirected to http://localhost:3000/actors/1
+Completed 302 Found in 17ms (ActiveRecord: 6.1ms | Allocations: 2478)
+
+
+Started GET "/actors/1" for ::1 at 2021-04-08 15:07:20 -0400
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mActor Load (0.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."id" = ? ORDER BY "actors"."name" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:21:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering actors/show.html.erb within layouts/application
+  Rendered actors/show.html.erb within layouts/application (Duration: 3.0ms | Allocations: 196)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 33.8ms | Allocations: 5318)
+Completed 200 OK in 41ms (Views: 34.6ms | ActiveRecord: 0.4ms | Allocations: 6488)
+
+
+Started GET "/shows" for ::1 at 2021-04-08 15:07:23 -0400
+Processing by ShowsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shows/index.html.erb within layouts/application
+  [1m[36mShow Load (0.5ms)[0m  [1m[34mSELECT "shows".* FROM "shows" ORDER BY "shows"."title" ASC[0m
+  ↳ app/views/shows/index.html.erb:3
+  Rendered shows/index.html.erb within layouts/application (Duration: 12.9ms | Allocations: 3554)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.9ms | Allocations: 8673)
+Completed 200 OK in 34ms (Views: 30.7ms | ActiveRecord: 0.5ms | Allocations: 9669)
+
+
+Started GET "/characters" for ::1 at 2021-04-08 15:07:25 -0400
+Processing by CharactersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering characters/index.html.erb within layouts/application
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT "characters".* FROM "characters" ORDER BY "characters"."name" ASC[0m
+  ↳ app/views/characters/index.html.erb:3
+  Rendered characters/index.html.erb within layouts/application (Duration: 9.0ms | Allocations: 682)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.1ms | Allocations: 5799)
+Completed 200 OK in 41ms (Views: 26.8ms | ActiveRecord: 1.1ms | Allocations: 8843)
+
+
+Started GET "/characters/new" for ::1 at 2021-04-08 15:07:26 -0400
+Processing by CharactersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering characters/new.html.erb within layouts/application
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors" ORDER BY "actors"."name" ASC[0m
+  ↳ app/views/characters/new.html.erb:18
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" ORDER BY "shows"."title" ASC[0m
+  ↳ app/views/characters/new.html.erb:28
+  Rendered characters/new.html.erb within layouts/application (Duration: 30.4ms | Allocations: 4401)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 43.2ms | Allocations: 9452)
+Completed 200 OK in 62ms (Views: 43.7ms | ActiveRecord: 1.0ms | Allocations: 14409)
+
+
+Started GET "/characters" for ::1 at 2021-04-08 15:07:35 -0400
+Processing by CharactersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering characters/index.html.erb within layouts/application
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" ORDER BY "characters"."name" ASC[0m
+  ↳ app/views/characters/index.html.erb:3
+  Rendered characters/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 509)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 34.6ms | Allocations: 5624)
+Completed 200 OK in 37ms (Views: 35.4ms | ActiveRecord: 0.3ms | Allocations: 6096)
+
+
+Started GET "/characters/new" for ::1 at 2021-04-08 15:07:36 -0400
+Processing by CharactersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering characters/new.html.erb within layouts/application
+  [1m[36mActor Load (0.5ms)[0m  [1m[34mSELECT "actors".* FROM "actors" ORDER BY "actors"."name" ASC[0m
+  ↳ app/views/characters/new.html.erb:18
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" ORDER BY "shows"."title" ASC[0m
+  ↳ app/views/characters/new.html.erb:28
+  Rendered characters/new.html.erb within layouts/application (Duration: 12.9ms | Allocations: 2988)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.1ms | Allocations: 8099)
+Completed 200 OK in 33ms (Views: 30.3ms | ActiveRecord: 0.8ms | Allocations: 8823)
+
+
+Started GET "/shows" for ::1 at 2021-04-08 15:07:43 -0400
+Processing by ShowsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shows/index.html.erb within layouts/application
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" ORDER BY "shows"."title" ASC[0m
+  ↳ app/views/shows/index.html.erb:3
+  Rendered shows/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 543)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | Allocations: 5660)
+Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 0.2ms | Allocations: 6118)
+
+
+Started GET "/shows/1" for ::1 at 2021-04-08 15:07:45 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShow Load (0.5ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:22:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shows/show.html.erb within layouts/application
+  [1m[36mCharacter Load (0.7ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."show_id" = ? ORDER BY "characters"."name" ASC[0m  [["show_id", 1]]
+  ↳ app/views/shows/show.html.erb:9
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."show_id" = ?[0m  [["show_id", 1]]
+  ↳ app/views/shows/show.html.erb:33
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shows/show.html.erb:34
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shows/show.html.erb:34
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shows/show.html.erb:34
+  Rendered shows/show.html.erb within layouts/application (Duration: 28.5ms | Allocations: 11887)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 40.1ms | Allocations: 16900)
+Completed 200 OK in 47ms (Views: 39.7ms | ActiveRecord: 2.2ms | Allocations: 18048)
+
+
+Started GET "/shows/1/characters/new" for ::1 at 2021-04-08 15:07:46 -0400
+Processing by CharactersController#new as HTML
+  Parameters: {"show_id"=>"1"}
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:12:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering characters/new.html.erb within layouts/application
+  [1m[36mActor Load (0.5ms)[0m  [1m[34mSELECT "actors".* FROM "actors" ORDER BY "actors"."name" ASC[0m
+  ↳ app/views/characters/new.html.erb:18
+  Rendered characters/new.html.erb within layouts/application (Duration: 10.5ms | Allocations: 1617)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.3ms | Allocations: 6732)
+Completed 200 OK in 32ms (Views: 25.9ms | ActiveRecord: 0.8ms | Allocations: 7800)
+
+
+Started GET "/login" for ::1 at 2021-04-08 16:08:52 -0400
+Processing by SessionsController#new as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/sessions_controller.rb:4:in `new'
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 1.3ms | Allocations: 677)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 28.8ms | Allocations: 4757)
+Completed 200 OK in 39ms (Views: 29.4ms | ActiveRecord: 0.5ms | Allocations: 14007)
+
+
+Started POST "/auth/google_oauth2" for ::1 at 2021-04-08 16:23:03 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/auth/google_oauth2/callback?state=afdb8a5963315595a832e1be2467400726df46251b6a8e52&code=4%2F0AY0e-g5njDyn851KZv7LLa2BeGUMVjDUsov2FvG4RyIG0Dle4U6iEqDlRcJ9BGMRSEdZFQ&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=none" for ::1 at 2021-04-08 16:23:04 -0400
+Processing by SessionsController#omniauth as HTML
+  Parameters: {"state"=>"afdb8a5963315595a832e1be2467400726df46251b6a8e52", "code"=>"4/0AY0e-g5njDyn851KZv7LLa2BeGUMVjDUsov2FvG4RyIG0Dle4U6iEqDlRcJ9BGMRSEdZFQ", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "prompt"=>"none", "provider"=>"google_oauth2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "117860689234137033262"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:25:in `omniauth'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 36ms (ActiveRecord: 0.8ms | Allocations: 12084)
+
+
+Started GET "/users/1" for ::1 at 2021-04-08 16:23:04 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mShow Load (0.1ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "viewings" ON "shows"."id" = "viewings"."show_id" WHERE "viewings"."user_id" = ? ORDER BY "shows"."title" ASC[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:16:in `uniq'
+  [1m[36mViewing Load (0.1ms)[0m  [1m[34mSELECT "viewings".* FROM "viewings" WHERE "viewings"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:23
+  Rendered users/show.html.erb within layouts/application (Duration: 31.8ms | Allocations: 13560)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 78.0ms | Allocations: 26835)
+Completed 200 OK in 89ms (Views: 83.3ms | ActiveRecord: 0.8ms | Allocations: 29252)
+
+
+Started GET "/searches/index?search=One&commit=search" for ::1 at 2021-04-08 16:23:13 -0400
+Processing by SearchesController#index as HTML
+  Parameters: {"search"=>"One", "commit"=>"search"}
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE (title LIKE 'One%') ORDER BY "shows"."title" ASC[0m
+  ↳ app/controllers/searches_controller.rb:6:in `index'
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE (name LIKE 'One%') ORDER BY "characters"."name" ASC[0m
+  ↳ app/controllers/searches_controller.rb:6:in `index'
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE (name LIKE 'One%') ORDER BY "actors"."name" ASC[0m
+  ↳ app/controllers/searches_controller.rb:6:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering searches/results.html.erb within layouts/application
+  Rendered searches/results.html.erb within layouts/application (Duration: 0.8ms | Allocations: 272)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 5367)
+Completed 200 OK in 45ms (Views: 15.3ms | ActiveRecord: 2.0ms | Allocations: 15167)
+
+
+Started GET "/users/1" for ::1 at 2021-04-08 16:23:25 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "viewings" ON "shows"."id" = "viewings"."show_id" WHERE "viewings"."user_id" = ? ORDER BY "shows"."title" ASC[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:16:in `uniq'
+  [1m[36mViewing Load (0.2ms)[0m  [1m[34mSELECT "viewings".* FROM "viewings" WHERE "viewings"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:23
+  Rendered users/show.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1655)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.6ms | Allocations: 6775)
+Completed 200 OK in 28ms (Views: 25.0ms | ActiveRecord: 0.8ms | Allocations: 7634)
+
+
+Started GET "/searches/index?search=One&commit=search" for ::1 at 2021-04-08 16:23:27 -0400
+Processing by SearchesController#index as HTML
+  Parameters: {"search"=>"One", "commit"=>"search"}
+  [1m[36mShow Load (0.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE (title LIKE 'One%') ORDER BY "shows"."title" ASC[0m
+  ↳ app/controllers/searches_controller.rb:6:in `index'
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE (name LIKE 'One%') ORDER BY "characters"."name" ASC[0m
+  ↳ app/controllers/searches_controller.rb:6:in `index'
+  [1m[36mActor Load (0.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE (name LIKE 'One%') ORDER BY "actors"."name" ASC[0m
+  ↳ app/controllers/searches_controller.rb:6:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering searches/results.html.erb within layouts/application
+  Rendered searches/results.html.erb within layouts/application (Duration: 0.3ms | Allocations: 35)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 5125)
+Completed 200 OK in 26ms (Views: 18.4ms | ActiveRecord: 1.1ms | Allocations: 7195)
+
+
+Started GET "/users/1" for ::1 at 2021-04-08 16:24:12 -0400
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mShow Load (0.1ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "viewings" ON "shows"."id" = "viewings"."show_id" WHERE "viewings"."user_id" = ? ORDER BY "shows"."title" ASC[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:16:in `uniq'
+  [1m[36mViewing Load (0.1ms)[0m  [1m[34mSELECT "viewings".* FROM "viewings" WHERE "viewings"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:23
+  Rendered users/show.html.erb within layouts/application (Duration: 34.9ms | Allocations: 13917)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 72.4ms | Allocations: 27194)
+Completed 200 OK in 109ms (Views: 76.9ms | ActiveRecord: 1.7ms | Allocations: 42757)
+
+
+Started GET "/searches/results?search=B&commit=search" for ::1 at 2021-04-08 16:24:15 -0400
+Processing by SearchesController#results as HTML
+  Parameters: {"search"=>"B", "commit"=>"search"}
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE (title LIKE 'B%') ORDER BY "shows"."title" ASC[0m
+  ↳ app/controllers/searches_controller.rb:6:in `results'
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE (name LIKE 'B%') ORDER BY "characters"."name" ASC[0m
+  ↳ app/controllers/searches_controller.rb:6:in `results'
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE (name LIKE 'B%') ORDER BY "actors"."name" ASC[0m
+  ↳ app/controllers/searches_controller.rb:6:in `results'
+  Rendering layout layouts/application.html.erb
+  Rendering searches/results.html.erb within layouts/application
+  Rendered searches/results.html.erb within layouts/application (Duration: 1.6ms | Allocations: 228)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.9ms | Allocations: 5336)
+Completed 200 OK in 63ms (Views: 33.7ms | ActiveRecord: 1.9ms | Allocations: 12292)
+
+
+Started GET "/searches/results?search=One&commit=search" for ::1 at 2021-04-08 16:24:18 -0400
+Processing by SearchesController#results as HTML
+  Parameters: {"search"=>"One", "commit"=>"search"}
+  [1m[36mShow Load (0.6ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE (title LIKE 'One%') ORDER BY "shows"."title" ASC[0m
+  ↳ app/controllers/searches_controller.rb:6:in `results'
+  [1m[36mCharacter Load (0.5ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE (name LIKE 'One%') ORDER BY "characters"."name" ASC[0m
+  ↳ app/controllers/searches_controller.rb:6:in `results'
+  [1m[36mActor Load (0.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE (name LIKE 'One%') ORDER BY "actors"."name" ASC[0m
+  ↳ app/controllers/searches_controller.rb:6:in `results'
+  Rendering layout layouts/application.html.erb
+  Rendering searches/results.html.erb within layouts/application
+  Rendered searches/results.html.erb within layouts/application (Duration: 0.3ms | Allocations: 39)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 5130)
+Completed 200 OK in 32ms (Views: 16.2ms | ActiveRecord: 1.5ms | Allocations: 10032)
+
+

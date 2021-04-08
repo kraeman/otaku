@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'searches/index', as: 'searches'
+  get 'searches/results', as: 'searches'
   resources :actors
  
   resources :viewings

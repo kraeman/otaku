@@ -22,7 +22,7 @@ class CharactersController < ApplicationController
         if params[:show_id] && params[:show_id] != params[:character][:show_id]
             redirect_to new_show_character_path(Show.find(params[:show_id]))
         else
-                if character_params[:show_id] != nil || (nested_character_params[:show_attributes][:title] != nil && nested_character_params[:show_attributes][:air_time] != nil && nested_character_params[:show_attributes][:rating] != nil)
+                if character_params[:show_id] || (nested_character_params[:show_attributes][:title] != nil && nested_character_params[:show_attributes][:air_time] != nil && nested_character_params[:show_attributes][:rating] != nil)
                     if character_params[:show_id] != ""
                         @character = Character.create(character_params)
                         redirect_to @character
