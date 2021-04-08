@@ -19,13 +19,19 @@ Specs:
 - [X] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
     -All models have some validations
 - [X] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
-    - character.search_by_name URL: /searches/results
-- [ ] Include signup (how e.g. Devise)
-- [ ] Include login (how e.g. Devise)
-- [ ] Include logout (how e.g. Devise)
-- [ ] Include third party signup/login (how e.g. Devise/OmniAuth)
-- [ ] Include nested resource show or index (URL e.g. users/2/recipes)
-- [ ] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
+    - character.search_by_name URL: /searches/results?search=#{YOUR SEARCH HERE}&commit=search
+- [X] Include signup (how e.g. Devise)
+    - bcrypt
+- [X] Include login (how e.g. Devise)
+    - Creates session with unique user_id
+- [x] Include logout (how e.g. Devise)
+    - Destroys session
+- [X] Include third party signup/login (how e.g. Devise/OmniAuth)
+    - Omniauth with Google
+- [x] Include nested resource show or index (URL e.g. users/2/recipes)
+    - URL shows/3/characters/1
+- [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
+    - shows/1/characters/new
 - [ ] Include form display of validation errors (form URL e.g. /recipes/new)
 
 Confirm:
