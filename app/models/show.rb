@@ -4,6 +4,7 @@ class Show < ApplicationRecord
     has_many :characters
     has_many :viewings
     has_many :users, through: :viewings
+    has_many :comments
     
 
     validates :title, presence: true, uniqueness: true

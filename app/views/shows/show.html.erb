@@ -16,3 +16,21 @@
 <br>
 
 <%=button_to "Edit Show", edit_show_path(@show), method: 'get'%>
+
+
+<h2>COMMENTS: </h2>
+    <%= form_with(model: Comment.new) do |f| %>
+        <div class="form-control">
+            <%= f.label :content, class: "form-label" %>
+            <%= f.text_field :content, class: "form-input" %>
+        </div>
+         
+            <%= f.hidden_field :show_id, value: @show.id %>
+        
+        <%= f.submit :create%>
+    <% end %>
+<ul>
+    <% @show.comments.reverse.each do |c| %>
+        <li><%=c.content%></li>
+    <% end %>
+</ul>
