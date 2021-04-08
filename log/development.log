@@ -40223,3 +40223,970 @@ Processing by UsersController#create as HTML
 Completed 200 OK in 22ms (Views: 10.9ms | ActiveRecord: 0.8ms | Allocations: 6889)
 
 
+Started GET "/login" for ::1 at 2021-04-08 18:29:19 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 2.0ms | Allocations: 616)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 9.9ms | Allocations: 4738)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms | Allocations: 5145)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:29:21 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 6ms (ActiveRecord: 0.7ms | Allocations: 914)
+
+
+Started GET "/login" for ::1 at 2021-04-08 18:29:21 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 3.4ms | Allocations: 616)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 15.2ms | Allocations: 4738)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.0ms | Allocations: 5141)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:29:22 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 739)
+
+
+Started GET "/login" for ::1 at 2021-04-08 18:29:22 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 3.0ms | Allocations: 616)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 10.9ms | Allocations: 4737)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.0ms | Allocations: 5144)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:30:19 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 1.0ms | Allocations: 1296)
+  Rendered layout layouts/sessions.html.erb (Duration: 1.1ms | Allocations: 1366)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.6ms | Allocations: 6221)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    2: 
+    3: <br>
+    4: <ul>
+    5: <% if @user.errors.any? %> 
+    6:     <% @user.errors.each do |error| %>
+    7:         <li><%=error.full_message%></li>
+    8:     <% end %>
+  
+app/views/sessions/new.html.erb:5
+app/controllers/sessions_controller.rb:14:in `create'
+Started GET "/login" for ::1 at 2021-04-08 18:30:43 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 3.2ms | Allocations: 678)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 17.2ms | Allocations: 4800)
+Completed 200 OK in 36ms (Views: 17.9ms | ActiveRecord: 1.0ms | Allocations: 10888)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:30:46 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 2.5ms | Allocations: 1345)
+  Rendered layout layouts/sessions.html.erb (Duration: 2.9ms | Allocations: 1415)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.3ms | Allocations: 2253)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    2: 
+    3: <br>
+    4: <ul>
+    5: <% if @user.errors.any? %> 
+    6:     <% @user.errors.each do |error| %>
+    7:         <li><%=error.full_message%></li>
+    8:     <% end %>
+  
+app/views/sessions/new.html.erb:5
+app/controllers/sessions_controller.rb:14:in `create'
+Started GET "/login" for ::1 at 2021-04-08 18:31:43 -0400
+Processing by SessionsController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/sessions_controller.rb:4:in `new'
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 1.6ms | Allocations: 678)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 7.1ms | Allocations: 4758)
+Completed 200 OK in 18ms (Views: 7.6ms | ActiveRecord: 0.8ms | Allocations: 14665)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:31:44 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 2.8ms | Allocations: 1345)
+  Rendered layout layouts/sessions.html.erb (Duration: 3.2ms | Allocations: 1415)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.4ms | Allocations: 2445)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    2: 
+    3: <br>
+    4: <ul>
+    5: <% if @user.errors.any? %> 
+    6:     <% @user.errors.each do |error| %>
+    7:         <li><%=error.full_message%></li>
+    8:     <% end %>
+  
+app/views/sessions/new.html.erb:5
+app/controllers/sessions_controller.rb:14:in `create'
+Started GET "/login" for ::1 at 2021-04-08 18:32:49 -0400
+Processing by SessionsController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/sessions_controller.rb:4:in `new'
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 1.8ms | Allocations: 678)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 8.3ms | Allocations: 4758)
+Completed 200 OK in 19ms (Views: 8.9ms | ActiveRecord: 0.8ms | Allocations: 14660)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:32:51 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms | Allocations: 935)
+
+
+Started GET "/login" for ::1 at 2021-04-08 18:32:51 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 2.8ms | Allocations: 616)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 15.7ms | Allocations: 4737)
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.0ms | Allocations: 5140)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:33:00 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 740)
+
+
+Started GET "/login" for ::1 at 2021-04-08 18:33:00 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 3.1ms | Allocations: 616)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 16.0ms | Allocations: 4737)
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.0ms | Allocations: 5142)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:33:00 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 750)
+
+
+Started GET "/login" for ::1 at 2021-04-08 18:33:00 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 2.9ms | Allocations: 616)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 17.3ms | Allocations: 4738)
+Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.0ms | Allocations: 5140)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:33:01 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 742)
+
+
+Started GET "/login" for ::1 at 2021-04-08 18:33:01 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 2.9ms | Allocations: 616)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 15.6ms | Allocations: 4737)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.0ms | Allocations: 5140)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:33:01 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 743)
+
+
+Started GET "/login" for ::1 at 2021-04-08 18:33:01 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 3.5ms | Allocations: 616)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 25.8ms | Allocations: 4738)
+Completed 200 OK in 28ms (Views: 26.6ms | ActiveRecord: 0.0ms | Allocations: 5152)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:33:02 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 745)
+
+
+Started GET "/login" for ::1 at 2021-04-08 18:33:02 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 3.0ms | Allocations: 616)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 15.6ms | Allocations: 4740)
+Completed 200 OK in 18ms (Views: 16.4ms | ActiveRecord: 0.0ms | Allocations: 5148)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:33:02 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 744)
+
+
+Started GET "/login" for ::1 at 2021-04-08 18:33:02 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 3.3ms | Allocations: 616)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 17.1ms | Allocations: 4737)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.0ms | Allocations: 5145)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:33:02 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 747)
+
+
+Started GET "/login" for ::1 at 2021-04-08 18:33:02 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 2.8ms | Allocations: 616)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 14.7ms | Allocations: 4737)
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.0ms | Allocations: 5141)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:33:02 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms | Allocations: 743)
+
+
+Started GET "/login" for ::1 at 2021-04-08 18:33:02 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 3.8ms | Allocations: 616)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 16.1ms | Allocations: 4737)
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.0ms | Allocations: 5140)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:33:03 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 741)
+
+
+Started GET "/login" for ::1 at 2021-04-08 18:33:03 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 3.3ms | Allocations: 616)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 17.6ms | Allocations: 4737)
+Completed 200 OK in 19ms (Views: 18.3ms | ActiveRecord: 0.0ms | Allocations: 5143)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:33:03 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 750)
+
+
+Started GET "/login" for ::1 at 2021-04-08 18:33:03 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 3.6ms | Allocations: 616)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 17.8ms | Allocations: 4737)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.0ms | Allocations: 5144)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:33:04 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 741)
+
+
+Started GET "/login" for ::1 at 2021-04-08 18:33:04 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 3.8ms | Allocations: 616)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 15.6ms | Allocations: 4737)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.0ms | Allocations: 5140)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:33:04 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 737)
+
+
+Started GET "/login" for ::1 at 2021-04-08 18:33:04 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 3.8ms | Allocations: 616)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 16.8ms | Allocations: 4737)
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.0ms | Allocations: 5143)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:33:04 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms | Allocations: 743)
+
+
+Started GET "/login" for ::1 at 2021-04-08 18:33:04 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 3.2ms | Allocations: 616)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 16.2ms | Allocations: 4737)
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.0ms | Allocations: 5140)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:33:05 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 745)
+
+
+Started GET "/login" for ::1 at 2021-04-08 18:33:05 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 3.2ms | Allocations: 616)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 16.1ms | Allocations: 4737)
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.0ms | Allocations: 5144)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:33:05 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 746)
+
+
+Started GET "/login" for ::1 at 2021-04-08 18:33:05 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 2.1ms | Allocations: 616)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 12.5ms | Allocations: 4738)
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.0ms | Allocations: 5140)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:37:04 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 744)
+
+
+Started GET "/login" for ::1 at 2021-04-08 18:37:04 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 3.8ms | Allocations: 616)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 17.7ms | Allocations: 4738)
+Completed 200 OK in 19ms (Views: 18.3ms | ActiveRecord: 0.0ms | Allocations: 5142)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:37:05 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 746)
+
+
+Started GET "/login" for ::1 at 2021-04-08 18:37:05 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 3.9ms | Allocations: 616)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 17.3ms | Allocations: 4737)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.0ms | Allocations: 5142)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:41:34 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 2.1ms | Allocations: 2435)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 8.5ms | Allocations: 6599)
+Completed 200 OK in 16ms (Views: 10.3ms | ActiveRecord: 0.7ms | Allocations: 11798)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:41:43 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"kraewind@gmail.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1068)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:9:in `create'
+Started GET "/login" for ::1 at 2021-04-08 18:42:13 -0400
+Processing by SessionsController#new as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/sessions_controller.rb:4:in `new'
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 1.7ms | Allocations: 677)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 7.6ms | Allocations: 4757)
+Completed 200 OK in 18ms (Views: 8.1ms | ActiveRecord: 0.7ms | Allocations: 14660)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:42:16 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"kraewind@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kraewind@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 2.9ms | Allocations: 2060)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 13.6ms | Allocations: 6066)
+Completed 200 OK in 76449ms (Views: 14.1ms | ActiveRecord: 0.4ms | Allocations: 44483)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:43:40 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+Completed 500 Internal Server Error in 3ms (Allocations: 3279)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:9:in `create'
+Started GET "/login" for ::1 at 2021-04-08 18:44:14 -0400
+Processing by SessionsController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/sessions_controller.rb:4:in `new'
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 3.7ms | Allocations: 677)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 9.2ms | Allocations: 4799)
+Completed 200 OK in 34ms (Views: 10.2ms | ActiveRecord: 2.3ms | Allocations: 12448)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:44:15 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 3.8ms | Allocations: 2140)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 20.0ms | Allocations: 6146)
+Completed 200 OK in 26ms (Views: 21.0ms | ActiveRecord: 0.4ms | Allocations: 7196)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:44:17 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1071)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:9:in `create'
+Started GET "/login" for ::1 at 2021-04-08 18:45:27 -0400
+Processing by SessionsController#new as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/sessions_controller.rb:4:in `new'
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 1.6ms | Allocations: 677)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 7.3ms | Allocations: 4757)
+Completed 200 OK in 17ms (Views: 7.8ms | ActiveRecord: 0.7ms | Allocations: 14664)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:45:29 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ (byebug):1:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 3.0ms | Allocations: 2060)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 14.1ms | Allocations: 6066)
+Completed 200 OK in 12563ms (Views: 14.8ms | ActiveRecord: 0.4ms | Allocations: 44906)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:45:52 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+Completed 500 Internal Server Error in 15892ms (ActiveRecord: 0.0ms | Allocations: 39780)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:9:in `create'
+Started GET "/login" for ::1 at 2021-04-08 18:46:18 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 2.6ms | Allocations: 615)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 12.6ms | Allocations: 4737)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.0ms | Allocations: 5142)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:46:20 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 1.8ms | Allocations: 2060)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 9.0ms | Allocations: 6067)
+Completed 200 OK in 8474ms (Views: 9.4ms | ActiveRecord: 0.2ms | Allocations: 44127)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:46:32 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+Completed 500 Internal Server Error in 25598ms (ActiveRecord: 0.0ms | Allocations: 38276)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:9:in `create'
+Started GET "/login" for ::1 at 2021-04-08 18:47:00 -0400
+Processing by SessionsController#new as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/sessions_controller.rb:4:in `new'
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 1.7ms | Allocations: 677)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 7.3ms | Allocations: 4757)
+Completed 200 OK in 16ms (Views: 7.9ms | ActiveRecord: 0.6ms | Allocations: 14657)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:47:05 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 1.5ms | Allocations: 672)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 8.1ms | Allocations: 4737)
+Completed 200 OK in 20ms (Views: 8.6ms | ActiveRecord: 0.9ms | Allocations: 15303)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:47:06 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 3.5ms | Allocations: 610)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 19.9ms | Allocations: 4729)
+Completed 200 OK in 25ms (Views: 20.9ms | ActiveRecord: 0.4ms | Allocations: 5605)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:47:07 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 3.6ms | Allocations: 610)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 19.9ms | Allocations: 4729)
+Completed 200 OK in 24ms (Views: 20.7ms | ActiveRecord: 0.2ms | Allocations: 5605)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:47:07 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 4.2ms | Allocations: 610)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 21.3ms | Allocations: 4729)
+Completed 200 OK in 25ms (Views: 22.0ms | ActiveRecord: 0.2ms | Allocations: 5607)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:47:07 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 3.5ms | Allocations: 610)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 20.3ms | Allocations: 4729)
+Completed 200 OK in 24ms (Views: 21.0ms | ActiveRecord: 0.3ms | Allocations: 5605)
+
+
+Started POST "/login" for ::1 at 2021-04-08 18:47:07 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 3.5ms | Allocations: 610)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 36.6ms | Allocations: 4729)
+Completed 200 OK in 40ms (Views: 37.3ms | ActiveRecord: 0.3ms | Allocations: 5607)
+
+
+Started POST "/login" for ::1 at 2021-04-08 19:11:35 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 4.5ms | Allocations: 2424)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 17.9ms | Allocations: 6589)
+Completed 200 OK in 26ms (Views: 19.9ms | ActiveRecord: 0.8ms | Allocations: 11329)
+
+
+Started POST "/login" for ::1 at 2021-04-08 19:11:36 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 1066)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:9:in `create'
+Started GET "/login" for ::1 at 2021-04-08 19:12:56 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 3.6ms | Allocations: 675)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 14.7ms | Allocations: 4797)
+Completed 200 OK in 35ms (Views: 15.6ms | ActiveRecord: 0.0ms | Allocations: 10687)
+
+
+Started POST "/login" for ::1 at 2021-04-08 19:13:23 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 3.2ms | Allocations: 2140)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 19.4ms | Allocations: 6146)
+Completed 200 OK in 23ms (Views: 20.1ms | ActiveRecord: 0.3ms | Allocations: 7003)
+
+
+Started POST "/login" for ::1 at 2021-04-08 19:14:13 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+Completed 500 Internal Server Error in 17ms (Allocations: 3270)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:9:in `create'
+Started GET "/login" for ::1 at 2021-04-08 19:14:16 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/sessions/new.html.erb:13
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 27.3ms | Allocations: 8161)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 35.8ms | Allocations: 12441)
+Completed 200 OK in 41ms (Views: 38.3ms | ActiveRecord: 3.0ms | Allocations: 13300)
+
+
+Started POST "/login" for ::1 at 2021-04-08 19:14:17 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 3.6ms | Allocations: 640)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 19.3ms | Allocations: 4759)
+Completed 200 OK in 25ms (Views: 20.5ms | ActiveRecord: 0.5ms | Allocations: 5804)
+
+
+Started POST "/login" for ::1 at 2021-04-08 19:14:18 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 5.5ms | Allocations: 633)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 23.1ms | Allocations: 4752)
+Completed 200 OK in 27ms (Views: 24.0ms | ActiveRecord: 0.3ms | Allocations: 5613)
+
+
+Started POST "/login" for ::1 at 2021-04-08 19:14:18 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 3.4ms | Allocations: 633)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 45.8ms | Allocations: 4754)
+Completed 200 OK in 51ms (Views: 46.5ms | ActiveRecord: 0.4ms | Allocations: 5612)
+
+
+Started POST "/login" for ::1 at 2021-04-08 19:14:19 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 3.3ms | Allocations: 633)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 22.9ms | Allocations: 4752)
+Completed 200 OK in 27ms (Views: 23.7ms | ActiveRecord: 0.3ms | Allocations: 5605)
+
+
+Started GET "/login" for ::1 at 2021-04-08 19:14:28 -0400
+Processing by SessionsController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/sessions_controller.rb:4:in `new'
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 1.8ms | Allocations: 698)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 8.5ms | Allocations: 4777)
+Completed 200 OK in 21ms (Views: 9.1ms | ActiveRecord: 0.9ms | Allocations: 14678)
+
+
+Started POST "/login" for ::1 at 2021-04-08 19:14:31 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 4.2ms | Allocations: 633)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 19.8ms | Allocations: 4752)
+Completed 200 OK in 25ms (Views: 20.7ms | ActiveRecord: 0.4ms | Allocations: 5798)
+
+
+Started POST "/login" for ::1 at 2021-04-08 19:14:32 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 4.0ms | Allocations: 633)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 21.2ms | Allocations: 4752)
+Completed 200 OK in 25ms (Views: 21.9ms | ActiveRecord: 0.2ms | Allocations: 5609)
+
+
+Started POST "/login" for ::1 at 2021-04-08 19:14:32 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 3.5ms | Allocations: 633)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 19.7ms | Allocations: 4752)
+Completed 200 OK in 24ms (Views: 20.5ms | ActiveRecord: 0.3ms | Allocations: 5607)
+
+
+Started POST "/login" for ::1 at 2021-04-08 19:14:32 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 4.3ms | Allocations: 633)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 22.2ms | Allocations: 4752)
+Completed 200 OK in 26ms (Views: 23.0ms | ActiveRecord: 0.2ms | Allocations: 5602)
+
+
+Started POST "/login" for ::1 at 2021-04-08 19:14:33 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 3.5ms | Allocations: 633)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 18.9ms | Allocations: 4752)
+Completed 200 OK in 23ms (Views: 19.8ms | ActiveRecord: 0.3ms | Allocations: 5605)
+
+
+Started POST "/login" for ::1 at 2021-04-08 19:14:33 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 3.6ms | Allocations: 633)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 19.1ms | Allocations: 4752)
+Completed 200 OK in 23ms (Views: 19.8ms | ActiveRecord: 0.3ms | Allocations: 5605)
+
+
