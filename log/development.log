@@ -33696,3 +33696,478 @@ Processing by ShowsController#show as HTML
 Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 0.3ms | Allocations: 7175)
 
 
+Started POST "/comments" for ::1 at 2021-04-08 14:06:54 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"content"=>"", "show_id"=>"1"}, "commit"=>"create"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mComment Create (1.7ms)[0m  [1m[32mINSERT INTO "comments" ("show_id", "content", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["show_id", 1], ["content", ""], ["created_at", "2021-04-08 18:06:54.999708"], ["updated_at", "2021-04-08 18:06:54.999708"], ["user_id", 1]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:8:in `create'
+Redirected to http://localhost:3000/shows/1
+Completed 302 Found in 21ms (ActiveRecord: 4.8ms | Allocations: 4312)
+
+
+Started GET "/shows/1" for ::1 at 2021-04-08 14:06:55 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:22:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shows/show.html.erb within layouts/application
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."show_id" = ? ORDER BY "characters"."name" ASC[0m  [["show_id", 1]]
+  ↳ app/views/shows/show.html.erb:9
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."show_id" = ?[0m  [["show_id", 1]]
+  ↳ app/views/shows/show.html.erb:33
+  Rendered shows/show.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1989)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 6167)
+Completed 200 OK in 17ms (Views: 14.8ms | ActiveRecord: 0.5ms | Allocations: 7177)
+
+
+Started POST "/comments" for ::1 at 2021-04-08 14:06:55 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"content"=>"", "show_id"=>"1"}, "commit"=>"create"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mComment Create (0.8ms)[0m  [1m[32mINSERT INTO "comments" ("show_id", "content", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["show_id", 1], ["content", ""], ["created_at", "2021-04-08 18:06:55.804719"], ["updated_at", "2021-04-08 18:06:55.804719"], ["user_id", 1]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:8:in `create'
+Redirected to http://localhost:3000/shows/1
+Completed 302 Found in 19ms (ActiveRecord: 3.8ms | Allocations: 4300)
+
+
+Started GET "/shows/1" for ::1 at 2021-04-08 14:06:55 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:22:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shows/show.html.erb within layouts/application
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."show_id" = ? ORDER BY "characters"."name" ASC[0m  [["show_id", 1]]
+  ↳ app/views/shows/show.html.erb:9
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."show_id" = ?[0m  [["show_id", 1]]
+  ↳ app/views/shows/show.html.erb:33
+  Rendered shows/show.html.erb within layouts/application (Duration: 5.2ms | Allocations: 2004)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 6180)
+Completed 200 OK in 18ms (Views: 15.0ms | ActiveRecord: 0.5ms | Allocations: 7194)
+
+
+Started POST "/comments" for ::1 at 2021-04-08 14:06:56 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"content"=>"", "show_id"=>"1"}, "commit"=>"create"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mComment Create (0.8ms)[0m  [1m[32mINSERT INTO "comments" ("show_id", "content", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["show_id", 1], ["content", ""], ["created_at", "2021-04-08 18:06:56.355821"], ["updated_at", "2021-04-08 18:06:56.355821"], ["user_id", 1]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:8:in `create'
+Redirected to http://localhost:3000/shows/1
+Completed 302 Found in 19ms (ActiveRecord: 4.6ms | Allocations: 4302)
+
+
+Started GET "/shows/1" for ::1 at 2021-04-08 14:06:56 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:22:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shows/show.html.erb within layouts/application
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."show_id" = ? ORDER BY "characters"."name" ASC[0m  [["show_id", 1]]
+  ↳ app/views/shows/show.html.erb:9
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."show_id" = ?[0m  [["show_id", 1]]
+  ↳ app/views/shows/show.html.erb:33
+  Rendered shows/show.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2020)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 6197)
+Completed 200 OK in 19ms (Views: 15.8ms | ActiveRecord: 0.5ms | Allocations: 7217)
+
+
+Started POST "/comments" for ::1 at 2021-04-08 14:06:56 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"content"=>"", "show_id"=>"1"}, "commit"=>"create"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mComment Create (0.9ms)[0m  [1m[32mINSERT INTO "comments" ("show_id", "content", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["show_id", 1], ["content", ""], ["created_at", "2021-04-08 18:06:56.716636"], ["updated_at", "2021-04-08 18:06:56.716636"], ["user_id", 1]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:8:in `create'
+Redirected to http://localhost:3000/shows/1
+Completed 302 Found in 19ms (ActiveRecord: 4.0ms | Allocations: 4294)
+
+
+Started GET "/shows/1" for ::1 at 2021-04-08 14:06:56 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:22:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shows/show.html.erb within layouts/application
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."show_id" = ? ORDER BY "characters"."name" ASC[0m  [["show_id", 1]]
+  ↳ app/views/shows/show.html.erb:9
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."show_id" = ?[0m  [["show_id", 1]]
+  ↳ app/views/shows/show.html.erb:33
+  Rendered shows/show.html.erb within layouts/application (Duration: 5.1ms | Allocations: 2036)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 6212)
+Completed 200 OK in 18ms (Views: 15.5ms | ActiveRecord: 0.5ms | Allocations: 7219)
+
+
+Started POST "/comments" for ::1 at 2021-04-08 14:06:57 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"content"=>"", "show_id"=>"1"}, "commit"=>"create"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mComment Create (0.8ms)[0m  [1m[32mINSERT INTO "comments" ("show_id", "content", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["show_id", 1], ["content", ""], ["created_at", "2021-04-08 18:06:57.221604"], ["updated_at", "2021-04-08 18:06:57.221604"], ["user_id", 1]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:8:in `create'
+Redirected to http://localhost:3000/shows/1
+Completed 302 Found in 30ms (ActiveRecord: 3.8ms | Allocations: 4291)
+
+
+Started GET "/shows/1" for ::1 at 2021-04-08 14:06:57 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:22:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shows/show.html.erb within layouts/application
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."show_id" = ? ORDER BY "characters"."name" ASC[0m  [["show_id", 1]]
+  ↳ app/views/shows/show.html.erb:9
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."show_id" = ?[0m  [["show_id", 1]]
+  ↳ app/views/shows/show.html.erb:33
+  Rendered shows/show.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2052)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 6229)
+Completed 200 OK in 17ms (Views: 14.3ms | ActiveRecord: 0.4ms | Allocations: 7243)
+
+
+Started POST "/comments" for ::1 at 2021-04-08 14:06:57 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"content"=>"", "show_id"=>"1"}, "commit"=>"create"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mComment Create (0.9ms)[0m  [1m[32mINSERT INTO "comments" ("show_id", "content", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["show_id", 1], ["content", ""], ["created_at", "2021-04-08 18:06:57.567808"], ["updated_at", "2021-04-08 18:06:57.567808"], ["user_id", 1]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:8:in `create'
+Redirected to http://localhost:3000/shows/1
+Completed 302 Found in 20ms (ActiveRecord: 3.6ms | Allocations: 4294)
+
+
+Started GET "/shows/1" for ::1 at 2021-04-08 14:06:57 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:22:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shows/show.html.erb within layouts/application
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."show_id" = ? ORDER BY "characters"."name" ASC[0m  [["show_id", 1]]
+  ↳ app/views/shows/show.html.erb:9
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."show_id" = ?[0m  [["show_id", 1]]
+  ↳ app/views/shows/show.html.erb:33
+  Rendered shows/show.html.erb within layouts/application (Duration: 5.6ms | Allocations: 2068)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 6244)
+Completed 200 OK in 19ms (Views: 16.6ms | ActiveRecord: 0.5ms | Allocations: 7258)
+
+
+Started POST "/comments" for ::1 at 2021-04-08 14:06:57 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"content"=>"", "show_id"=>"1"}, "commit"=>"create"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mComment Create (0.9ms)[0m  [1m[32mINSERT INTO "comments" ("show_id", "content", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["show_id", 1], ["content", ""], ["created_at", "2021-04-08 18:06:57.950413"], ["updated_at", "2021-04-08 18:06:57.950413"], ["user_id", 1]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:8:in `create'
+Redirected to http://localhost:3000/shows/1
+Completed 302 Found in 20ms (ActiveRecord: 4.7ms | Allocations: 4293)
+
+
+Started GET "/shows/1" for ::1 at 2021-04-08 14:06:57 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:22:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shows/show.html.erb within layouts/application
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."show_id" = ? ORDER BY "characters"."name" ASC[0m  [["show_id", 1]]
+  ↳ app/views/shows/show.html.erb:9
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."show_id" = ?[0m  [["show_id", 1]]
+  ↳ app/views/shows/show.html.erb:33
+  Rendered shows/show.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2084)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 6260)
+Completed 200 OK in 20ms (Views: 17.1ms | ActiveRecord: 0.5ms | Allocations: 7277)
+
+
+Started GET "/shows/1" for ::1 at 2021-04-08 14:07:33 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/shows_controller.rb:22:in `show'
+  [1m[36mShow Load (0.1ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:22:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shows/show.html.erb within layouts/application
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."show_id" = ? ORDER BY "characters"."name" ASC[0m  [["show_id", 1]]
+  ↳ app/views/shows/show.html.erb:9
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."show_id" = ?[0m  [["show_id", 1]]
+  ↳ app/views/shows/show.html.erb:33
+  Rendered shows/show.html.erb within layouts/application (Duration: 15.5ms | Allocations: 15291)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | Allocations: 22683)
+Completed 200 OK in 46ms (Views: 25.0ms | ActiveRecord: 2.0ms | Allocations: 32927)
+
+
+Started POST "/comments" for ::1 at 2021-04-08 14:07:34 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"content"=>"", "show_id"=>"1"}, "commit"=>"create"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mShow Load (0.1ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:8:in `create'
+Redirected to http://localhost:3000/shows/1
+Completed 302 Found in 56ms (ActiveRecord: 1.4ms | Allocations: 13423)
+
+
+Started GET "/shows/1" for ::1 at 2021-04-08 14:07:35 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShow Load (0.1ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:22:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shows/show.html.erb within layouts/application
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."show_id" = ? ORDER BY "characters"."name" ASC[0m  [["show_id", 1]]
+  ↳ app/views/shows/show.html.erb:9
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."show_id" = ?[0m  [["show_id", 1]]
+  ↳ app/views/shows/show.html.erb:33
+  Rendered shows/show.html.erb within layouts/application (Duration: 6.0ms | Allocations: 2084)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.4ms | Allocations: 6260)
+Completed 200 OK in 30ms (Views: 26.5ms | ActiveRecord: 0.4ms | Allocations: 7272)
+
+
+Started POST "/comments" for ::1 at 2021-04-08 14:07:35 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"content"=>"", "show_id"=>"1"}, "commit"=>"create"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:8:in `create'
+Redirected to http://localhost:3000/shows/1
+Completed 302 Found in 15ms (ActiveRecord: 0.9ms | Allocations: 4165)
+
+
+Started GET "/shows/1" for ::1 at 2021-04-08 14:07:35 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:22:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shows/show.html.erb within layouts/application
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."show_id" = ? ORDER BY "characters"."name" ASC[0m  [["show_id", 1]]
+  ↳ app/views/shows/show.html.erb:9
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."show_id" = ?[0m  [["show_id", 1]]
+  ↳ app/views/shows/show.html.erb:33
+  Rendered shows/show.html.erb within layouts/application (Duration: 8.6ms | Allocations: 2084)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | Allocations: 6261)
+Completed 200 OK in 26ms (Views: 22.1ms | ActiveRecord: 0.7ms | Allocations: 7277)
+
+
+Started POST "/comments" for ::1 at 2021-04-08 14:07:35 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"content"=>"", "show_id"=>"1"}, "commit"=>"create"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mShow Load (0.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:8:in `create'
+Redirected to http://localhost:3000/shows/1
+Completed 302 Found in 15ms (ActiveRecord: 1.0ms | Allocations: 4167)
+
+
+Started GET "/shows/1" for ::1 at 2021-04-08 14:07:36 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:22:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shows/show.html.erb within layouts/application
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."show_id" = ? ORDER BY "characters"."name" ASC[0m  [["show_id", 1]]
+  ↳ app/views/shows/show.html.erb:9
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."show_id" = ?[0m  [["show_id", 1]]
+  ↳ app/views/shows/show.html.erb:33
+  Rendered shows/show.html.erb within layouts/application (Duration: 6.4ms | Allocations: 2084)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 6260)
+Completed 200 OK in 20ms (Views: 17.3ms | ActiveRecord: 0.5ms | Allocations: 7279)
+
+
+Started POST "/comments" for ::1 at 2021-04-08 14:07:36 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"content"=>"", "show_id"=>"1"}, "commit"=>"create"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:8:in `create'
+Redirected to http://localhost:3000/shows/1
+Completed 302 Found in 16ms (ActiveRecord: 0.9ms | Allocations: 4165)
+
+
+Started GET "/shows/1" for ::1 at 2021-04-08 14:07:36 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:22:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shows/show.html.erb within layouts/application
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."show_id" = ? ORDER BY "characters"."name" ASC[0m  [["show_id", 1]]
+  ↳ app/views/shows/show.html.erb:9
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."show_id" = ?[0m  [["show_id", 1]]
+  ↳ app/views/shows/show.html.erb:33
+  Rendered shows/show.html.erb within layouts/application (Duration: 5.4ms | Allocations: 2084)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 6260)
+Completed 200 OK in 19ms (Views: 16.5ms | ActiveRecord: 0.5ms | Allocations: 7272)
+
+
+Started POST "/comments" for ::1 at 2021-04-08 14:07:36 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"content"=>"", "show_id"=>"1"}, "commit"=>"create"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mShow Load (0.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:8:in `create'
+Redirected to http://localhost:3000/shows/1
+Completed 302 Found in 15ms (ActiveRecord: 1.0ms | Allocations: 4164)
+
+
+Started GET "/shows/1" for ::1 at 2021-04-08 14:07:36 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:22:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shows/show.html.erb within layouts/application
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."show_id" = ? ORDER BY "characters"."name" ASC[0m  [["show_id", 1]]
+  ↳ app/views/shows/show.html.erb:9
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."show_id" = ?[0m  [["show_id", 1]]
+  ↳ app/views/shows/show.html.erb:33
+  Rendered shows/show.html.erb within layouts/application (Duration: 15.5ms | Allocations: 2084)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.3ms | Allocations: 6261)
+Completed 200 OK in 28ms (Views: 25.4ms | ActiveRecord: 0.6ms | Allocations: 7271)
+
+
+Started POST "/comments" for ::1 at 2021-04-08 14:07:37 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"content"=>"", "show_id"=>"1"}, "commit"=>"create"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:8:in `create'
+Redirected to http://localhost:3000/shows/1
+Completed 302 Found in 15ms (ActiveRecord: 0.9ms | Allocations: 4167)
+
+
+Started GET "/shows/1" for ::1 at 2021-04-08 14:07:37 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:22:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering shows/show.html.erb within layouts/application
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."show_id" = ? ORDER BY "characters"."name" ASC[0m  [["show_id", 1]]
+  ↳ app/views/shows/show.html.erb:9
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."show_id" = ?[0m  [["show_id", 1]]
+  ↳ app/views/shows/show.html.erb:33
+  Rendered shows/show.html.erb within layouts/application (Duration: 5.9ms | Allocations: 2084)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 6260)
+Completed 200 OK in 20ms (Views: 17.5ms | ActiveRecord: 0.6ms | Allocations: 7276)
+
+
