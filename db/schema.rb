@@ -67,8 +67,15 @@ ActiveRecord::Schema.define(version: 2021_04_08_180352) do
     t.index ["show_id"], name: "index_characters_on_show_id"
   end
 
-# Could not dump table "comments" because of following StandardError
-#   Unknown type 'reference' for column 'user_id'
+  create_table "comments", force: :cascade do |t|
+    t.integer "show_id", null: false
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.index ["show_id"], name: "index_comments_on_show_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
 
   create_table "shows", force: :cascade do |t|
     t.string "title"

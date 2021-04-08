@@ -1,5 +1,5 @@
 class AddUserIdToCommentsTable < ActiveRecord::Migration[6.1]
   def change
-    add_column :comments, :user_id, :reference
+    add_reference :comments, :user, index: true
   end
 end
