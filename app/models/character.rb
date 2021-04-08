@@ -5,6 +5,7 @@ class Character < ApplicationRecord
 
   validates :name,  presence: true
   validates :bio, presence: true
+  accepts_nested_attributes_for :show
 
 
   def show_attributes=(show)

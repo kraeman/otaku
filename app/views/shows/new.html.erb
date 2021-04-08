@@ -15,26 +15,7 @@
             <%= f.number_field :rating, class: "form-input" %>
         </div>
         <br>
-    <h2>Optionally create a Character for this show!</h2>
-    <br>
-        <%= f.fields_for :characters do |c| %>
-            <%= c.label :name %>
-            <%= c.text_field :name %><br>
 
-            <%= c.label :bio %>
-            <%= c.text_field :bio %><br>
-
-            <%= c.label :actor_id, class: "form-label"  %>
-            <%= c.collection_select :actor_id, Actor.all, :id, :name, prompt: true, class: "form-label" %>
-
-            <br>
-
-           
-
-            <%= c.label "Character Photo", class: "form-label" %>
-            <%= c.file_field :avatar, class: "form-input" %>
-
-        <% end %>
  <br>
 
         <h2><%= f.submit :create%></h2>

@@ -4,7 +4,7 @@ class Show < ApplicationRecord
     has_many :characters
     has_many :viewings
     has_many :users, through: :viewings
-    accepts_nested_attributes_for :characters
+    
 
     validates :title, presence: true, uniqueness: true
     #validates air time as a length of time

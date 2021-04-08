@@ -1,34 +1,24 @@
 class CharactersController < ApplicationController
     def index
         if params[:show_id]
-            @characters = Show.find(params[:show_id].characters)
+            @characters = Show.find(params[:show_id]).characters
         else
             @characters = Character.all
         end
     end
     
     def new
-        if params[:show_id] && @show = Show.find(params[:show_id])
-            @character = Character.new(show_id: params[:show_id])
-        else
-            @character = Character.new
-        end
-        # byebug
+        @character = Character.new
     end
     
     def create
-        @character = Character.create(character_params)
-        # byebug
-       
-        #   session[:character_id] = @character.id
-        if params[:show_id] && @character.show_id == params[:show_id].to_i && @character.id
-            redirect_to show_character_path(params[:show_id], @character.id)
-        elsif @character.id
+       if @character = Character.create(character_params)
             redirect_to @character
-            
-        else
-          render :new
-        end
+       else
+            render :new 
+       end
+
+        
     end
     
     def show

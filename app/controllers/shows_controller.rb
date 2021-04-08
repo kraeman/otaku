@@ -1,7 +1,6 @@
 class ShowsController < ApplicationController
     def new
         @show = Show.new
-        @show.characters.build
     end
 
     def index
@@ -15,7 +14,6 @@ class ShowsController < ApplicationController
           session[:show_id] = @show.id
           redirect_to @show
         else
-            @show.characters.build
             render :new
         end
     end
@@ -45,11 +43,6 @@ class ShowsController < ApplicationController
     private
     
     def show_params
-        params.require(:show).permit(:title, :air_time, :rating, characters_attributes: [
-            :name,
-            :bio,
-            :actor_id,
-            :avatar
-          ])
+        params.require(:show).permit(:title, :air_time, :rating)
     end
 end
