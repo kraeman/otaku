@@ -19,11 +19,10 @@ class CharactersController < ApplicationController
     def create
         @character = Character.create(character_params)
         # byebug
-        if params[:show_id]
+       
         #   session[:character_id] = @character.id
-            if @character.show_id == params[:show_id].to_i && @character.id
-                redirect_to show_character_path(params[:show_id], @character.id)
-            end
+        if params[:show_id] && @character.show_id == params[:show_id].to_i && @character.id
+            redirect_to show_character_path(params[:show_id], @character.id)
         elsif @character.id
             redirect_to @character
             
