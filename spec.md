@@ -32,10 +32,11 @@ Specs:
     - URL shows/3/characters/1
 - [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
     - shows/1/characters/new
-- [ ] Include form display of validation errors (form URL e.g. /recipes/new)
+- [X] Include form display of validation errors (form URL e.g. /recipes/new)
+    - Yes, for every form!
 
 Confirm:
-- [ ] The application is pretty DRY
-- [ ] Limited logic in controllers
-- [ ] Views use helper methods if appropriate
-- [ ] Views use partials if appropriate
+- [x] The application is pretty DRY
+- [x] Limited logic in controllers
+- [x] Views use helper methods if appropriate
+- [x] Views use partials if appropriate
