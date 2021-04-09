@@ -18,22 +18,33 @@ class CharactersController < ApplicationController
     end
     
     def create
-        # byebug
-        if params[:show_id] && params[:show_id] != params[:character][:show_id]
-            redirect_to new_show_character_path(Show.find(params[:show_id]))
-        else
-                if character_params[:show_id] || (nested_character_params[:show_attributes][:title] != nil && nested_character_params[:show_attributes][:air_time] != nil && nested_character_params[:show_attributes][:rating] != nil)
+        if !character_params[:show_attributes]
+            if character_params[:name] != "" && character_params[:bio] != "" && character_params[:actor_id] != ""
+                if params[:show_id] != character_params[:show_id]
+                    redirect_to new_show_character_path(Show.find(params[:show_id]))
+                else
+                    @character = Character.create(character_params)
+                    redirect_to @character
+                end
+            else
+                @character = Character.create(character_params)
+                render :new
+            end
+        else             
+                if character_params[:name] != "" && character_params[:bio] != "" && character_params[:actor_id] != "" && (character_params[:show_id] != "" || (character_params[:show_attributes][:title] != "" && character_params[:show_attributes][:rating] != "" && character_params[:show_attributes][:air_time] != ""))
                     if character_params[:show_id] != ""
-                        @character = Character.create(character_params)
+                        @character = Character.create(name: character_params[:name], bio: character_params[:bio], show_id: character_params[:show_id], actor_id: character_params[:actor_id])
                         redirect_to @character
                     else
-                        @character = Character.create(nested_character_params)
+                        @character = Character.create(character_params)
                         redirect_to @character
                     end
-            else
-                    redirect_to :new 
-            end
-        end
+                else
+                 @character = Character.create(character_params)
+                 render :new
+                end  
+        end     
+    
     end
     
     def show
@@ -61,11 +72,11 @@ class CharactersController < ApplicationController
     
     private
     
-    def nested_character_params
-        params.require(:character).permit(:name, :bio, :actor_id, :avatar, show_attributes: [:title, :rating, :air_time])
+    def character_params
+        params.require(:character).permit(:name, :bio, :show_id, :actor_id, :avatar, show_attributes: [:title, :rating, :air_time])
     end
 
-    def character_params
-        params.require(:character).permit(:name, :bio, :show_id, :actor_id, :avatar)
-    end
+    # def character_params
+    #     params.require(:character).permit(:name, :bio, , :actor_id, :avatar)
+    # end
 end

@@ -1,4 +1,9 @@
 <h1>Create a Viewing</h1>
+<% if @viewing.errors.any? %> 
+    <% @viewing.errors.each do |error| %>
+        <li><%=error.full_message%></li>
+    <% end %>
+<% end %>
 
 <div id="viewing-form" class="hide">
     <%= form_with(model: @viewing) do |f| %>
