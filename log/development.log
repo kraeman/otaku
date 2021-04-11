@@ -49818,3 +49818,47 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 146ms (Views: 103.3ms | ActiveRecord: 0.4ms | Allocations: 35161)
 
 
+Started POST "/auth/google_oauth2" for ::1 at 2021-04-11 17:02:54 -0400
+Started GET "/auth/google_oauth2/callback?state=32bab7205188f61a33de19095190e047442900ff8696d830&code=4%2F0AY0e-g6AR9ZKy0oGFHyYaAPIQ9GMzae67150hqU9-jW6exe8ByBGtjlijMC3Py3KAItp0A&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&authuser=0&prompt=none" for ::1 at 2021-04-11 17:02:54 -0400
+Processing by SessionsController#omniauth as HTML
+  Parameters: {"state"=>"32bab7205188f61a33de19095190e047442900ff8696d830", "code"=>"4/0AY0e-g6AR9ZKy0oGFHyYaAPIQ9GMzae67150hqU9-jW6exe8ByBGtjlijMC3Py3KAItp0A", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email openid https://www.googleapis.com/auth/userinfo.profile", "authuser"=>"0", "prompt"=>"none", "provider"=>"google_oauth2"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/sessions_controller.rb:27:in `omniauth'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "117860689234137033262"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:27:in `omniauth'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 22ms (ActiveRecord: 1.6ms | Allocations: 1625)
+
+
+Started GET "/users/1" for ::1 at 2021-04-11 17:02:54 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mShow Load (0.5ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "viewings" ON "shows"."id" = "viewings"."show_id" WHERE "viewings"."user_id" = ? ORDER BY "shows"."title" ASC[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:16:in `uniq'
+  [1m[36mViewing Load (0.1ms)[0m  [1m[34mSELECT "viewings".* FROM "viewings" WHERE "viewings"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:23
+  [1m[36mShow Load (0.1ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = ? ORDER BY "shows"."title" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:25
+  Rendered users/show.html.erb within layouts/application (Duration: 95.6ms | Allocations: 27231)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 135.0ms | Allocations: 35622)
+Completed 200 OK in 140ms (Views: 135.8ms | ActiveRecord: 1.8ms | Allocations: 37273)
+
+
+Started GET "/users/1/edit" for ::1 at 2021-04-11 17:02:56 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 23.8ms | Allocations: 2314)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 32.4ms | Allocations: 10417)
+Completed 200 OK in 36ms (Views: 32.9ms | ActiveRecord: 0.2ms | Allocations: 11386)
+
+
