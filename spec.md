@@ -9,7 +9,7 @@ Specs:
     - Comments belong to User
 - [x] Include at least two has_many through relationships (x has_many y through z; e.g. Recipe has_many Items through Ingredients)
     - User has many shows through viewings
-    - Actor has many shows through actors_shows
+    - Actor has many shows through actors_shows table
 - [x] Include at least one many-to-many relationship (x has_many y through z, y has_many x through z; e.g. Recipe has_many Items through Ingredients, Item has_many Recipes through Ingredients)
     - User has many shows through viewings
     - Show has many users through viewings

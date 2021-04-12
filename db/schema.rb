@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_12_222708) do
+ActiveRecord::Schema.define(version: 2021_04_12_200558) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -77,19 +77,10 @@ ActiveRecord::Schema.define(version: 2021_04_12_222708) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "ratings", force: :cascade do |t|
-    t.integer "show_id", null: false
-    t.integer "user_id", null: false
-    t.decimal "rating"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["show_id"], name: "index_ratings_on_show_id"
-    t.index ["user_id"], name: "index_ratings_on_user_id"
-  end
-
   create_table "shows", force: :cascade do |t|
     t.string "title"
     t.decimal "air_time"
+    t.decimal "rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -126,8 +117,6 @@ ActiveRecord::Schema.define(version: 2021_04_12_222708) do
   add_foreign_key "characters", "actors"
   add_foreign_key "characters", "shows"
   add_foreign_key "comments", "shows"
-  add_foreign_key "ratings", "shows"
-  add_foreign_key "ratings", "users"
   add_foreign_key "viewings", "shows"
   add_foreign_key "viewings", "users"
 end
