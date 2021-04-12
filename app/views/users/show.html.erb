@@ -24,11 +24,15 @@
 
 <h3>Your Upcoming Viewings:</h3>
 <ul>
+<% if @user.viewings.any? { |v| v.time >= Time.now } %>
   <% @user.viewings.each do |viewing| %>
     <% if viewing.time >= Time.now %>
       <li><%=link_to viewing.show.title, show_path(viewing.show)%>
       <%= link_to "#{viewing.time.strftime("%m/%d/%y: %H:%M %Z")} @ #{viewing.place}", edit_viewing_path(viewing)%></li>
     <% end %>
+  <% end %>
+  <% else %>
+  <%="You have no upcoming viewings!"%>
   <% end %>
 </ul>
 <br>

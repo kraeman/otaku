@@ -51889,3 +51889,78 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 35ms (Views: 31.2ms | ActiveRecord: 1.3ms | Allocations: 9562)
 
 
+Started GET "/users/1" for ::1 at 2021-04-12 14:27:03 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:25:in `show'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mShow Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "shows" INNER JOIN "viewings" ON "shows"."id" = "viewings"."show_id" WHERE "viewings"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[36mViewing Load (0.3ms)[0m  [1m[34mSELECT "viewings".* FROM "viewings" WHERE "viewings"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:27
+  Rendered users/show.html.erb within layouts/application (Duration: 8.3ms | Allocations: 2374)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.4ms | Allocations: 9566)
+Completed 200 OK in 40ms (Views: 29.5ms | ActiveRecord: 3.1ms | Allocations: 11719)
+
+
+Started GET "/viewings" for ::1 at 2021-04-12 14:27:08 -0400
+Processing by ViewingsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/viewings_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering viewings/index.html.erb within layouts/application
+  [1m[36mViewing Load (0.3ms)[0m  [1m[34mSELECT "viewings".* FROM "viewings" WHERE "viewings"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/viewings/index.html.erb:4
+  Rendered viewings/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 832)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.2ms | Allocations: 7706)
+Completed 200 OK in 33ms (Views: 28.2ms | ActiveRecord: 0.5ms | Allocations: 9133)
+
+
+Started GET "/viewings" for ::1 at 2021-04-12 14:27:57 -0400
+Processing by ViewingsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/viewings_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering viewings/index.html.erb within layouts/application
+  [1m[36mViewing Load (0.2ms)[0m  [1m[34mSELECT "viewings".* FROM "viewings" WHERE "viewings"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/viewings/index.html.erb:3
+  Rendered viewings/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 871)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | Allocations: 8073)
+Completed 200 OK in 42ms (Views: 31.1ms | ActiveRecord: 0.4ms | Allocations: 9718)
+
+
+Started GET "/viewings" for ::1 at 2021-04-12 14:28:04 -0400
+Processing by ViewingsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/viewings_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering viewings/index.html.erb within layouts/application
+  [1m[36mViewing Load (0.2ms)[0m  [1m[34mSELECT "viewings".* FROM "viewings" WHERE "viewings"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/viewings/index.html.erb:3
+  Rendered viewings/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 669)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.9ms | Allocations: 7535)
+Completed 200 OK in 27ms (Views: 23.5ms | ActiveRecord: 0.5ms | Allocations: 8433)
+
+
+Started GET "/viewings" for ::1 at 2021-04-12 14:28:31 -0400
+Processing by ViewingsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/viewings_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering viewings/index.html.erb within layouts/application
+  [1m[36mViewing Load (0.3ms)[0m  [1m[34mSELECT "viewings".* FROM "viewings" WHERE "viewings"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/viewings/index.html.erb:3
+  Rendered viewings/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 902)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 8104)
+Completed 200 OK in 32ms (Views: 25.6ms | ActiveRecord: 0.6ms | Allocations: 9741)
+
+
