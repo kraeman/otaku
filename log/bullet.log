@@ -1,0 +1,36 @@
+2021-04-12 13:47:06[WARN] user: kraewind
+GET /users/1
+USE eager loading detected
+  Viewing => [:show]
+  Add to your query: .includes([:show])
+Call stack
+  /Users/kraewind/Documents/Flatiron/Phase 3/otaku/app/views/users/show.html.erb:29:in `block in _app_views_users_show_html_erb__2456448377006394470_70293805432420'
+  /Users/kraewind/Documents/Flatiron/Phase 3/otaku/app/views/users/show.html.erb:27:in `_app_views_users_show_html_erb__2456448377006394470_70293805432420'
+
+2021-04-12 13:47:16[WARN] user: kraewind
+GET /viewings?
+USE eager loading detected
+  Viewing => [:show]
+  Add to your query: .includes([:show])
+Call stack
+  /Users/kraewind/Documents/Flatiron/Phase 3/otaku/app/views/viewings/index.html.erb:6:in `block in _app_views_viewings_index_html_erb___569434546450492773_70293549333660'
+  /Users/kraewind/Documents/Flatiron/Phase 3/otaku/app/views/viewings/index.html.erb:4:in `_app_views_viewings_index_html_erb___569434546450492773_70293549333660'
+
+2021-04-12 13:47:30[WARN] user: kraewind
+GET /users/1
+USE eager loading detected
+  Viewing => [:show]
+  Add to your query: .includes([:show])
+Call stack
+  /Users/kraewind/Documents/Flatiron/Phase 3/otaku/app/views/users/show.html.erb:29:in `block in _app_views_users_show_html_erb__2456448377006394470_70293805432420'
+  /Users/kraewind/Documents/Flatiron/Phase 3/otaku/app/views/users/show.html.erb:27:in `_app_views_users_show_html_erb__2456448377006394470_70293805432420'
+
+2021-04-12 14:02:42[WARN] user: kraewind
+GET /users/1
+USE eager loading detected
+  Viewing => [:show]
+  Add to your query: .includes([:show])
+Call stack
+  /Users/kraewind/Documents/Flatiron/Phase 3/otaku/app/views/users/show.html.erb:29:in `block in _app_views_users_show_html_erb__2958741497423102413_70120039876020'
+  /Users/kraewind/Documents/Flatiron/Phase 3/otaku/app/views/users/show.html.erb:27:in `_app_views_users_show_html_erb__2958741497423102413_70120039876020'
+

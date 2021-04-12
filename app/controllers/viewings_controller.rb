@@ -41,6 +41,13 @@ class ViewingsController < ApplicationController
     end
 
     def destroy
+        viewing = Viewing.find(params[:id])
+        # byebug
+        if viewing.destroy
+            redirect_to user_path(session[:user_id])
+        else
+            redirect_to back
+        end
     end
     
     private

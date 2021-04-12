@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   post '/viewings', to: 'viewings#create'
   get '/users/:id', to: 'users#show'
   get '/users/:id/edit', to: 'users#edit'
+  delete '/viewings/:id', to: 'viewings#destroy'
   
 
 

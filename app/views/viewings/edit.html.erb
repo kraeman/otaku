@@ -20,4 +20,7 @@
         <%= f.submit :update%>
     <% end %>
 
+<br><br>
+    <%=button_to "Delete Viewing", "/viewings/#{@viewing.id}", method: "delete"%>
+
 </div>
