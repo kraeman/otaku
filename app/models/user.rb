@@ -4,6 +4,7 @@ class User < ApplicationRecord
     has_many :comments
     has_many :viewings
     has_many :shows, through: :viewings
+    has_many :ratings
 
     validates :name, presence: true
     # validates :dob
