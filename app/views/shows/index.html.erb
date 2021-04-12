@@ -1,7 +1,11 @@
 <h1>All Anime</h1>
 <ul>
+<% if @shows.any? %>
 <% @shows.each do |s| %>
     <li><%= link_to s.title, show_path(s) %></li>
+<% end %>
+<% else %>
+    <%="No anime yet! Add one or check back later!"%>
 <% end %>
 </ul>
 
