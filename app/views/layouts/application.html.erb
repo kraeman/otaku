@@ -41,7 +41,7 @@
             </li>
              </div>
           <%=form_with(url: searches_path, method: 'get') do |f|%>
-            <%=f.label :search%>
+            
             <%=f.text_field :search%>
             <%=f.submit :search%>
           <% end %>

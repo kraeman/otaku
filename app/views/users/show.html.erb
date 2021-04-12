@@ -1,17 +1,17 @@
 
 
 <% if session[:user_id] %>
-  <h1><%= @user.username %></h1>
+<h1>Username: <%= @user.username %></h1>
 
-<h4><%= @user.name %></h4>
-<h4><%= @user.email %></h4>
+<h4>Name: <%= @user.name %></h4>
 <h4><%= @user.dob %></h4>
 <h4><%= @user.admin %></h4>
 <img src="<%= @user.image %>">
+<br><br>
 
 <h4><%=button_to "Edit Profile", edit_user_path(@user), method: 'get'%></h4>
 
-<h3>Anime You Have Watched:</h3>
+<h3>Your Anime:</h3>
 <ul>
   <% @user.shows.uniq.each do |show| %>
     <li><%=link_to show.title, show_path(show)%></li>
@@ -29,6 +29,7 @@
 </ul>
 <br>
   <%= button_to "Add a viewing", new_viewing_path, method: 'get' %>
+  <br>
   <%= button_to "See Past Viewings", viewings_path, method: 'get'%>
 <br>
 <% else %>
