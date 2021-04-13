@@ -41,8 +41,6 @@
 <ul>
     <% @show.comments.reverse.each do |c| %>
         <li><%=User.find_by_id(c.user_id).username%>: <%=c.content%>  <%=c.created_at.strftime("%m/%d/%y: %H:%M %Z")%></li>
-        <%if User.find(session[:user_id]).email == "kraewind@gmail.com" || User.find(session[:user_id]).id == c.user_id%>
-            <%=button_to "Delete Comment", "/comments/#{c.id}", method: "delete"%>
-        <% end %>
+        <%= delete_if_admin(c)%>
     <% end %>
 </ul>
