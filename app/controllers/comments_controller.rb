@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
     
     def create
         
-       comment = Comment.create(content: params[:comment][:content], show_id: params[:comment][:show_id], user_id: session[:user_id])
+       comment = Comment.create(comment_params)
     #    byebug
        redirect_to show_path(Show.find(comment.show_id))
     end
@@ -17,4 +17,8 @@ class CommentsController < ApplicationController
           redirect_to back
       end
   end    
+
+    def comment_params
+        params.require(:comment).permit(:content, :show_id, :user_id)
+    end
 end
