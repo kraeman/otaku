@@ -1,12 +1,14 @@
 module ApplicationHelper
     def display_error_messages_if_any(resource)
-        # byebug
-        if resource.errors.any?
-            resource.errors.each do |error|
-                # byebug
-                error.full_message
+        errors = ""
+        i = 1
+            if resource.errors.any?
+                resource.errors.each do |error|
+                    errors += " #{i}.#{error.full_message}"
+                    i += 1
+                end
+                errors.html_safe
             end
-        end
     end
 
     def delete_if_admin(resource)
