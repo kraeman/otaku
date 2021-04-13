@@ -8,6 +8,7 @@ module SearchesHelper
              else 
                 content_tag(li: (link_to r.name, actor_path(r)))
              end 
-         end 
+         end
+         return nil 
     end
 end

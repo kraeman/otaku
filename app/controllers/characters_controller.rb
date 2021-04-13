@@ -27,7 +27,7 @@ class CharactersController < ApplicationController
                     redirect_to @character
                 end
             else
-                @character = Character.create(character_params)
+                # @character = Character.create(character_params)
                 render :new
             end
         else             
@@ -40,7 +40,7 @@ class CharactersController < ApplicationController
                         redirect_to @character
                     end
                 else
-                 @character = Character.create(character_params)
+                #  @character = Character.create(character_params)
                  render :new
                 end  
         end     
