@@ -5,6 +5,7 @@ class Actor < ApplicationRecord
 
     validates :name, presence: true
     validate :date_in_future
+    validates :dob, presence: true
     default_scope { order(name: :asc) }
     scope :search_by_name, -> (name) {where("name LIKE ?", "#{name}%")}
 private
