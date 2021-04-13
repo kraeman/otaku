@@ -1,12 +1,7 @@
 <h1>Edit an Actor</h1>
-
 <br>
 <ul>
-<% if @actor.errors.any? %> 
-    <% @actor.errors.each do |error| %>
-        <li><%=error.full_message%></li>
-    <% end %>
-<% end %>
+<%=display_error_messages_if_any(@actor)%>
 </ul>
 <br>
 

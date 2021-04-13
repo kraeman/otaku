@@ -1,11 +1,7 @@
 <h1>Edit a Character</h1>
 <br>
 <ul>
-<% if @character.errors.any? %> 
-    <% @character.errors.each do |error| %>
-        <li><%=error.full_message%></li>
-    <% end %>
-<% end %>
+<%=display_error_messages_if_any(@character)%>
 </ul>
 <br>
 <div id="character-form" class="hide">

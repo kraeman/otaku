@@ -2,10 +2,7 @@
 
 <br>
 <ul>
-<% if !@user %> 
-        <%="Login Error"%>
-    
-<% end %>
+<%= user_error_show?(@user)%>
 </ul>
 <br>
 

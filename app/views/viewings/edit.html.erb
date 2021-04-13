@@ -1,10 +1,6 @@
 <h1>Edit a Viewing</h1>
 
-<% if @viewing.errors.any? %> 
-    <% @viewing.errors.each do |error| %>
-        <li><%=error.full_message%></li>
-    <% end %>
-<% end %>
+<%=display_error_messages_if_any(@viewing)%>
 
 
 <div id="viewing-form" class="hide">

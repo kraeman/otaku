@@ -1,11 +1,7 @@
 <h1>Signup</h1>
 <br>
 <ul>
-<% if @user.errors.any? %> 
-    <% @user.errors.each do |error| %>
-        <li><%=error.full_message%></li>
-    <% end %>
-<% end %>
+<%=display_error_messages_if_any(@user)%>
 
 </ul>
 <br>

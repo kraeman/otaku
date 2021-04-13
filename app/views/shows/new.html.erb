@@ -1,11 +1,7 @@
 <h1>Create A Show</h1>
 <br>
 <ul>
-<% if @show.errors.any? %> 
-    <% @show.errors.each do |error| %>
-        <li><%=error.full_message%></li>
-    <% end %>
-<% end %>
+<%=display_error_messages_if_any(@show)%>
 </ul>
 <br>
 <div id="show-form" class="hide">
