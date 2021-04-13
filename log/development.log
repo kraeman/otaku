@@ -53177,3 +53177,94 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 20ms (Views: 17.9ms | ActiveRecord: 0.6ms | Allocations: 9567)
 
 
+Started GET "/actors" for ::1 at 2021-04-12 20:37:29 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ActorsController#index as HTML
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms | Allocations: 5384)
+
+
+
+SyntaxError - syntax error, unexpected tCONSTANT, expecting do or '{' or '('
+...  errors.add(:dob, “Actor DOB can not be in the future!”)
+...                            ^~~
+/Users/kraewind/Documents/Flatiron/Phase 3/otaku/app/models/actor.rb:14: syntax error, unexpected tIDENTIFIER, expecting '('
+...d(:dob, “Actor DOB can not be in the future!”)
+...                             ^~
+/Users/kraewind/Documents/Flatiron/Phase 3/otaku/app/models/actor.rb:14: syntax error, unexpected ')', expecting end
+...B can not be in the future!”)
+...                              ^:
+  app/models/actor.rb:14:in `'
+  app/controllers/actors_controller.rb:7:in `index'
+
+Started POST "/__better_errors/d919acdd9d48a8e2/variables" for ::1 at 2021-04-12 20:37:29 -0400
+Started GET "/actors" for ::1 at 2021-04-12 20:37:50 -0400
+Processing by ActorsController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/models/actor.rb:8:in `block in <class:Actor>'
+  Rendering layout layouts/application.html.erb
+  Rendering actors/index.html.erb within layouts/application
+  [1m[36mActor Load (0.1ms)[0m  [1m[34mSELECT "actors".* FROM "actors" ORDER BY "actors"."name" ASC[0m
+  ↳ app/views/actors/index.html.erb:3
+  Rendered actors/index.html.erb within layouts/application (Duration: 6.3ms | Allocations: 3761)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 39.2ms | Allocations: 15382)
+Completed 200 OK in 55ms (Views: 42.5ms | ActiveRecord: 0.8ms | Allocations: 21363)
+
+
+Started GET "/actors/new" for ::1 at 2021-04-12 20:37:52 -0400
+Processing by ActorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering actors/new.html.erb within layouts/application
+  Rendered actors/new.html.erb within layouts/application (Duration: 26.8ms | Allocations: 6016)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 39.8ms | Allocations: 12772)
+Completed 200 OK in 43ms (Views: 40.6ms | ActiveRecord: 0.0ms | Allocations: 13415)
+
+
+Started POST "/actors" for ::1 at 2021-04-12 20:38:02 -0400
+Processing by ActorsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "actor"=>{"name"=>"sdfgswsgb", "dob"=>"2022-02-11"}, "commit"=>"create"}
+  Rendering layout layouts/application.html.erb
+  Rendering actors/new.html.erb within layouts/application
+  Rendered actors/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 705)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | Allocations: 7442)
+Completed 200 OK in 28ms (Views: 22.4ms | ActiveRecord: 0.0ms | Allocations: 9293)
+
+
+Started GET "/actors" for ::1 at 2021-04-12 20:38:21 -0400
+Processing by ActorsController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/models/actor.rb:8:in `block in <class:Actor>'
+  Rendering layout layouts/application.html.erb
+  Rendering actors/index.html.erb within layouts/application
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors" ORDER BY "actors"."name" ASC[0m
+  ↳ app/views/actors/index.html.erb:3
+  Rendered actors/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 3218)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 10059)
+Completed 200 OK in 20ms (Views: 13.2ms | ActiveRecord: 0.9ms | Allocations: 13915)
+
+
+Started GET "/actors/new" for ::1 at 2021-04-12 20:38:23 -0400
+Processing by ActorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering actors/new.html.erb within layouts/application
+  Rendered actors/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 609)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 32.8ms | Allocations: 7466)
+Completed 200 OK in 35ms (Views: 33.6ms | ActiveRecord: 0.0ms | Allocations: 7952)
+
+
+Started POST "/actors" for ::1 at 2021-04-12 20:38:30 -0400
+Processing by ActorsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "actor"=>{"name"=>"Mitsumi Hakeda", "dob"=>"2222-02-22"}, "commit"=>"create"}
+  Rendering layout layouts/application.html.erb
+  Rendering actors/new.html.erb within layouts/application
+  Rendered actors/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 700)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 7435)
+Completed 200 OK in 25ms (Views: 22.1ms | ActiveRecord: 0.0ms | Allocations: 9174)
+
+
