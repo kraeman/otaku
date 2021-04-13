@@ -9,14 +9,7 @@
 
 <div id="viewing-form" class="hide">
     <%= form_with(model: @viewing) do |f| %>
-        <div class="form-control">
-            <%= f.label :time, class: "form-label" %>
-            <%= f.datetime_field :time, class: "form-input" %>
-        </div>
-        <div class="form-control">
-            <%= f.label :place, class: "form-label" %>
-            <%= f.text_field :place, class: "form-input" %>
-        </div>
+        <%= render partial: "form", locals: {f: f} %>
         <%= f.submit :update%>
     <% end %>
 

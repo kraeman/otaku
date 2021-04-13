@@ -12,14 +12,7 @@
 
 <div id="show-form" class="hide">
     <%= form_with(model: @show) do |f| %>
-        <div class="form-control">
-            <%= f.label :title, class: "form-label" %>
-            <%= f.text_field :title, class: "form-input" %>
-        </div>
-        <div class="form-control">
-            <%= f.label :air_time, class: "form-label" %>
-            <%= f.number_field :air_time, class: "form-input" %>
-        </div>
+         <%= render partial: "form", locals: {f: f} %>
         
         <%= f.submit :update%>
     <% end %>
