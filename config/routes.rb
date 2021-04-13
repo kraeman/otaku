@@ -23,6 +23,10 @@ Rails.application.routes.draw do
   get '/users/:id', to: 'users#show'
   get '/users/:id/edit', to: 'users#edit'
   delete '/viewings/:id', to: 'viewings#destroy'
+  delete '/shows/:id', to: 'shows#destroy'
+  delete '/comments/:id', to: 'comments#destroy'
+  delete '/characters/:id', to: 'characters#destroy'
+  delete '/actors/:id', to: 'actors#destroy'
   
 
 

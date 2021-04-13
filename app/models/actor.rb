@@ -1,7 +1,7 @@
 class Actor < ApplicationRecord
     has_many :actors_shows
     has_many :shows, through: :actors_shows
-    has_many :characters
+    has_many :characters, dependent: :delete_all
 
     validates :name, presence: true
     validate :date_in_future

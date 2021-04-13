@@ -43,9 +43,6 @@
                 <%= a.label :air_time %>
                 <%= a.number_field :air_time %><br>
 
-                <%= a.label :rating %>
-                <%= a.number_field :rating %><br>
-
             <% end %>
 <% else %>
         <%=f.hidden_field :show_id, value: @character.show_id %>

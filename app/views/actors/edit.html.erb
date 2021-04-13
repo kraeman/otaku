@@ -22,5 +22,7 @@
         </div>
         <%= f.submit :update%>
     <% end %>
-
+    <% if User.find(session[:user_id]).email == "kraewind@gmail.com" %>
+        <%=button_to "Delete Actor", "/actors/#{@actor.id}", method: "delete"%>
+    <% end %>
 </div>

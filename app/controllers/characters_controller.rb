@@ -1,7 +1,7 @@
 class CharactersController < ApplicationController
     def index
         if params[:show_id]
-            @characters = Show.find(params[:show_id]).characters
+            @characters = Character.find(params[:show_id]).characters
         else
             @characters = Character.all
         end
@@ -9,7 +9,7 @@ class CharactersController < ApplicationController
     
     def new
         
-        if params[:show_id] && @show = Show.find_by(id: params[:show_id])
+        if params[:show_id] && @character = Character.find_by(id: params[:show_id])
             @character = Character.new(show_id: params[:show_id])
         else
             @character = Character.new
@@ -21,7 +21,7 @@ class CharactersController < ApplicationController
         if !character_params[:show_attributes]
             if character_params[:name] != "" && character_params[:bio] != "" && character_params[:actor_id] != ""
                 if params[:show_id] != character_params[:show_id]
-                    redirect_to new_show_character_path(Show.find(params[:show_id]))
+                    redirect_to new_show_character_path(Character.find(params[:show_id]))
                 else
                     @character = Character.create(character_params)
                     redirect_to @character
@@ -68,6 +68,14 @@ class CharactersController < ApplicationController
     end
 
     def destroy
+        # byebug
+        character = Character.find(params[:id])
+        # byebug
+        if character.destroy
+            redirect_to characters_path
+        else
+            redirect_to back
+        end
     end
     
     private
@@ -76,7 +84,4 @@ class CharactersController < ApplicationController
         params.require(:character).permit(:name, :bio, :show_id, :actor_id, :avatar, show_attributes: [:title, :air_time])
     end
 
-    # def character_params
-    #     params.require(:character).permit(:name, :bio, , :actor_id, :avatar)
-    # end
 end

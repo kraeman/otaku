@@ -36,6 +36,14 @@ class ActorsController < ApplicationController
     end
 
     def destroy
+        # byebug
+        actor = Actor.find(params[:id])
+        # byebug
+        if actor.destroy
+            redirect_to actors_path
+        else
+            redirect_to back
+        end
     end
     
     private

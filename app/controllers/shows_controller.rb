@@ -39,6 +39,14 @@ class ShowsController < ApplicationController
     end
 
     def destroy
+        # byebug
+        show = Show.find(params[:id])
+        # byebug
+        if show.destroy
+            redirect_to shows_path
+        else
+            redirect_to back
+        end
     end
     
     private

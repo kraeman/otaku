@@ -20,11 +20,12 @@
             <%= f.label :air_time, class: "form-label" %>
             <%= f.number_field :air_time, class: "form-input" %>
         </div>
-        <div class="form-control">
-            <%= f.label :rating, class: "form-label" %>
-            <%= f.number_field :rating, class: "form-input" %>
-        </div>
+        
         <%= f.submit :update%>
+    <% end %>
+
+    <% if User.find(session[:user_id]).email == "kraewind@gmail.com" %>
+        <%=button_to "Delete Show", "/shows/#{@show.id}", method: "delete"%>
     <% end %>
 
 </div>
