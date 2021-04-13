@@ -40,6 +40,6 @@
     <% end %>
 <ul>
     <% @show.comments.reverse.each do |c| %>
-        <li><%=User.find_by_id(c.user_id).username%>: <%=c.content%>  <%=c.created_at%></li>
+        <li><%=User.find_by_id(c.user_id).username%>: <%=c.content%>  <%=c.created_at.strftime("%m/%d/%y: %H:%M %Z")%></li>
     <% end %>
 </ul>
