@@ -53268,3 +53268,656 @@ Processing by ActorsController#create as HTML
 Completed 200 OK in 25ms (Views: 22.1ms | ActiveRecord: 0.0ms | Allocations: 9174)
 
 
+  [1m[35m (5.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to GetRidOfRatingsForUser (20210413012507)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ashows" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "air_time" decimal DEFAULT NULL, "rating" decimal DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ashows" ("id","title","air_time","rating","created_at","updated_at")
+                     SELECT "id","title","air_time","rating","created_at","updated_at" FROM "shows"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "shows"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "shows" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "air_time" decimal DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "shows" ("id","title","air_time","created_at","updated_at")
+                     SELECT "id","title","air_time","created_at","updated_at" FROM "ashows"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "ashows"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210413012507"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to GetRidOfUidInUser (20210413012933)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "dob" date DEFAULT NULL, "admin" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "email" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "username" varchar DEFAULT NULL, "uid" varchar DEFAULT NULL, "image" varchar DEFAULT NULL, "cvo" boolean DEFAULT 0)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","name","dob","admin","created_at","updated_at","email","password_digest","username","uid","image","cvo")
+                     SELECT "id","name","dob","admin","created_at","updated_at","email","password_digest","username","uid","image","cvo" FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "dob" date DEFAULT NULL, "admin" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "email" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "username" varchar DEFAULT NULL, "image" varchar DEFAULT NULL, "cvo" boolean DEFAULT 0)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "users" ("id","name","dob","admin","created_at","updated_at","email","password_digest","username","image","cvo")
+                     SELECT "id","name","dob","admin","created_at","updated_at","email","password_digest","username","image","cvo" FROM "ausers"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210413012933"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/actors" for ::1 at 2021-04-12 21:30:49 -0400
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ActorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering actors/index.html.erb within layouts/application
+  [1m[36mActor Load (0.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors" ORDER BY "actors"."name" ASC[0m
+  ↳ app/views/actors/index.html.erb:3
+  Rendered actors/index.html.erb within layouts/application (Duration: 14.2ms | Allocations: 4767)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 74.6ms | Allocations: 19639)
+Completed 200 OK in 140ms (Views: 90.6ms | ActiveRecord: 0.8ms | Allocations: 28699)
+
+
+Started GET "/users/" for ::1 at 2021-04-12 21:30:50 -0400
+
+AbstractController::ActionNotFound - The action 'index' could not be found for UsersController:
+
+Started POST "/__better_errors/08db636ccf884ad1/variables" for ::1 at 2021-04-12 21:30:50 -0400
+Started GET "/users/1" for ::1 at 2021-04-12 21:31:10 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.0ms | Allocations: 7141)
+
+
+
+NameError - undefined local variable or method `date_in_future' for #<Class:0x00007ff5dc81d3a8>:
+  app/models/user.rb:9:in `<class:User>'
+  app/models/user.rb:1:in `<main>'
+  app/controllers/users_controller.rb:25:in `show'
+
+Started POST "/__better_errors/2c9c1bd2c32a4cf2/variables" for ::1 at 2021-04-12 21:31:10 -0400
+Started GET "/" for ::1 at 2021-04-12 21:31:40 -0400
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 25ms (ActiveRecord: 0.4ms | Allocations: 4103)
+
+
+Started GET "/login" for ::1 at 2021-04-12 21:31:41 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 34.9ms | Allocations: 6077)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 44.2ms | Allocations: 11646)
+Completed 200 OK in 65ms (Views: 45.3ms | ActiveRecord: 0.9ms | Allocations: 17879)
+
+
+Started POST "/auth/google_oauth2" for ::1 at 2021-04-12 21:31:42 -0400
+Started GET "/auth/google_oauth2/callback?state=5eca0d7bfafb084c6f8d13730557c15f200fdfcb5db7f325&code=4%2F0AY0e-g6p-pW33sln6BO8FtOSwhvyu1DdcLpMGKSBBVZTlkmQxTTz1zfwO_dcG3SmKv59Lg&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&authuser=0&prompt=none" for ::1 at 2021-04-12 21:31:42 -0400
+Processing by SessionsController#omniauth as HTML
+  Parameters: {"state"=>"5eca0d7bfafb084c6f8d13730557c15f200fdfcb5db7f325", "code"=>"4/0AY0e-g6p-pW33sln6BO8FtOSwhvyu1DdcLpMGKSBBVZTlkmQxTTz1zfwO_dcG3SmKv59Lg", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email openid https://www.googleapis.com/auth/userinfo.profile", "authuser"=>"0", "prompt"=>"none", "provider"=>"google_oauth2"}
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "117860689234137033262"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:27:in `omniauth'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 3.8ms | Allocations: 2891)
+
+
+
+ActiveRecord::StatementInvalid - SQLite3::SQLException: no such column: users.uid:
+  app/controllers/sessions_controller.rb:27:in `omniauth'
+
+Started POST "/__better_errors/d3051e1352017726/variables" for ::1 at 2021-04-12 21:31:43 -0400
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to GetRidOfUidInUser (20210413012933)
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUidBackToUser (20210413013307)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210413013307"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/auth/google_oauth2/callback?state=5eca0d7bfafb084c6f8d13730557c15f200fdfcb5db7f325&code=4%2F0AY0e-g6p-pW33sln6BO8FtOSwhvyu1DdcLpMGKSBBVZTlkmQxTTz1zfwO_dcG3SmKv59Lg&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&authuser=0&prompt=none" for ::1 at 2021-04-12 21:34:14 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+
+OAuth2::Error - invalid_grant: Bad Request
+{
+  "error": "invalid_grant",
+  "error_description": "Bad Request"
+}:
+
+Started POST "/__better_errors/72ee90be42e65946/variables" for ::1 at 2021-04-12 21:34:14 -0400
+Started GET "/auth/google_oauth2/callback?state=5eca0d7bfafb084c6f8d13730557c15f200fdfcb5db7f325&code=4%2F0AY0e-g6p-pW33sln6BO8FtOSwhvyu1DdcLpMGKSBBVZTlkmQxTTz1zfwO_dcG3SmKv59Lg&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&authuser=0&prompt=none" for ::1 at 2021-04-12 21:34:20 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+
+OAuth2::Error - invalid_grant: Bad Request
+{
+  "error": "invalid_grant",
+  "error_description": "Bad Request"
+}:
+
+Started POST "/__better_errors/d1f4aa25850ac6d7/variables" for ::1 at 2021-04-12 21:34:20 -0400
+Started POST "/auth/google_oauth2" for ::1 at 2021-04-12 21:34:22 -0400
+Started GET "/auth/google_oauth2/callback?state=4e9bbba5a3084e8cab35514e25734d5765700488ca25f227&code=4%2F0AY0e-g5K2YfPsCV8l9ATut4AErUKQkvW9Q_Xu3WhAVfb6PNlgagMsQJ1Z3KFpX4qMbUjlA&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=none" for ::1 at 2021-04-12 21:34:23 -0400
+Processing by SessionsController#omniauth as HTML
+  Parameters: {"state"=>"4e9bbba5a3084e8cab35514e25734d5765700488ca25f227", "code"=>"4/0AY0e-g5K2YfPsCV8l9ATut4AErUKQkvW9Q_Xu3WhAVfb6PNlgagMsQJ1Z3KFpX4qMbUjlA", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.profile openid https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "prompt"=>"none", "provider"=>"google_oauth2"}
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.0ms | Allocations: 8872)
+
+
+
+NameError - undefined local variable or method `date_in_future' for #<Class:0x00007f8f519587a0>:
+  app/models/user.rb:9:in `<class:User>'
+  app/models/user.rb:1:in `<main>'
+  app/controllers/sessions_controller.rb:27:in `omniauth'
+
+Started POST "/__better_errors/626b410f3dedcf19/variables" for ::1 at 2021-04-12 21:34:23 -0400
+Started GET "/auth/google_oauth2/callback?state=4e9bbba5a3084e8cab35514e25734d5765700488ca25f227&code=4%2F0AY0e-g5K2YfPsCV8l9ATut4AErUKQkvW9Q_Xu3WhAVfb6PNlgagMsQJ1Z3KFpX4qMbUjlA&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=none" for ::1 at 2021-04-12 21:35:29 -0400
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+
+OAuth2::Error - invalid_grant: Bad Request
+{
+  "error": "invalid_grant",
+  "error_description": "Bad Request"
+}:
+
+Started POST "/__better_errors/711f6612f5e49259/variables" for ::1 at 2021-04-12 21:35:30 -0400
+Started POST "/auth/google_oauth2" for ::1 at 2021-04-12 21:35:31 -0400
+Started GET "/auth/google_oauth2/callback?state=af8a97453705e89f56b83bbfd00e5db3a360576ce8625c32&code=4%2F0AY0e-g77TKc7iwSbcflOP1I839GFZ7kjchd1lnb17RXgE86vlE_JDeq2kZygUXD95LZAVg&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=none" for ::1 at 2021-04-12 21:35:32 -0400
+Processing by SessionsController#omniauth as HTML
+  Parameters: {"state"=>"af8a97453705e89f56b83bbfd00e5db3a360576ce8625c32", "code"=>"4/0AY0e-g77TKc7iwSbcflOP1I839GFZ7kjchd1lnb17RXgE86vlE_JDeq2kZygUXD95LZAVg", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.profile openid https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "prompt"=>"none", "provider"=>"google_oauth2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "117860689234137033262"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:27:in `omniauth'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sessions_controller.rb:27:in `omniauth'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kraewind@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:27:in `omniauth'
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kraewind@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:27:in `omniauth'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sessions_controller.rb:27:in `omniauth'
+Completed 500 Internal Server Error in 298ms (ActiveRecord: 1.0ms | Allocations: 17281)
+
+
+
+ActionController::UrlGenerationError - No route matches {:action=>"update", :controller=>"users", :id=>nil}, missing required keys: [:id]:
+  app/controllers/sessions_controller.rb:40:in `omniauth'
+
+Started POST "/__better_errors/b79d9effe33078a2/variables" for ::1 at 2021-04-12 21:35:32 -0400
+Started POST "/auth/google_oauth2" for ::1 at 2021-04-12 21:35:56 -0400
+Started GET "/auth/google_oauth2/callback?state=180f2be669acb710d317e660b759b98be9662242d7d1dc78&code=4%2F0AY0e-g7hVjDU3DinNP8g3xVdh2QnA8JeGuYrTLnsTBPPM7Q82OkM0DVPGfJ8jXfNZNwZXw&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=none" for ::1 at 2021-04-12 21:35:56 -0400
+Processing by SessionsController#omniauth as HTML
+  Parameters: {"state"=>"180f2be669acb710d317e660b759b98be9662242d7d1dc78", "code"=>"4/0AY0e-g7hVjDU3DinNP8g3xVdh2QnA8JeGuYrTLnsTBPPM7Q82OkM0DVPGfJ8jXfNZNwZXw", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "prompt"=>"none", "provider"=>"google_oauth2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "117860689234137033262"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:27:in `omniauth'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sessions_controller.rb:27:in `omniauth'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kraewind@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:27:in `omniauth'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kraewind@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:27:in `omniauth'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sessions_controller.rb:27:in `omniauth'
+Completed 500 Internal Server Error in 308ms (ActiveRecord: 0.7ms | Allocations: 5486)
+
+
+
+ActionController::UrlGenerationError - No route matches {:action=>"update", :controller=>"users", :id=>nil}, missing required keys: [:id]:
+  app/controllers/sessions_controller.rb:40:in `omniauth'
+
+Started POST "/__better_errors/e0bcb4fa4374ec7e/variables" for ::1 at 2021-04-12 21:35:57 -0400
+Started GET "/login" for ::1 at 2021-04-12 21:44:28 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+
+ActiveRecord::PendingMigrationError - Migrations are pending. To resolve this issue, run:
+        bin/rails db:migrate RAILS_ENV=development
+You have 23 pending migrations:
+20210331195700_create_shows.rb
+20210331195906_create_comments.rb
+20210331200053_create_users.rb
+20210331200527_create_viewings.rb
+20210331202050_create_characters.rb
+20210331202211_create_actors.rb
+20210331202352_create_actors_shows.rb
+20210331221955_add_email_password_username_to_user.rb
+20210401150605_fix_birthday_column_name.rb
+20210401153240_fix_age_column_for_actor.rb
+20210401153653_fix_dob_column_for_actor_data_type.rb
+20210401181215_change_column_type_for_user_and_actor.rb
+20210402154322_add_actor_id_to_characters.rb
+20210403201055_add_uid_to_user.rb
+20210404211935_add_image_to_user.rb
+20210405165639_add_cvo_to_user.rb
+20210406171632_change_air_time_data_type_in_show_table.rb
+20210407032807_create_active_storage_tables.active_storage.rb
+20210408180352_add_user_id_to_comments_table.rb
+20210412200558_change_column_type_of_air_time_in_show.rb
+20210413012507_get_rid_of_ratings_for_user.rb
+20210413012933_get_rid_of_uid_in_user.rb
+20210413013307_add_uid_back_to_user.rb:
+
+Started POST "/__better_errors/dd18b8b525aeec7f/variables" for ::1 at 2021-04-12 21:44:29 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateShows (20210331195700)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "shows" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "air_time" datetime, "rating" decimal, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210331195700"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateComments (20210331195906)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "show_id" integer NOT NULL, "content" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_93e93fedfd"
+FOREIGN KEY ("show_id")
+  REFERENCES "shows" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_comments_on_show_id" ON "comments" ("show_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210331195906"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUsers (20210331200053)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "DOB" date, "admin" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210331200053"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateViewings (20210331200527)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "viewings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "time" datetime, "place" varchar, "show_id" integer NOT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_50cf711846"
+FOREIGN KEY ("show_id")
+  REFERENCES "shows" ("id")
+, CONSTRAINT "fk_rails_acc89e7162"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_viewings_on_show_id" ON "viewings" ("show_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_viewings_on_user_id" ON "viewings" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210331200527"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateCharacters (20210331202050)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "characters" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "bio" text, "show_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_babb775ba2"
+FOREIGN KEY ("show_id")
+  REFERENCES "shows" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_characters_on_show_id" ON "characters" ("show_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210331202050"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateActors (20210331202211)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "actors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "age" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210331202211"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateActorsShows (20210331202352)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "actors_shows" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "actor_id" integer NOT NULL, "show_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_f2ea3a59fd"
+FOREIGN KEY ("actor_id")
+  REFERENCES "actors" ("id")
+, CONSTRAINT "fk_rails_36818d65df"
+FOREIGN KEY ("show_id")
+  REFERENCES "shows" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_actors_shows_on_actor_id" ON "actors_shows" ("actor_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_actors_shows_on_show_id" ON "actors_shows" ("show_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210331202352"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddEmailPasswordUsernameToUser (20210331221955)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "email" varchar[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "password_digest" varchar[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "username" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210331221955"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to FixBirthdayColumnName (20210401150605)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "dob" date DEFAULT NULL, "admin" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "email" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "username" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","name","dob","admin","created_at","updated_at","email","password_digest","username")
+                     SELECT "id","name","DOB","admin","created_at","updated_at","email","password_digest","username" FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "dob" date DEFAULT NULL, "admin" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "email" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "username" varchar DEFAULT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "users" ("id","name","dob","admin","created_at","updated_at","email","password_digest","username")
+                     SELECT "id","name","dob","admin","created_at","updated_at","email","password_digest","username" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210401150605"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to FixAgeColumnForActor (20210401153240)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aactors" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "dob" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "aactors" ("id","name","dob","created_at","updated_at")
+                     SELECT "id","name","age","created_at","updated_at" FROM "actors"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "actors"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "actors" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "dob" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "actors" ("id","name","dob","created_at","updated_at")
+                     SELECT "id","name","dob","created_at","updated_at" FROM "aactors"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aactors"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210401153240"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to FixDobColumnForActorDataType (20210401153653)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aactors" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "dob" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "aactors" ("id","name","dob","created_at","updated_at")
+                     SELECT "id","name","dob","created_at","updated_at" FROM "actors"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "actors"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "actors" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "dob" datetime DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "actors" ("id","name","dob","created_at","updated_at")
+                     SELECT "id","name","dob","created_at","updated_at" FROM "aactors"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "aactors"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210401153653"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to ChangeColumnTypeForUserAndActor (20210401181215)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aactors" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "dob" datetime DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "aactors" ("id","name","dob","created_at","updated_at")
+                     SELECT "id","name","dob","created_at","updated_at" FROM "actors"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "actors"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "actors" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "dob" date DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "actors" ("id","name","dob","created_at","updated_at")
+                     SELECT "id","name","dob","created_at","updated_at" FROM "aactors"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "aactors"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "dob" date DEFAULT NULL, "admin" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "email" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "username" varchar DEFAULT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "ausers" ("id","name","dob","admin","created_at","updated_at","email","password_digest","username")
+                     SELECT "id","name","dob","admin","created_at","updated_at","email","password_digest","username" FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "dob" date DEFAULT NULL, "admin" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "email" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "username" varchar DEFAULT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "users" ("id","name","dob","admin","created_at","updated_at","email","password_digest","username")
+                     SELECT "id","name","dob","admin","created_at","updated_at","email","password_digest","username" FROM "ausers"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210401181215"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddActorIdToCharacters (20210402154322)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acharacters" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "bio" text DEFAULT NULL, "show_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_acharacters_on_show_id" ON "acharacters" ("show_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "acharacters" ("id","name","bio","show_id","created_at","updated_at")
+                     SELECT "id","name","bio","show_id","created_at","updated_at" FROM "characters"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "characters"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "characters" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "bio" text DEFAULT NULL, "show_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "actor_id" integer NOT NULL, CONSTRAINT "fk_rails_babb775ba2"
+FOREIGN KEY ("show_id")
+  REFERENCES "shows" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_characters_on_show_id" ON "characters" ("show_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "characters" ("id","name","bio","show_id","created_at","updated_at")
+                     SELECT "id","name","bio","show_id","created_at","updated_at" FROM "acharacters"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "acharacters"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_characters_on_actor_id" ON "characters" ("actor_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acharacters" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "bio" text DEFAULT NULL, "show_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "actor_id" integer NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_acharacters_on_actor_id" ON "acharacters" ("actor_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_acharacters_on_show_id" ON "acharacters" ("show_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "acharacters" ("id","name","bio","show_id","created_at","updated_at","actor_id")
+                     SELECT "id","name","bio","show_id","created_at","updated_at","actor_id" FROM "characters"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "characters"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "characters" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "bio" text DEFAULT NULL, "show_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "actor_id" integer NOT NULL, CONSTRAINT "fk_rails_babb775ba2"
+FOREIGN KEY ("show_id")
+  REFERENCES "shows" ("id")
+, CONSTRAINT "fk_rails_ef60fa97ca"
+FOREIGN KEY ("actor_id")
+  REFERENCES "actors" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_characters_on_show_id" ON "characters" ("show_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_characters_on_actor_id" ON "characters" ("actor_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "characters" ("id","name","bio","show_id","created_at","updated_at","actor_id")
+                     SELECT "id","name","bio","show_id","created_at","updated_at","actor_id" FROM "acharacters"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "acharacters"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210402154322"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddUidToUser (20210403201055)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210403201055"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddImageToUser (20210404211935)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "image" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210404211935"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddCvoToUser (20210405165639)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "cvo" boolean DEFAULT 0[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210405165639"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to ChangeAirTimeDataTypeInShowTable (20210406171632)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ashows" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "air_time" datetime DEFAULT NULL, "rating" decimal DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "ashows" ("id","title","air_time","rating","created_at","updated_at")
+                     SELECT "id","title","air_time","rating","created_at","updated_at" FROM "shows"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "shows"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "shows" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "air_time" integer DEFAULT NULL, "rating" decimal DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "shows" ("id","title","air_time","rating","created_at","updated_at")
+                     SELECT "id","title","air_time","rating","created_at","updated_at" FROM "ashows"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ashows"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210406171632"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateActiveStorageTables (20210407032807)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "service_name" varchar NOT NULL, "byte_size" bigint NOT NULL, "checksum" varchar NOT NULL, "created_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" integer NOT NULL, "variation_digest" varchar NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210407032807"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddUserIdToCommentsTable (20210408180352)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "comments" ADD "user_id" integer[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210408180352"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to ChangeColumnTypeOfAirTimeInShow (20210412200558)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ashows" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "air_time" integer DEFAULT NULL, "rating" decimal DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "ashows" ("id","title","air_time","rating","created_at","updated_at")
+                     SELECT "id","title","air_time","rating","created_at","updated_at" FROM "shows"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "shows"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "shows" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "air_time" decimal DEFAULT NULL, "rating" decimal DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "shows" ("id","title","air_time","rating","created_at","updated_at")
+                     SELECT "id","title","air_time","rating","created_at","updated_at" FROM "ashows"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "ashows"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210412200558"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to GetRidOfRatingsForUser (20210413012507)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ashows" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "air_time" decimal DEFAULT NULL, "rating" decimal DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "ashows" ("id","title","air_time","rating","created_at","updated_at")
+                     SELECT "id","title","air_time","rating","created_at","updated_at" FROM "shows"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "shows"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "shows" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "air_time" decimal DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "shows" ("id","title","air_time","created_at","updated_at")
+                     SELECT "id","title","air_time","created_at","updated_at" FROM "ashows"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ashows"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210413012507"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to GetRidOfUidInUser (20210413012933)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "dob" date DEFAULT NULL, "admin" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "email" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "username" varchar DEFAULT NULL, "uid" varchar DEFAULT NULL, "image" varchar DEFAULT NULL, "cvo" boolean DEFAULT 0)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "ausers" ("id","name","dob","admin","created_at","updated_at","email","password_digest","username","uid","image","cvo")
+                     SELECT "id","name","dob","admin","created_at","updated_at","email","password_digest","username","uid","image","cvo" FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "dob" date DEFAULT NULL, "admin" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "email" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "username" varchar DEFAULT NULL, "image" varchar DEFAULT NULL, "cvo" boolean DEFAULT 0)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "users" ("id","name","dob","admin","created_at","updated_at","email","password_digest","username","image","cvo")
+                     SELECT "id","name","dob","admin","created_at","updated_at","email","password_digest","username","image","cvo" FROM "ausers"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210413012933"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddUidBackToUser (20210413013307)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210413013307"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-04-13 01:44:42.259854"], ["updated_at", "2021-04-13 01:44:42.259854"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/login" for ::1 at 2021-04-12 21:44:51 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/sessions.html.erb
+  Rendering sessions/new.html.erb within layouts/sessions
+  Rendered sessions/new.html.erb within layouts/sessions (Duration: 32.1ms | Allocations: 10681)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/sessions.html.erb (Duration: 59.9ms | Allocations: 20518)
+Completed 200 OK in 105ms (Views: 65.0ms | ActiveRecord: 0.4ms | Allocations: 34048)
+
+
+Started POST "/auth/google_oauth2" for ::1 at 2021-04-12 21:44:53 -0400
+Started GET "/auth/google_oauth2/callback?state=cc03e4bfe21d1c3443aa9bbdd737251d3bd8012137421258&code=4%2F0AY0e-g7_8456PdGnDbo5QHeNlSMnR7TlyWXufomOm845dVBump5tA6nwkB3qnjickFi5Eg&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=consent" for ::1 at 2021-04-12 21:44:55 -0400
+Processing by SessionsController#omniauth as HTML
+  Parameters: {"state"=>"cc03e4bfe21d1c3443aa9bbdd737251d3bd8012137421258", "code"=>"4/0AY0e-g7_8456PdGnDbo5QHeNlSMnR7TlyWXufomOm845dVBump5tA6nwkB3qnjickFi5Eg", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "prompt"=>"consent", "provider"=>"google_oauth2"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "117860689234137033262"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:27:in `omniauth'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sessions_controller.rb:27:in `omniauth'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kraewind@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:27:in `omniauth'
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kraewind@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:27:in `omniauth'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "password_digest", "username", "image", "cvo", "uid") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Krae Wind"], ["created_at", "2021-04-13 01:44:56.436256"], ["updated_at", "2021-04-13 01:44:56.436256"], ["email", "kraewind@gmail.com"], ["password_digest", "$2a$12$4PnVDcj5XyIWFTG2XMyrLu1ToLtCN.2Poj6sxoyqsBkbYKZrS5xSS"], ["username", "kraewind@gmail.com"], ["image", "https://lh3.googleusercontent.com/a-/AOh14GgMYYLe18jjy2IsaEYO8xcUY5rGq1m8dM4lM2JJvbw=s96-c"], ["cvo", 1], ["uid", "117860689234137033262"]]
+  ↳ app/controllers/sessions_controller.rb:27:in `omniauth'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/sessions_controller.rb:27:in `omniauth'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 310ms (ActiveRecord: 2.7ms | Allocations: 5144)
+
+
+Started GET "/users/1" for ::1 at 2021-04-12 21:44:56 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "shows" INNER JOIN "viewings" ON "shows"."id" = "viewings"."show_id" WHERE "viewings"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:15
+  [1m[36mViewing Load (0.1ms)[0m  [1m[34mSELECT "viewings".* FROM "viewings" WHERE "viewings"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:26
+  Rendered users/show.html.erb within layouts/application (Duration: 55.0ms | Allocations: 16604)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 71.7ms | Allocations: 23727)
+Completed 200 OK in 75ms (Views: 72.5ms | ActiveRecord: 1.1ms | Allocations: 25436)
+
+
+Started GET "/users/1/edit" for ::1 at 2021-04-12 21:45:09 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 17.1ms | Allocations: 1500)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 32.1ms | Allocations: 8362)
+Completed 200 OK in 37ms (Views: 32.9ms | ActiveRecord: 0.3ms | Allocations: 9403)
+
+
+Started GET "/users/1" for ::1 at 2021-04-12 21:45:11 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mShow Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "shows" INNER JOIN "viewings" ON "shows"."id" = "viewings"."show_id" WHERE "viewings"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:15
+  [1m[36mViewing Load (0.3ms)[0m  [1m[34mSELECT "viewings".* FROM "viewings" WHERE "viewings"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:26
+  Rendered users/show.html.erb within layouts/application (Duration: 7.7ms | Allocations: 1801)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.8ms | Allocations: 8657)
+Completed 200 OK in 29ms (Views: 25.0ms | ActiveRecord: 0.9ms | Allocations: 9563)
+
+

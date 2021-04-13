@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_12_200558) do
+ActiveRecord::Schema.define(version: 2021_04_13_013307) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -80,7 +80,6 @@ ActiveRecord::Schema.define(version: 2021_04_12_200558) do
   create_table "shows", force: :cascade do |t|
     t.string "title"
     t.decimal "air_time"
-    t.decimal "rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -88,15 +87,15 @@ ActiveRecord::Schema.define(version: 2021_04_12_200558) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.date "dob"
-    t.boolean "admin", default: false
+    t.boolean "admin"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "email"
     t.string "password_digest"
     t.string "username"
-    t.string "uid"
     t.string "image"
     t.boolean "cvo", default: false
+    t.string "uid"
   end
 
   create_table "viewings", force: :cascade do |t|
