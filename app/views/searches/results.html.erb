@@ -1,11 +1,3 @@
 <ul>
-    <% @results.each do |r| %>
-        <% if r.class == Show %>
-            <li><%=link_to r.title, show_path(r)%></li>
-        <% elsif r.class == Character %>
-            <li><%=link_to r.name, character_path(r)%></li>
-        <% else %>
-            <li><%=link_to r.name, actor_path(r)%></li>
-        <% end %>
-    <% end %>
+    <%=display_search_results(@results)%>
 </ul>

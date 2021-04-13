@@ -1,8 +1,6 @@
 <h1><%=@character.name%></h1>
 
-<% if @character.avatar.attached? %>
-    <image src="<%=(url_for(@character.avatar))%>">
-<% end %>
+<%=show_avatar(@character)%>
 
 <h4>Bio: <%=@character.bio%></h4>
 <br>

@@ -6,8 +6,6 @@
 
 <%= form_with(model: @user) do |f| %>
         <%= render partial: "form1", locals: {f: f} %>
-        <% if !@user.cvo %>
-            <%= render partial: "form2", locals: {f: f} %>
-        <% end %>
+        <%= created_via_omni?(@user, f)%>
         <%= f.submit :update%>
     <% end %>

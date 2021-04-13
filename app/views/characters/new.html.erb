@@ -13,20 +13,7 @@
             <%= f.collection_select :actor_id, Actor.all, :id, :name, prompt: true, class: "form-label" %>
         </div>
         
-<% if @character.show_id == nil %>
-
-        <div class="form-control">
-                <%= f.label :show_id, class: "form-label"  %>
-                <%= f.collection_select :show_id, Show.all, :id, :title, prompt: true, class: "form-label" %>
-            </div>
-<h2>Optionally create a show!</h2>
-            <%= f.fields_for :show do |a| %>
-                <%= render partial: "shows/form", locals: {f: a} %>
-
-            <% end %>
-<% else %>
-        <%=f.hidden_field :show_id, value: @character.show_id %>
-<% end %>
+<%=display_show_portion_conditionally(f, @character)%>
 
 
         <%= f.submit "Create"%>
