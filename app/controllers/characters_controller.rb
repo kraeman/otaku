@@ -21,9 +21,9 @@ class CharactersController < ApplicationController
     
     def create
         # byebug
-        if !character_params[:show_id]
-            if character_params[:name] != "" && character_params[:bio] != "" && character_params[:actor_id] != ""
-                if character_params[:show_attributes][:show_id] != character_params[:show_attributes][:id]
+        if no_show_attributes_in_character_params?
+            if character_params_filled_out?
+            if hacked?
                     
                     redirect_to new_show_character_path(Show.find(character_params[:show_attributes][:id]))
                 else
@@ -37,8 +37,8 @@ class CharactersController < ApplicationController
                 render :new
             end
         else             
-                if character_params[:name] != "" && character_params[:bio] != "" && character_params[:actor_id] != "" && (character_params[:show_id] != "" || (character_params[:show_attributes][:title] != "" && character_params[:show_attributes][:rating] != "" && character_params[:show_attributes][:air_time] != ""))
-                    if character_params[:show_id] != ""
+                if character_params_filled_out_with_show_attributes?
+                    if show_id_in_character_params
                         # byebug
                         @character = Character.create(name: character_params[:name], bio: character_params[:bio], show_id: character_params[:show_id], actor_id: character_params[:actor_id])
                         redirect_to @character
@@ -92,20 +92,18 @@ class CharactersController < ApplicationController
     end
 
     def no_show_attributes_in_character_params?
-        !character_params[:show_attributes]
+        !character_params[:show_id]
     end
 
     def character_params_filled_out?
-        character_params[:name] != "" && character_params[:bio] != "" && character_params[:actor_id] != ""
-    end
+        character_params[:name] != "" && character_params[:bio] != "" && character_params[:actor_id] != ""    end
 
     def hacked?
-        params[:show_id] != character_params[:show_id]
+        character_params[:show_attributes][:show_id] != character_params[:show_attributes][:id]
     end
 
     def character_params_filled_out_with_show_attributes?
-        character_params_filled_out? && (character_params[:show_id] != "" || (character_params[:show_attributes][:title] != "" && character_params[:show_attributes][:rating] != "" && character_params[:show_attributes][:air_time] != ""))
-    end
+        character_params[:name] != "" && character_params[:bio] != "" && character_params[:actor_id] != "" && (character_params[:show_id] != "" || (character_params[:show_attributes][:title] != "" && character_params[:show_attributes][:rating] != "" && character_params[:show_attributes][:air_time] != ""))    end
 
     def show_id_in_character_params
         character_params[:show_id] != ""
