@@ -1,7 +1,13 @@
 module ActorsHelper
-    # def iterate_through_actor(actor)
-    #     actor.each do |a|
-    #         content_tag(:li, link_to a.name, actor_path(a))
-    #     end
-    # end
+    def iterate_through_actor(actors)
+        actorz = ""
+        if actors.any?
+            actors.each do |a|
+                actorz << (link_to a.name, actor_path(a)) + content_tag(:br)
+            end
+            actorz.html_safe
+        else
+            "No actors yet!!!"
+        end
+    end
 end
