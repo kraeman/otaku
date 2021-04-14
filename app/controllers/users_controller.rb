@@ -37,10 +37,10 @@ class UsersController < ApplicationController
 
     def update
         # byebug
-        user = User.find_by_id(params[:id])
-        user.update(user_params)
-        if user.valid?
-            redirect_to user
+        @user = User.find_by_id(params[:id])
+        @user.update(user_params)
+        if @user.valid?
+            redirect_to @user
         else
             render :edit
         end

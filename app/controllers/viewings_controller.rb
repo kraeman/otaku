@@ -33,10 +33,10 @@ class ViewingsController < ApplicationController
 
     def update
         # byebug
-        viewing = Viewing.find(params[:id])
-        viewing.update(viewing_params)
-        if viewing.valid?
-            redirect_to user_path(viewing.user)
+        @viewing = Viewing.find(params[:id])
+        @viewing.update(viewing_params)
+        if @viewing.valid?
+            redirect_to user_path(@viewing.user)
         else
             render :edit
         end

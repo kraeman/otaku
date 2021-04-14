@@ -37,10 +37,10 @@ class CharactersController < ApplicationController
     end
 
     def update
-        character = Character.find(params[:id])
-        character.update(character_params)
-        if character.valid?
-            redirect_to character
+        @character = Character.find(params[:id])
+        @character.update(character_params)
+        if @character.valid?
+            redirect_to @character
         else
             render :edit
         end

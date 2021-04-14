@@ -34,10 +34,10 @@ class ShowsController < ApplicationController
 
     def update
         # byebug
-        show = Show.find(params[:id])
-        show.update(show_params)
-        if show.valid?
-            redirect_to show
+        @show = Show.find(params[:id])
+        @show.update(show_params)
+        if @show.valid?
+            redirect_to @show
         else
             render :edit
         end
