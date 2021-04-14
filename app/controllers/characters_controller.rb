@@ -25,9 +25,9 @@ class CharactersController < ApplicationController
        @character = helpers.context_of_show_and_filled_out_correctly_and_security(character_params)
         if helpers.context_of_show?(character_params) && helpers.filled_out_form_correctly_in_context_of_show?(character_params)
                 if helpers.hacked?(character_params)
-                    redirect_to new_show_character_path(helpers.find_in_context_of_show(character_params))
+                    redirect_to new_show_character_path(Character.find_in_context_of_show(character_params))
                 else
-                    redirect_to show_character_path(helpers.find_in_context_of_show_but_not_hacked(character_params), @character)
+                    redirect_to show_character_path(Character.find_in_context_of_show_but_not_hacked(character_params), @character)
                 end
         elsif @character.valid?
             redirect_to @character

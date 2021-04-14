@@ -13,6 +13,12 @@ class Character < ApplicationRecord
   scope :search_by_name, -> (name) {where("name LIKE ?", "#{name}%")}
 
 
+    def self.find_in_context_of_show(character_params)
+        Show.find(character_params[:show_attributes][:id])
+    end
 
+    def self.find_in_context_of_show_but_not_hacked(character_params)
+        Show.find(character_params[:show_attributes][:id])
+    end
 
 end

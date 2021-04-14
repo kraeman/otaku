@@ -57,12 +57,5 @@ module CharactersHelper
         end
     end
 
-    def find_in_context_of_show(character_params)
-        Show.find(character_params[:show_attributes][:id])
-    end
-
-    def find_in_context_of_show_but_not_hacked(character_params)
-        Show.find(character_params[:show_attributes][:id])
-    end
 
 end
