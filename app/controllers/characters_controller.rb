@@ -22,25 +22,21 @@ class CharactersController < ApplicationController
     def create
         
     
-        if no_show_attributes_in_character_params?
-            if character_params_filled_out?
-            if hacked?
-                    
+        if context_of_show?
+            if filled_out_form_correctly_in_context_of_show?
+                if hacked?
                     redirect_to new_show_character_path(Show.find(character_params[:show_attributes][:id]))
                 else
-                    # byebug
                     @character = Character.create(name: character_params[:name], bio: character_params[:bio], actor_id: character_params[:actor_id], show_id: character_params[:show_attributes][:id])
                     redirect_to show_character_path(Show.find(character_params[:show_attributes][:id]), @character)
                 end
             else
-                # byebug
                 @character = Character.create(name: character_params[:name], bio: character_params[:bio], actor_id: character_params[:actor_id], show_id: character_params[:show_attributes][:id])
                 render :new
             end
         else             
-                if character_params_filled_out_with_show_attributes?
-                    if show_id_in_character_params
-                        # byebug
+                if filled_out_form_correctly?
+                    if selected_show_from_dropdown?
                         @character = Character.create(name: character_params[:name], bio: character_params[:bio], show_id: character_params[:show_id], actor_id: character_params[:actor_id])
                         redirect_to @character
                     else
@@ -65,8 +61,7 @@ class CharactersController < ApplicationController
         @character.avatar.attach(params[:avatar])
     end
 
-    def update
-        # byebug
+    def upda
         character = Character.find(params[:id])
         character.update(character_params)
         if character.valid?
@@ -77,9 +72,7 @@ class CharactersController < ApplicationController
     end
 
     def destroy
-        # byebug
         character = Character.find(params[:id])
-        # byebug
         if character.destroy
             redirect_to characters_path
         else
@@ -93,21 +86,21 @@ class CharactersController < ApplicationController
         params.require(:character).permit(:name, :bio, :actor_id, :show_id, :avatar, show_attributes: [:title, :air_time, :show_id, :id])
     end
 
-    def no_show_attributes_in_character_params?
+    def context_of_show?
         !character_params[:show_id]
     end
 
-    def character_params_filled_out?
+    def filled_out_form_correctly_in_context_of_show?
         character_params[:name] != "" && character_params[:bio] != "" && character_params[:actor_id] != ""    end
 
     def hacked?
         character_params[:show_attributes][:show_id] != character_params[:show_attributes][:id]
     end
 
-    def character_params_filled_out_with_show_attributes?
+    def filled_out_form_correctly?
         character_params[:name] != "" && character_params[:bio] != "" && character_params[:actor_id] != "" && (character_params[:show_id] != "" || (character_params[:show_attributes][:title] != "" && character_params[:show_attributes][:rating] != "" && character_params[:show_attributes][:air_time] != ""))    end
 
-    def show_id_in_character_params
+    def selected_show_from_dropdown?
         character_params[:show_id] != ""
     end
 

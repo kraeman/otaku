@@ -42,11 +42,14 @@ class ViewingsController < ApplicationController
 
     def destroy
         viewing = Viewing.find(params[:id])
-        # byebug
-        if viewing.destroy
-            redirect_to user_path(session[:user_id])
+        if viewing.user_id == session[:user_id]
+            if viewing.destroy
+                redirect_to user_path(session[:user_id])
+            else
+                redirect_to back
+            end
         else
-            redirect_to back
+            redirect_to user_path(session[:user_id])
         end
     end
     

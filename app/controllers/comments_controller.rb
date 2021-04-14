@@ -11,11 +11,15 @@ class CommentsController < ApplicationController
     def destroy
       comment = Comment.find(params[:id])
       show_id = comment.show_id
-      if comment.destroy
-          redirect_to show_path(show_id)
-      else
-          redirect_to back
-      end
+      if comment.user_id == session[:user_id]
+        if comment.destroy
+            redirect_to show_path(show_id)
+        else
+            redirect_to back
+        end
+    else
+        redirect_to user_path(session[:user_id])
+    end
   end    
 
     def comment_params
