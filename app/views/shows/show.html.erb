@@ -1,10 +1,6 @@
 <br>
 <ul>
-<% if @comment.errors.any? %> 
-    <% @comment.errors.each do |error| %>
-        <li><%=error.full_message%></li>
-    <% end %>
-<% end %>
+<%=display_error_messages_if_any(@comment)%>
 </ul>
 <br>
 <h1><%=@show.title%></h1>
