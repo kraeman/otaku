@@ -21,18 +21,20 @@ class ActorsController < ApplicationController
     end
     
     def show
+      
         @actor = Actor.find_by_id(params[:id])
         redirect_if_record_not_exist(@actor)
         
     end
 
     def edit
-        
+          
         @actor = Actor.find_by_id(params[:id])
         redirect_if_record_not_exist(@actor)
     end
 
     def update
+        
         @actor = Actor.find(params[:id])
         @actor.update(actor_params)
         if @actor.valid?
@@ -43,7 +45,6 @@ class ActorsController < ApplicationController
     end
 
     def destroy
-        
         # byebug
         actor = Actor.find(params[:id])
         # byebug
@@ -57,7 +58,7 @@ class ActorsController < ApplicationController
     private
     
     def actor_params
-        params.require(:actor).permit(:name, :dob)
+        params.require(:actor).permit(:name, :dob, :id)
     end
 
 end
