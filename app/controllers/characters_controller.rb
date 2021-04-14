@@ -20,7 +20,8 @@ class CharactersController < ApplicationController
     end
     
     def create
-        # byebug
+        
+    
         if no_show_attributes_in_character_params?
             if character_params_filled_out?
             if hacked?
@@ -32,8 +33,8 @@ class CharactersController < ApplicationController
                     redirect_to show_character_path(Show.find(character_params[:show_attributes][:id]), @character)
                 end
             else
-                
-                @character = Character.create(character_params)
+                # byebug
+                @character = Character.create(name: character_params[:name], bio: character_params[:bio], actor_id: character_params[:actor_id], show_id: character_params[:show_attributes][:id])
                 render :new
             end
         else             
@@ -50,7 +51,8 @@ class CharactersController < ApplicationController
                  @character = Character.create(character_params)
                  render :new
                 end  
-        end      
+        end       
+    
     
     end
     
