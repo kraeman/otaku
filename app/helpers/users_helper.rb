@@ -10,4 +10,17 @@ module UsersHelper
             render partial: "form2", locals: {f: f}
          end
     end
+
+
+    def iterate_through_user_shows(user)
+        showz = ""
+        if @user.shows.any?
+             @user.shows.uniq.each do |showy| 
+                showz << (link_to showy.title, show_path(showy)) + content_tag(:br)
+             end
+             showz.html_safe
+         else 
+            "You currently have no anime!"
+         end
+    end
 end

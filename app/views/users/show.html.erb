@@ -11,29 +11,12 @@
 <h4><%=button_to "Edit Profile", edit_user_path(@user), method: 'get'%></h4>
 
 <h3>Your Anime:</h3>
-<ul>
-  <% if @user.shows.any? %>
-    <% @user.shows.uniq.each do |show| %>
-      <li><%=link_to show.title, show_path(show)%></li>
-    <% end %>
-  <% else %>
-    <%="You currently have no anime!"%>
-  <% end %>  
-</ul>
+<%= iterate_through_user_shows(@user)%>
 
 <h3>Your Upcoming Viewings:</h3>
-<ul>
-<% if @user.viewings.any? { |v| v.time >= Time.now } %>
-  <% @user.viewings.each do |viewing| %>
-    <% if viewing.time >= Time.now %>
-      <li><%=link_to viewing.show.title, show_path(viewing.show)%>
-      <%= link_to "#{viewing.time.strftime("%m/%d/%y: %H:%M %Z")} @ #{viewing.place}", edit_viewing_path(viewing)%></li>
-    <% end %>
-  <% end %>
-  <% else %>
-  <%="You have no upcoming viewings!"%>
-  <% end %>
-</ul>
+
+<%= iterate_through_user_future_viewings(@user)%>
+
 <br>
   <%= button_to "Add a viewing", new_viewing_path, method: 'get' %>
   <br>

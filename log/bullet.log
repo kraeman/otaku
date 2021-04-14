@@ -34,3 +34,43 @@ Call stack
   /Users/kraewind/Documents/Flatiron/Phase 3/otaku/app/views/users/show.html.erb:29:in `block in _app_views_users_show_html_erb__2958741497423102413_70120039876020'
   /Users/kraewind/Documents/Flatiron/Phase 3/otaku/app/views/users/show.html.erb:27:in `_app_views_users_show_html_erb__2958741497423102413_70120039876020'
 
+2021-04-14 11:46:39[WARN] user: kraewind
+GET /users/1
+USE eager loading detected
+  Viewing => [:show]
+  Add to your query: .includes([:show])
+Call stack
+  /Users/kraewind/Documents/Flatiron/Phase 3/otaku/app/helpers/viewings_helper.rb:7:in `block in iterate_through_user_future_viewings'
+  /Users/kraewind/Documents/Flatiron/Phase 3/otaku/app/helpers/viewings_helper.rb:5:in `iterate_through_user_future_viewings'
+  /Users/kraewind/Documents/Flatiron/Phase 3/otaku/app/views/users/show.html.erb:18:in `_app_views_users_show_html_erb___2116944227951356864_70131255071940'
+
+2021-04-14 11:50:03[WARN] user: kraewind
+GET /users/1
+USE eager loading detected
+  Viewing => [:show]
+  Add to your query: .includes([:show])
+Call stack
+  /Users/kraewind/Documents/Flatiron/Phase 3/otaku/app/helpers/viewings_helper.rb:7:in `block in iterate_through_user_future_viewings'
+  /Users/kraewind/Documents/Flatiron/Phase 3/otaku/app/helpers/viewings_helper.rb:5:in `iterate_through_user_future_viewings'
+  /Users/kraewind/Documents/Flatiron/Phase 3/otaku/app/views/users/show.html.erb:18:in `_app_views_users_show_html_erb___2116944227951356864_70131436272320'
+
+2021-04-14 11:50:06[WARN] user: kraewind
+GET /viewings?
+USE eager loading detected
+  Viewing => [:show]
+  Add to your query: .includes([:show])
+Call stack
+  /Users/kraewind/Documents/Flatiron/Phase 3/otaku/app/helpers/viewings_helper.rb:22:in `block in iterate_through_user_past_viewings'
+  /Users/kraewind/Documents/Flatiron/Phase 3/otaku/app/helpers/viewings_helper.rb:20:in `iterate_through_user_past_viewings'
+  /Users/kraewind/Documents/Flatiron/Phase 3/otaku/app/views/viewings/index.html.erb:3:in `_app_views_viewings_index_html_erb__467422473025769814_70131436637360'
+
+2021-04-14 11:50:52[WARN] user: kraewind
+GET /users/1
+USE eager loading detected
+  Viewing => [:show]
+  Add to your query: .includes([:show])
+Call stack
+  /Users/kraewind/Documents/Flatiron/Phase 3/otaku/app/helpers/viewings_helper.rb:7:in `block in iterate_through_user_future_viewings'
+  /Users/kraewind/Documents/Flatiron/Phase 3/otaku/app/helpers/viewings_helper.rb:5:in `iterate_through_user_future_viewings'
+  /Users/kraewind/Documents/Flatiron/Phase 3/otaku/app/views/users/show.html.erb:18:in `_app_views_users_show_html_erb___2116944227951356864_70131436272320'
+

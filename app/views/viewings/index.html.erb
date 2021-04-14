@@ -1,12 +1,3 @@
 <h1>Your Past Viewings</h1>
 
-<% if @user.viewings.any? { |v| v.time < Time.now } %>
-<% @user.viewings.each do |viewing| %>
-    <% if viewing.time < Time.now %>
-      <li><%=link_to viewing.show.title, show_path(viewing.show)%>
-      <%= link_to "#{viewing.time.strftime("%m/%d/%y: %H:%M %Z")} @ #{viewing.place}", edit_viewing_path(viewing)%></li>
-    <% end %>
-  <% end %>
-  <% else %>
-    <%="No viewing History!"%>
-  <% end %>
+<%=iterate_through_user_past_viewings(@user)%>
