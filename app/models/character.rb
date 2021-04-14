@@ -1,7 +1,7 @@
 class Character < ApplicationRecord
   belongs_to :show
   belongs_to :actor
-  has_one_attached :avatar
+  has_one_attached :avatar, dependent: :delete_all
 
   validates :name,  presence: true
   validates :bio, presence: true

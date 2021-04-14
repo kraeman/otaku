@@ -1,8 +1,8 @@
 class User < ApplicationRecord
     has_secure_password
 
-    has_many :comments
-    has_many :viewings
+    has_many :comments, dependent: :delete_all
+    has_many :viewings, dependent: :delete_all
     has_many :shows, through: :viewings
 
     validates :name, presence: true
