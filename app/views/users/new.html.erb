@@ -8,7 +8,7 @@
 <div id="signup-form" class="hide">
     <%= form_with(model: @user) do |f| %>
         <%= render partial: "form1", locals: {f: f} %>
-        <%= render partial: "form2", locals: {f: f} %>
+        <%= render partial: "context_of_show", locals: {f: f} %>
         <%= f.submit :create%>
     <% end %>
     <h4> Already have an account? <%= link_to "Log in", signin_path, class: "show-login"%></h4>

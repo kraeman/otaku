@@ -17,4 +17,10 @@ module ApplicationHelper
         end
     end
 
+    def delete_if_admin_or_owner(resource)
+        if User.find(session[:user_id]).email == "kraewind@gmail.com" || resource.user_id == (session[:user_id])
+            button_to "Delete #{resource.class}", "/#{resource.class.name.downcase}s/#{resource.id}", method: "delete"
+        end
+    end
+
 end

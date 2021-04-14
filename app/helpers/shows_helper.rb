@@ -11,4 +11,15 @@ module ShowsHelper
         end
 
     end
+    def iterate_through_comments(comments)
+        coms = ""
+        if comments.any?
+            comments.reverse.each do |c|
+               coms << "#{User.find_by_id(c.user_id).username}: " + " #{c.content} " + "#{c.created_at.strftime("%m/%d/%y: %H:%M %Z")}" +  "#{delete_if_admin_or_owner(c)}"
+            end
+            coms.html_safe
+        else
+            "No Comments Yet"
+        end
+    end
 end
