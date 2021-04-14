@@ -2,4 +2,8 @@
 
 <h4>DOB: <%=@actor.dob%></h4>
 <br>
+<h4>Shows Actor Is In: </h4> 
+<br>
+<%= display_shows_conditionally(@actor.shows)%>
+<br>
 <%=button_to "Edit Actor", edit_actor_path(@actor), method: 'get'%>

@@ -1,7 +1,12 @@
 <h1><%=@character.name%></h1>
+<br>
+<h4>Show: <%=link_to @character.show.title, show_path(@character.show)%></h4>
+<br>
 
 <%=show_avatar(@character)%>
 
 <h4>Bio: <%=@character.bio%></h4>
+<br>
+<h4>Actor: <%=link_to @character.actor.name, actor_path(@character.actor)%></h4>
 <br>
 <%=button_to "Edit Character", edit_character_path(@character), method: 'get'%>
