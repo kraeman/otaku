@@ -11,4 +11,8 @@ class Character < ApplicationRecord
 
   default_scope { order(name: :asc) }
   scope :search_by_name, -> (name) {where("name LIKE ?", "#{name}%")}
+
+
+
+
 end

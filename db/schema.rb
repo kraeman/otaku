@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_13_013307) do
+ActiveRecord::Schema.define(version: 2021_04_14_190414) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -45,15 +45,6 @@ ActiveRecord::Schema.define(version: 2021_04_13_013307) do
     t.date "dob"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "actors_shows", force: :cascade do |t|
-    t.integer "actor_id", null: false
-    t.integer "show_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["actor_id"], name: "index_actors_shows_on_actor_id"
-    t.index ["show_id"], name: "index_actors_shows_on_show_id"
   end
 
   create_table "characters", force: :cascade do |t|
@@ -111,8 +102,6 @@ ActiveRecord::Schema.define(version: 2021_04_13_013307) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "actors_shows", "actors"
-  add_foreign_key "actors_shows", "shows"
   add_foreign_key "characters", "actors"
   add_foreign_key "characters", "shows"
   add_foreign_key "comments", "shows"
