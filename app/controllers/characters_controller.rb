@@ -11,13 +11,11 @@ class CharactersController < ApplicationController
     
     def new
         
-        if params[:show_id] && @character = Show.find_by(id: params[:show_id])
-            
+        if @character = Show.find_by(id: params[:show_id])
             @character = Character.new(show_id: params[:show_id])
-            
         else
             @character = Character.new
-            @character.build_show
+            @show = @character.build_show
         end 
     end
     

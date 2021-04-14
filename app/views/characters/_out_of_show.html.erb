@@ -2,7 +2,7 @@
   <%= f.collection_select :show_id, Show.all, :id, :title, prompt: true, class: "form-label"  %>              
             
        <%=  content_tag(:h2, "Optionally create a show!")%>    
-            <%= f.fields_for :show do |a| %> 
+            <%= f.fields_for :show, @show do |a| %> 
                <%= a.label :title %> 
               <%=  a.text_field :title%>  
 

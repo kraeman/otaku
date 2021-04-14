@@ -52,6 +52,7 @@ module CharactersHelper
                     if selected_show_from_dropdown?(character_params)
                         return Character.create(name: character_params[:name], bio: character_params[:bio], show_id: character_params[:show_id], actor_id: character_params[:actor_id])
                     else
+                        # byebug
                         return Character.create(character_params)
                     end
         end
