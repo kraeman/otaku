@@ -1,9 +1,13 @@
 module CharactersHelper
     def display_show_portion_conditionally(f, character)
-         if character.show_id == nil 
-
-        
-                f.label :show_id, class: "form-label"  
+    #    byebug
+         if character.show_id
+            #  byebug
+                # byebug
+            f.hidden_field :show_id, value: (character.show_id) 
+            
+        else 
+            f.label :show_id, class: "form-label"  
                 f.collection_select :show_id, Show.all, :id, :title, prompt: true, class: "form-label" 
                
                 content_tag(:h2, "Optionally create a show!")
@@ -11,8 +15,6 @@ module CharactersHelper
                     render partial: "shows/form", locals: {f: a} 
     
                  end 
-        else 
-                f.hidden_field :show_id, value: character.show_id 
         end 
     end
 

@@ -9,8 +9,10 @@ class CharactersController < ApplicationController
     
     def new
         
-        if params[:show_id] && @character = Character.find_by(id: params[:show_id])
+        if params[:show_id] && @character = Show.find_by(id: params[:show_id])
+            
             @character = Character.new(show_id: params[:show_id])
+            
         else
             @character = Character.new
             @character.build_show
@@ -18,21 +20,26 @@ class CharactersController < ApplicationController
     end
     
     def create
-        if no_show_attributes_in_character_params?
-            if character_params_filled_out?
-                if hacked?
-                    redirect_to new_show_character_path(Character.find(params[:show_id]))
+        # byebug
+        if !character_params[:show_id]
+            if character_params[:name] != "" && character_params[:bio] != "" && character_params[:actor_id] != ""
+                if character_params[:show_attributes][:show_id] != character_params[:show_attributes][:id]
+                    
+                    redirect_to new_show_character_path(Show.find(character_params[:show_attributes][:id]))
                 else
-                    @character = Character.create(character_params)
-                    redirect_to @character
+                    # byebug
+                    @character = Character.create(name: character_params[:name], bio: character_params[:bio], actor_id: character_params[:actor_id], show_id: character_params[:show_attributes][:id])
+                    redirect_to show_character_path(Show.find(character_params[:show_attributes][:id]), @character)
                 end
             else
-                # @character = Character.create(character_params)
+                
+                @character = Character.create(character_params)
                 render :new
             end
         else             
-                if character_params_filled_out_with_show_attributes?
-                    if show_id_in_character_params
+                if character_params[:name] != "" && character_params[:bio] != "" && character_params[:actor_id] != "" && (character_params[:show_id] != "" || (character_params[:show_attributes][:title] != "" && character_params[:show_attributes][:rating] != "" && character_params[:show_attributes][:air_time] != ""))
+                    if character_params[:show_id] != ""
+                        # byebug
                         @character = Character.create(name: character_params[:name], bio: character_params[:bio], show_id: character_params[:show_id], actor_id: character_params[:actor_id])
                         redirect_to @character
                     else
@@ -40,10 +47,10 @@ class CharactersController < ApplicationController
                         redirect_to @character
                     end
                 else
-                #  @character = Character.create(character_params)
+                 @character = Character.create(character_params)
                  render :new
                 end  
-        end     
+        end      
     
     end
     
@@ -81,7 +88,7 @@ class CharactersController < ApplicationController
     private
     
     def character_params
-        params.require(:character).permit(:name, :bio, :show_id, :actor_id, :avatar, show_attributes: [:title, :air_time])
+        params.require(:character).permit(:name, :bio, :actor_id, :show_id, :avatar, show_attributes: [:title, :air_time, :show_id, :id])
     end
 
     def no_show_attributes_in_character_params?
