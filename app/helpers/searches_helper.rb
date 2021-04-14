@@ -1,14 +1,19 @@
 module SearchesHelper
     def display_search_results(results)
+      rezults = ""
+      if results.any?
          results.each do |r| 
              if r.class == Show 
-                content_tag(li: (link_to r.title, show_path(r)))
+                rezults << (link_to r.title, show_path(r)) + content_tag(:br)
              elsif r.class == Character 
-                content_tag(li: (link_to r.name, character_path(r)))
+                rezults << (link_to r.name, character_path(r)) + content_tag(:br)
              else 
-                content_tag(li: (link_to r.name, actor_path(r)))
-             end 
+               rezults << (link_to r.name, actor_path(r)) + content_tag(:br)             
+            end 
          end
-         return nil 
+         rezults.html_safe
+      else
+         "Nothing matched your search!"
+      end
     end
 end

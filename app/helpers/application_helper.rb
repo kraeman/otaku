@@ -16,4 +16,5 @@ module ApplicationHelper
             button_to "Delete #{resource.class}", "/#{resource.class.name.downcase}s/#{resource.id}", method: "delete"
         end
     end
+
 end
