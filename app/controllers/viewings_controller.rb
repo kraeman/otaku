@@ -1,4 +1,5 @@
 class ViewingsController < ApplicationController
+    before_action :redirect_if_not_logged_in, only: [:new, :index, :show, :edit]
     def new
         @viewing = Viewing.new
     end
@@ -20,7 +21,7 @@ class ViewingsController < ApplicationController
         end
     end
     
-    def viewing
+    def show
         @viewing = Viewing.find(params[:id])
     end
 

@@ -1,4 +1,5 @@
 class ShowsController < ApplicationController
+    before_action :redirect_if_not_logged_in, only: [:new, :index, :show, :edit]
     def new
         @show = Show.new
     end

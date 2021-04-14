@@ -1,5 +1,7 @@
 class ActorsController < ApplicationController
+    before_action :redirect_if_not_logged_in, only: [:new, :index, :show, :edit]
     def new
+        
         @actor = Actor.new
     end
 
@@ -22,6 +24,7 @@ class ActorsController < ApplicationController
     end
 
     def edit
+        
         @actor = Actor.find(params[:id])
     end
 
@@ -36,6 +39,7 @@ class ActorsController < ApplicationController
     end
 
     def destroy
+        
         # byebug
         actor = Actor.find(params[:id])
         # byebug
@@ -51,4 +55,5 @@ class ActorsController < ApplicationController
     def actor_params
         params.require(:actor).permit(:name, :dob)
     end
+
 end

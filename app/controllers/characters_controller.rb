@@ -1,4 +1,5 @@
 class CharactersController < ApplicationController
+    before_action :redirect_if_not_logged_in, only: [:new, :index, :show, :edit]
     def index
         if params[:show_id]
             @characters = Character.find(params[:show_id]).characters
@@ -32,7 +33,7 @@ class CharactersController < ApplicationController
         @character.avatar.attach(params[:avatar])
     end
 
-    def upda
+    def update
         character = Character.find(params[:id])
         character.update(character_params)
         if character.valid?
