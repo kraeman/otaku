@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     end
 
     def edit
-        #if cvo is true, cant resent password
+        
         @user = User.find_by(id: session[:user_id])
     end
 

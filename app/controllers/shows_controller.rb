@@ -20,12 +20,14 @@ class ShowsController < ApplicationController
     end
     
     def show
-        @show = Show.find(params[:id])
+        @show = Show.find_by_id(params[:id])
         @comment = Comment.new
+        redirect_if_record_not_exist(@show)
     end
 
     def edit
-        @show = Show.find(params[:id])
+        @show = Show.find_by_id(params[:id])
+        redirect_if_record_not_exist(@show)
     end
 
     def update

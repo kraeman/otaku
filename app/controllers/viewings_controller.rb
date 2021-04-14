@@ -21,13 +21,14 @@ class ViewingsController < ApplicationController
         end
     end
     
-    def show
-        @viewing = Viewing.find(params[:id])
-    end
+    # def show
+    #     @viewing = Viewing.find(params[:id])
+    # end
 
     def edit
         # byebug
-        @viewing = Viewing.find(params[:id])
+        @viewing = Viewing.find_by_id(params[:id])
+        redirect_if_record_not_exist(@viewing)
     end
 
     def update

@@ -25,12 +25,14 @@ class CharactersController < ApplicationController
     end
     
     def show
-        @character = Character.find(params[:id])
+        @character = Character.find_by_id(params[:id])
+        redirect_if_record_not_exist(@character)
     end
 
     def edit
-        @character = Character.find(params[:id])
+        @character = Character.find_by_id(params[:id])
         @character.avatar.attach(params[:avatar])
+        redirect_if_record_not_exist(@character)
     end
 
     def update

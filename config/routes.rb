@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get "/", to: "users#show"
+  get "/", to: "users#show", as: 'root'
   get 'searches/results', as: 'searches'
   resources :actors
  

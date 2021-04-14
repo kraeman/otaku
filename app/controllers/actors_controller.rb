@@ -6,6 +6,7 @@ class ActorsController < ApplicationController
     end
 
     def index
+        
         @actors = Actor.all
     end
     
@@ -20,12 +21,15 @@ class ActorsController < ApplicationController
     end
     
     def show
-        @actor = Actor.find(params[:id])
+        @actor = Actor.find_by_id(params[:id])
+        redirect_if_record_not_exist(@actor)
+        
     end
 
     def edit
         
-        @actor = Actor.find(params[:id])
+        @actor = Actor.find_by_id(params[:id])
+        redirect_if_record_not_exist(@actor)
     end
 
     def update

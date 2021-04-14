@@ -7,4 +7,13 @@ class ApplicationController < ActionController::Base
         redirect_to signin_path if !logged_in?
     end
 
+    def redirect_if_record_not_exist(record)
+        if record
+            redirect_if_not_logged_in
+        else
+            # byebug
+            redirect_to root_path
+    
+        end
+    end
 end
