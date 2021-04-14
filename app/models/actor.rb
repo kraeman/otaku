@@ -1,7 +1,8 @@
 class Actor < ApplicationRecord
-    has_many :actors_shows, dependent: :delete_all
-    has_many :shows, through: :actors_shows
+    # has_many :actors_shows, dependent: :delete_all
     has_many :characters, dependent: :delete_all
+    has_many :shows, through: :characters
+    
 
     validates :name, presence: true
     validates :dob, presence: true
