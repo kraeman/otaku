@@ -15,7 +15,7 @@ class CharactersController < ApplicationController
             @character = Character.new(show_id: params[:show_id])
         else
             @character = Character.new
-            @show = @character.build_show
+            @character.build_show
         end 
     end
     
