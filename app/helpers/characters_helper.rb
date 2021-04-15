@@ -9,11 +9,11 @@ module CharactersHelper
         end 
     end
 
-    def show_avatar(character)
-        if character.avatar.attached?
-             image_tag(url_for(@character.avatar))
-        end
-    end
+    # def show_avatar(character)
+    #     if character.avatar.attached?
+    #          image_tag(url_for(@character.avatar))
+    #     end
+    # end
 
     def iterate_through_characters(characters)
         charac = ""
@@ -58,5 +58,24 @@ module CharactersHelper
         end
     end
 
+    # def display_add_image(c, f)
+    #     # byebug
+    #     if c.avatar.nil?
+    #         render partial: 'add_photo', locals: {f: f} 
+    #     end 
+    # end
 
+    # def do_not_delete_old_pic_if_no_new_pic(character_params)
+    #     character = Character.find(params[:id])
+    #     old_pic = character.avatar
+    #     byebug
+    #     if !character_params[:avatar]
+    #         character.update(name: character_params[:name], bio: character_params[:bio], :avatar => old_pic)
+    #         # byebug
+    #         return character
+    #     else
+    #         character.update(character_params)
+    #        return character 
+    #     end
+    # end
 end

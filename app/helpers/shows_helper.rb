@@ -15,7 +15,7 @@ module ShowsHelper
         coms = ""
         if comments.any?
             comments.reverse.each do |c|
-               coms << "#{User.find_by_id(c.user_id).username}: " + " #{c.content} " + "#{c.created_at.strftime("%m/%d/%y: %H:%M %Z")}" +  "#{delete_if_admin_or_owner(c)}"
+               coms << "#{User.find_by_id(c.user_id).username}: " + " #{c.content} " + "#{c.created_at.strftime("%m/%d/%y: %H:%M %Z")}" +  "#{delete_if_admin_or_owner(c)}" + "#{content_tag(:br)}"
             end
             coms.html_safe
         else

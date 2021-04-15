@@ -67,7 +67,7 @@ class CharactersController < ApplicationController
     private
     
     def character_params
-        params.require(:character).permit(:name, :bio, :actor_id, :show_id, :avatar, show_attributes: [:title, :air_time, :show_id, :id])
+        params.require(:character).permit(:name, :bio, :actor_id, :show_id, show_attributes: [:title, :air_time, :show_id, :id])
     end
 
 
