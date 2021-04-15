@@ -1,5 +1,4 @@
 class Show < ApplicationRecord
-    # has_many :actors_shows, dependent: :delete_all
     has_many :characters, dependent: :delete_all
     has_many :actors, through: :characters
     

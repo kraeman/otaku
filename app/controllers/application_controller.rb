@@ -11,9 +11,7 @@ class ApplicationController < ActionController::Base
         if record
             redirect_if_not_logged_in
         else
-            # byebug
             redirect_to root_path
-    
         end
     end
     def redirect_if_logged_in

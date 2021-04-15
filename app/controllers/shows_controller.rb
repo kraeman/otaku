@@ -1,7 +1,6 @@
 class ShowsController < ApplicationController
     before_action :redirect_if_not_logged_in, only: [:new, :index, :show, :edit]
     
-    
     def new
         @show = Show.new
     end
@@ -11,7 +10,6 @@ class ShowsController < ApplicationController
     end
     
     def create
-        # byebug
         @show = Show.create(show_params)
         if @show.id
           session[:show_id] = @show.id
@@ -33,7 +31,6 @@ class ShowsController < ApplicationController
     end
 
     def update
-        # byebug
         @show = Show.find(params[:id])
         @show.update(show_params)
         if @show.valid?
@@ -44,9 +41,7 @@ class ShowsController < ApplicationController
     end
 
     def destroy
-        # byebug
         show = Show.find(params[:id])
-        # byebug
         if show.destroy
             redirect_to shows_path
         else

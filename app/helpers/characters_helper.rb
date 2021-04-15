@@ -1,6 +1,5 @@
 module CharactersHelper
     def display_show_portion_conditionally(f, character)
-    #    byebug
          if character.show_id
             render partial: 'characters/context_of_show', locals: {f: f}
             
@@ -52,7 +51,6 @@ module CharactersHelper
                     if selected_show_from_dropdown?(character_params)
                         return Character.create(name: character_params[:name], bio: character_params[:bio], show_id: character_params[:show_id], actor_id: character_params[:actor_id])
                     else
-                        # byebug
                         return Character.create(character_params)
                     end
         end

@@ -1,5 +1,4 @@
 class Actor < ApplicationRecord
-    # has_many :actors_shows, dependent: :delete_all
     has_many :characters, dependent: :delete_all
     has_many :shows, through: :characters
     
@@ -10,6 +9,7 @@ class Actor < ApplicationRecord
     
     default_scope { order(name: :asc) }
     scope :search_by_name, -> (name) {where("name LIKE ?", "#{name}%")}
+    
 private
   
     def date_in_future

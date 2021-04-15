@@ -1,10 +1,7 @@
 class CommentsController < ApplicationController
-    
-    
-    def create
-        
+
+    def create 
        comment = Comment.create(content: comment_params[:content], show_id: comment_params[:show_id], user_id: session[:user_id])
-    #    byebug
        redirect_to show_path(Show.find(comment.show_id))
     end
 

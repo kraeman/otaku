@@ -11,7 +11,6 @@ module ViewingsHelper
         else 
             "You have no upcoming viewings!"
         end 
-    
     end
 
     def iterate_through_user_past_viewings(user)

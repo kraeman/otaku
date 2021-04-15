@@ -1,7 +1,6 @@
 class CharactersController < ApplicationController
     before_action :redirect_if_not_logged_in, only: [:new, :index, :show, :edit]
     def index
-        
         if params[:show_id]
             @characters = Character.find(params[:show_id]).characters
         else
@@ -10,7 +9,6 @@ class CharactersController < ApplicationController
     end
     
     def new
-        
         if @character = Show.find_by(id: params[:show_id])
             @character = Character.new(show_id: params[:show_id])
         else

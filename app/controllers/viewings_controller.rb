@@ -10,9 +10,7 @@ class ViewingsController < ApplicationController
 
     
     def create
-        # byebug
         @viewing = Viewing.create(time: viewing_params[:time], place: viewing_params[:place], show_id: viewing_params[:show_id], user_id: session[:user_id])
-        # byebug
         if @viewing.id
           session[:viewing_id] = @viewing.id
           redirect_to @viewing.user
@@ -20,19 +18,13 @@ class ViewingsController < ApplicationController
           render :new
         end
     end
-    
-    # def show
-    #     @viewing = Viewing.find(params[:id])
-    # end
 
     def edit
-        # byebug
         @viewing = Viewing.find_by_id(params[:id])
         redirect_if_record_not_exist(@viewing)
     end
 
     def update
-        # byebug
         @viewing = Viewing.find(params[:id])
         @viewing.update(viewing_params)
         if @viewing.valid?

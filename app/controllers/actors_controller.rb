@@ -1,12 +1,10 @@
 class ActorsController < ApplicationController
     before_action :redirect_if_not_logged_in, only: [:new, :index, :show, :edit]
     def new
-        
         @actor = Actor.new
     end
 
     def index
-        
         @actors = Actor.all
     end
     
@@ -21,20 +19,16 @@ class ActorsController < ApplicationController
     end
     
     def show
-      
         @actor = Actor.find_by_id(params[:id])
         redirect_if_record_not_exist(@actor)
-        
     end
 
     def edit
-          
         @actor = Actor.find_by_id(params[:id])
         redirect_if_record_not_exist(@actor)
     end
 
     def update
-        
         @actor = Actor.find(params[:id])
         @actor.update(actor_params)
         if @actor.valid?
@@ -45,9 +39,7 @@ class ActorsController < ApplicationController
     end
 
     def destroy
-        # byebug
         actor = Actor.find(params[:id])
-        # byebug
         if actor.destroy
             redirect_to actors_path
         else
@@ -60,5 +52,4 @@ class ActorsController < ApplicationController
     def actor_params
         params.require(:actor).permit(:name, :dob, :id)
     end
-
 end
